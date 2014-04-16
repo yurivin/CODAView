@@ -1,9 +1,10 @@
-package net.yvin.codaview.app;
+package net.yvin.codaview.app.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import net.yvin.codaview.app.R;
 
 
 public class MainMenuActivity extends Activity {
