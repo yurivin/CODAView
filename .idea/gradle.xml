@@ -7,8 +7,8 @@
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="modules">
           <set>
-            <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/CODAView" />
+            <option value="C:\Users\Yuriy\Documents\GitHub\CODAView" />
+            <option value="C:\Users\Yuriy\Documents\GitHub\CODAView\CODAView" />
           </set>
         </option>
       </GradleProjectSettings>

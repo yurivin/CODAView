@@ -7,5 +7,7 @@
     <string name="CODA">CODA</string>
     <string name="properties">Properties</string>
     <string name="show_daily">Show daily</string>
+    <string name="menu">Menu</string>
+    <string name="calendar">Calendar</string>
 
 </resources>
