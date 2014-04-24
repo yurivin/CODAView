@@ -10,12 +10,12 @@
     tools:context="net.yvin.codaview.app.activity.CalendarActivity">
 
     <CalendarView
-        android:id="@+id/calendarView1"
+        android:id="@+id/calendarView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:unfocusedMonthDateColor="#ffd1850f"
         android:focusedMonthDateColor="#ffc6ff16"
-        android:weekNumberColor="#ffff976e"
-        android:weekSeparatorLineColor="#00ff00"/>
+        android:showWeekNumber="false"
+        android:weekSeparatorLineColor="#ffd1510f"/>
 
 </RelativeLayout>
