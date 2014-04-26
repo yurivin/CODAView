@@ -17,6 +17,6 @@ public class DailyActivity extends MenuAbstractActivity {
         setContentView(R.layout.activity_daily);
 
         dayTitle = (TextView)findViewById(R.id.dayTitle);
-        dayTitle.setText(diaryTitlesRepo.find("diary.0212", this));
+        dayTitle.setText(diaryTitlesRepo.find("0212", this));
     }
 }
