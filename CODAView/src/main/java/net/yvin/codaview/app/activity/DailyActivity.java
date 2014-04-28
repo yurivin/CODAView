@@ -4,19 +4,28 @@ import net.yvin.codaview.app.activity.base.MenuAbstractActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 import net.yvin.codaview.app.R;
-import repository.DiaryTitlesRepository;
+import net.yvin.codaview.app.repository.DailyContentRepository;
+import net.yvin.codaview.app.repository.DiaryTitlesRepository;
+import net.yvin.codaview.app.utils.DateUtils;
 
 
 public class DailyActivity extends MenuAbstractActivity {
 
-    TextView dayTitle;
+    TextView dayTitleTv, quoteTv, contentTv, sumTv;
     DiaryTitlesRepository diaryTitlesRepo = new DiaryTitlesRepository();
+    DailyContentRepository dailyContentRepo = new DailyContentRepository();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_daily);
 
-        dayTitle = (TextView)findViewById(R.id.dayTitle);
-        dayTitle.setText(diaryTitlesRepo.find("0212", this));
+        dayTitleTv = (TextView)findViewById(R.id.dayTitleTv);
+        dayTitleTv.setText(diaryTitlesRepo.find(DateUtils.nowToDailyId(), this));
+        quoteTv = (TextView)findViewById(R.id.quoteTv);
+        quoteTv.setText(dailyContentRepo.find("0106" + "-" + "quote", this));
+        contentTv = (TextView)findViewById(R.id.contentTv);
+        contentTv.setText(dailyContentRepo.find("0106" + "-" + "content", this));
+        sumTv = (TextView)findViewById(R.id.sumTv);
+        sumTv.setText(dailyContentRepo.find("0106" + "-" + "sum", this));
     }
 }

@@ -1,4 +1,4 @@
-package repository;
+package net.yvin.codaview.app.repository;
 
 import android.content.Context;
 

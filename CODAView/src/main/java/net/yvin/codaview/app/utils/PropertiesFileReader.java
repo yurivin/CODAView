@@ -1,4 +1,4 @@
-package Utils;
+package net.yvin.codaview.app.utils;
 
 import android.content.Context;
 import android.content.res.AssetManager;

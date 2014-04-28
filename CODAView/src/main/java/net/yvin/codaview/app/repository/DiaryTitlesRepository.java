@@ -1,12 +1,8 @@
-package repository;
+package net.yvin.codaview.app.repository;
 
-import Utils.PropertiesFileReader;
+import net.yvin.codaview.app.utils.PropertiesFileReader;
 import android.content.Context;
-import android.content.res.AssetManager;
-import android.content.res.Resources;
 
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.Properties;
 
 /**
