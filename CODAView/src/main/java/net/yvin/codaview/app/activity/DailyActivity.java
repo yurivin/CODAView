@@ -22,10 +22,10 @@ public class DailyActivity extends MenuAbstractActivity {
         dayTitleTv = (TextView)findViewById(R.id.dayTitleTv);
         dayTitleTv.setText(diaryTitlesRepo.find(DateUtils.nowToDailyId(), this));
         quoteTv = (TextView)findViewById(R.id.quoteTv);
-        quoteTv.setText(dailyContentRepo.find("0106" + "-" + "quote", this));
+        quoteTv.setText(dailyContentRepo.find("0112" + "-" + "quote", this));
         contentTv = (TextView)findViewById(R.id.contentTv);
-        contentTv.setText(dailyContentRepo.find("0106" + "-" + "content", this));
+        contentTv.setText(dailyContentRepo.find("0112" + "-" + "content", this));
         sumTv = (TextView)findViewById(R.id.sumTv);
-        sumTv.setText(dailyContentRepo.find("0106" + "-" + "sum", this));
+        sumTv.setText(dailyContentRepo.find("0112" + "-" + "sum", this));
     }
 }
