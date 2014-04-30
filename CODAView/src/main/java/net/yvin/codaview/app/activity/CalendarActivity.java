@@ -9,6 +9,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import net.yvin.codaview.app.R;
 import net.yvin.codaview.app.activity.base.MenuAbstractActivity;
+import net.yvin.codaview.app.utils.DateUtils;
 
 import java.lang.reflect.Field;
 
@@ -20,10 +21,14 @@ public class CalendarActivity extends MenuAbstractActivity {
         setContentView(R.layout.activity_calendar);
         setMonthTitleColor();
         CalendarView calendar = (CalendarView) findViewById(R.id.calendarView);
+
         calendar.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             public void onSelectedDayChange(CalendarView view,
                                             int year, int month, int dayOfMonth) {
                 Intent intent = new Intent(getApplicationContext(), DailyActivity.class);
+                intent.putExtra("dailyId", DateUtils.CalendarToDailyId(year, month, dayOfMonth));
+                startActivity(intent);
+                finish();
                 Toast.makeText(getApplicationContext(),
                         dayOfMonth + "/" + month + "/" + year, Toast.LENGTH_LONG).show();
             }

@@ -25,4 +25,14 @@ public class DateUtils {
         Log.d("daily id: ", builder.toString());
         return builder.toString();
     }
+
+    public static String CalendarToDailyId(int year, int month, int dayOfMonth) {
+        StringBuilder dailyId = new StringBuilder();
+        dailyId.append(String.valueOf(year).substring(2));
+        String str = String.valueOf(month + 1);
+        dailyId.append(str.length() == 2 ? str : "0" + str);
+        str = String.valueOf(dayOfMonth);
+        dailyId.append(str.length() == 2 ? str : "0" + str);
+        return dailyId.toString();
+    }
 }
