@@ -1,6 +1,7 @@
 package net.yvin.codaview.app.activity;
 
 import android.content.Intent;
+import android.util.Log;
 import net.yvin.codaview.app.activity.base.MenuAbstractActivity;
 import android.os.Bundle;
 import android.widget.TextView;
@@ -28,6 +29,7 @@ public class DailyActivity extends MenuAbstractActivity {
             if (intent.getExtras() != null) {
                 if (intent.getExtras().containsKey("dailyId")) {
                     dailyId = intent.getStringExtra("dailyId");
+                    Log.d("dailyId", dailyId);
                 }
             }
         }
