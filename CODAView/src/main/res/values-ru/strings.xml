@@ -2,9 +2,7 @@
 <resources>
 
     <string name="app_name">вСозе</string>
-    <string name="action_settings">Настройки</string>
     <string name="CODA">CODA</string>
-    <string name="properties">Опции</string>
     <string name="show_daily">Ежедневник</string>
     <string name="menu">Меню</string>
     <string name="calendar">Календарь</string>
