@@ -22,7 +22,7 @@
                 android:layout_alignParentTop="true"
                 android:layout_width="match_parent"
                 android:textColor="#ffd14503"
-                android:textSize="17dp"
+                android:textSize="16dp"
                 android:layout_height="wrap_content"/>
 
             <TextView
@@ -31,7 +31,7 @@
                 android:id="@+id/quoteTv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="13dp"
+                android:textSize="12dp"
                 android:textStyle="italic"
                 android:textColor="#fffff00c"/>
 
@@ -42,7 +42,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="#ffffaa0f"
-                android:textSize="13dp"/>
+                android:textSize="12dp"/>
 
             <TextView
                 android:layout_below="@+id/contentTv"
@@ -50,9 +50,9 @@
                 android:id="@+id/sumTv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="13dp"
+                android:textSize="12dp"
                 android:textStyle="bold"
-                android:textColor="#ffd1850f"/>
+                android:textColor="#ffff7105"/>
         </RelativeLayout>
     </ScrollView>
 </RelativeLayout>

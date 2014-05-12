@@ -12,5 +12,42 @@
         style="@style/Widget.Button.MainMenu"
         android:text="@string/calendar"
         android:layout_height="wrap_content"/>
-
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnCalendar">
+    <Button
+        android:id="@+id/btnSteps"
+        android:onClick="clickBtnSteps"
+        android:layout_weight="1"
+        android:layout_above="@+id/btnCalendar"
+        style="@style/Widget.Button.MainMenu"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="0dp"
+        android:textSize="17sp"
+        android:text="@string/steps"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/btnTraditions"
+        android:onClick="clickBtnTraditions"
+        android:layout_weight="1"
+        android:layout_above="@+id/btnSteps"
+        style="@style/Widget.Button.MainMenu"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
+        android:textSize="17sp"
+        android:text="@string/traditions"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/btnPromises"
+        android:onClick="clickBtnPromises"
+        android:layout_weight="1"
+        android:layout_above="@+id/btnTraditions"
+        style="@style/Widget.Button.MainMenu"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="5dp"
+        android:textSize="17sp"
+        android:text="@string/promises"
+        android:layout_height="wrap_content"/>
+    </LinearLayout>
 </RelativeLayout>

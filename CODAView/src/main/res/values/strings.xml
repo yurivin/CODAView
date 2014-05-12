@@ -6,5 +6,8 @@
     <string name="show_daily">Show daily</string>
     <string name="menu">Menu</string>
     <string name="calendar">Calendar</string>
+    <string name="steps">Steps</string>
+    <string name="traditions">Traditions</string>
+    <string name="promises">Promises</string>
 
 </resources>
