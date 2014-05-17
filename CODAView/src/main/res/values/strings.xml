@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">inCODA</string>
+    <string name="app_name">12 Steps CODA Diary of Melody Bitty</string>
     <string name="CODA">CODA</string>
     <string name="show_daily">Show daily</string>
     <string name="menu">Menu</string>
@@ -9,5 +9,8 @@
     <string name="steps">Steps</string>
     <string name="traditions">Traditions</string>
     <string name="promises">Promises</string>
+    <string name="title_activity_splash_screen">SplashScreenActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
 
 </resources>

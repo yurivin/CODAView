@@ -1,6 +1,5 @@
 package net.yvin.codaview.app.activity;
 
-import android.app.ListActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -20,7 +19,7 @@ public class TwelveActivity extends MenuListAbstractActivity {
         super.onCreate(icicle);
 
         String[] values = null;
-        values = getSTwelveArray(values);
+        values = getTwelveArray(values);
 
         for(int i = 1 ; i <= values.length; i++) {
             values[i-1] = String.valueOf(i) + ". " + values[i-1];
@@ -30,7 +29,7 @@ public class TwelveActivity extends MenuListAbstractActivity {
         setListAdapter(adapter);
     }
 
-    private String[] getSTwelveArray(String[] values) {
+    private String[] getTwelveArray(String[] values) {
         switch(getIntent().getStringExtra("twelve")) {
             case STEPS :
                 values = getResources().getStringArray(R.array.steps);
