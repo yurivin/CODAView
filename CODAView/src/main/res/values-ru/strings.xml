@@ -3,7 +3,7 @@
 
     <string name="app_name">12 Шагов CODA Ежедневник Мелоди Битти</string>
     <string name="CODA">CODA</string>
-    <string name="show_daily">Ежедневник</string>
+    <string name="daily">Ежедневник</string>
     <string name="menu">Меню</string>
     <string name="calendar">Календарь</string>
     <string name="steps">Шаги</string>
