@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:background="@color/background"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textTitleTv"
+        android:layout_width="match_parent"
+        android:textColor="#ffffaa0f"
+        android:text="HI!"
+        android:textSize="16sp"
+        android:layout_alignParentTop="true"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/firstTv"
+        android:layout_below="@id/textTitleTv"
+        android:layout_width="match_parent"
+        android:textColor="#ffffaa0f"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/secondTv"
+        android:layout_width="match_parent"
+        android:textColor="#ffffaa0f"
+        android:layout_below="@id/firstTv"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/thirdTv"
+        android:layout_width="match_parent"
+        android:textColor="#ffffaa0f"
+        android:layout_below="@id/secondTv"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/forthTv"
+        android:layout_width="match_parent"
+        android:textColor="#ffffaa0f"
+        android:layout_below="@id/thirdTv"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>

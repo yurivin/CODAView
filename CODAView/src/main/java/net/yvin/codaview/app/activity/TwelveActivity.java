@@ -1,5 +1,6 @@
 package net.yvin.codaview.app.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -48,5 +49,9 @@ public class TwelveActivity extends MenuListAbstractActivity {
     protected void onListItemClick(ListView l, View v, int position, long id) {
         String item = (String) getListAdapter().getItem(position);
         Toast.makeText(this, item + " выбран", Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(this, TextActivity.class);
+        intent.putExtra("type", getIntent().getStringExtra("twelve"));
+        intent.putExtra("number", position + 1);
+        startActivity(intent);
     }
 }

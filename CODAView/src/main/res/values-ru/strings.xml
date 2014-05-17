@@ -9,6 +9,7 @@
     <string name="steps">Шаги</string>
     <string name="traditions">Традиции</string>
     <string name="promises">Обещания</string>
+    <string name="step">Шаг</string>
 
     <string-array name="steps">
         <item>Мы признали своё бессилие перед другими, признали, что наша жизнь перестала поддаваться контролю.</item>
