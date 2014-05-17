@@ -1,6 +1,7 @@
 package net.yvin.codaview.app.activity;
 
 import android.content.Intent;
+import android.text.format.Time;
 import android.util.Log;
 import net.yvin.codaview.app.activity.base.MenuAbstractActivity;
 import android.os.Bundle;
@@ -12,10 +13,13 @@ import net.yvin.codaview.app.utils.AssetsTxtReader;
 import net.yvin.codaview.app.utils.DateUtils;
 import net.yvin.codaview.app.utils.PropertiesFileReader;
 
+import java.util.Calendar;
+import java.util.Date;
+
 
 public class DailyActivity extends MenuAbstractActivity {
 
-    TextView dayTitleTv, quoteTv, contentTv, sumTv;
+    TextView dayTitleTv, dateTv, quoteTv, contentTv, sumTv;
     DiaryTitlesRepository diaryTitlesRepo = new DiaryTitlesRepository();
     DailyContentRepository dailyContentRepo = new DailyContentRepository();
 
@@ -33,8 +37,14 @@ public class DailyActivity extends MenuAbstractActivity {
                 }
             }
         }
+
+        Time now = new Time();
+        now.setToNow();
+
         dayTitleTv = (TextView) findViewById(R.id.dayTitleTv);
         dayTitleTv.setText(diaryTitlesRepo.find(dailyId, this));
+        dateTv =(TextView) findViewById(R.id.dateTv);
+        dateTv.setText(now.monthDay + "-" + String.valueOf(now.month + 1) + "-" + now.year);
         quoteTv = (TextView) findViewById(R.id.quoteTv);
         quoteTv.setText(dailyContentRepo.find(dailyId + "-" + "quote", this));
         contentTv = (TextView) findViewById(R.id.contentTv);
