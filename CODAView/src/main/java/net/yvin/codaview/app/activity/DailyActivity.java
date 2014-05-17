@@ -47,10 +47,10 @@ public class DailyActivity extends MenuAbstractActivity {
         dateTv =(TextView) findViewById(R.id.dateTv);
         dateTv.setText(now.monthDay + "-" + String.valueOf(now.month + 1) + "-" + now.year);
         quoteTv = (TextView) findViewById(R.id.quoteTv);
-        quoteTv.setText(dailyContentRepo.find(dailyId + "-" + Constants.QUOTE, this));
+        quoteTv.setText(dailyContentRepo.find(Constants.QUOTE  + Constants.SLASH + dailyId, this));
         contentTv = (TextView) findViewById(R.id.contentTv);
-        contentTv.setText(dailyContentRepo.find(dailyId + "-" + Constants.MAIN, this));
+        contentTv.setText(dailyContentRepo.find(Constants.MAIN + Constants.SLASH + dailyId, this));
         sumTv = (TextView) findViewById(R.id.sumTv);
-        sumTv.setText(dailyContentRepo.find(dailyId + "-" + Constants.SUM, this));
+        sumTv.setText(dailyContentRepo.find(Constants.SUM + Constants.SLASH + dailyId, this));
     }
 }

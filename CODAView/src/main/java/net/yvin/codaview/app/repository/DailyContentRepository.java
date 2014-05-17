@@ -12,9 +12,8 @@ import java.util.Properties;
 public class DailyContentRepository implements PropertiesRepository {
     @Override
     public String find(String key, Context context) {
-        String[] result = key.split("-");
         AssetsTxtReader txtReader = new AssetsTxtReader(context);
-        return txtReader.getAssetsTxt("Daily/" + result[1] + "/" + result[0] +".txt");
+        return txtReader.getAssetsTxt("Daily/" + key +".txt");
     }
 
 
