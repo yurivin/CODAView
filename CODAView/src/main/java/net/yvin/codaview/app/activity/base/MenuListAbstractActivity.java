@@ -20,15 +20,9 @@ public class MenuListAbstractActivity extends ListActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        Intent intent = null;
-        switch(item.getItemId()){
-            case R.id.action_menu :
-                intent = new Intent(this, MenuActivity.class);
-                this.startActivity(intent);
-                this.finish();
-                break;
-        }
-
+        new MenuSelectorImpl(item, this).select();
         return super.onOptionsItemSelected(item);
     }
+
+
 }
