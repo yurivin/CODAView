@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.View;
 import net.yvin.codaview.app.R;
 import net.yvin.codaview.app.activity.base.MenuAbstractActivity;
+import net.yvin.codaview.app.utils.Constants;
+
 import static net.yvin.codaview.app.utils.Constants.*;
 
 /**
@@ -24,19 +26,19 @@ public class MenuActivity extends MenuAbstractActivity {
 
     public void clickBtnSteps(View v) {
         Intent intent = new Intent(this, TwelveActivity.class);
-        intent.putExtra("twelve", STEPS);
+        intent.putExtra(Constants.TWELVE, STEPS);
         lunchActivity(intent);
     }
 
     public void clickBtnTraditions(View v) {
         Intent intent = new Intent(this, TwelveActivity.class);
-        intent.putExtra("twelve", TRADITIONS);
+        intent.putExtra(Constants.TWELVE, TRADITIONS);
         lunchActivity(intent);
     }
 
     public void clickBtnPromises(View v) {
         Intent intent = new Intent(this, TwelveActivity.class);
-        intent.putExtra("twelve", PROMISES);
+        intent.putExtra(Constants.TWELVE, PROMISES);
         lunchActivity(intent);
     }
 

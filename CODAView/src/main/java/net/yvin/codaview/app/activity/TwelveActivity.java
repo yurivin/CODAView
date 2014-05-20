@@ -8,6 +8,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 import net.yvin.codaview.app.R;
 import net.yvin.codaview.app.activity.base.MenuListAbstractActivity;
+import net.yvin.codaview.app.utils.Constants;
 
 import static net.yvin.codaview.app.utils.Constants.*;
 
@@ -31,7 +32,7 @@ public class TwelveActivity extends MenuListAbstractActivity {
     }
 
     private String[] getTwelveArray(String[] values) {
-        switch(getIntent().getStringExtra("twelve")) {
+        switch(getIntent().getStringExtra(Constants.TWELVE)) {
             case STEPS :
                 values = getResources().getStringArray(R.array.steps);
                 break;
@@ -49,9 +50,9 @@ public class TwelveActivity extends MenuListAbstractActivity {
     protected void onListItemClick(ListView l, View v, int position, long id) {
         String item = (String) getListAdapter().getItem(position);
         Toast.makeText(this, item + " выбран", Toast.LENGTH_LONG).show();
-        Intent intent = new Intent(this, TextActivity.class);
-        intent.putExtra("type", getIntent().getStringExtra("twelve"));
-        intent.putExtra("number", position + 1);
+        Intent intent = new Intent(this, StepActivity.class);
+        intent.putExtra(Constants.TWELVE, getIntent().getStringExtra(Constants.TWELVE));
+        intent.putExtra(Constants.NUMBER, position + 1);
         startActivity(intent);
     }
 }

@@ -1,6 +1,7 @@
 package net.yvin.codaview.app.repository;
 
 import android.content.Context;
+import android.util.Log;
 import net.yvin.codaview.app.utils.AssetsTxtReader;
 
 /**

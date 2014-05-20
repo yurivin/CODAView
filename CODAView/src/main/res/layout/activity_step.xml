@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:orientation="vertical"
+                android:background="@color/background"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/stepTitleTv"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="5dp"
+                android:textColor="#ffff5003"
+                android:text="HI!"
+                android:textSize="16sp"
+                android:layout_alignParentTop="true"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/stepTv"
+                android:layout_below="@id/stepTitleTv"
+                android:layout_width="match_parent"
+                android:text="firstTv"
+                android:layout_marginBottom="5dp"
+                android:textColor="#ffffaa0f"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:id="@+id/btnExtension"
+                android:onClick="clickBtnExtension"
+                android:layout_width="match_parent"
+                android:layout_below="@+id/stepTv"
+                style="@style/Widget.Button.MainMenu"
+                android:text="@string/extension"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/extensionTitleTv"
+                android:layout_width="match_parent"
+                android:text="secondTv"
+                android:visibility="gone"
+                android:textColor="#ffff5003"
+                android:layout_marginBottom="5dp"
+                android:layout_below="@id/btnExtension"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/extensionTv"
+                android:layout_width="match_parent"
+                android:textColor="#ffffaa0f"
+                android:visibility="gone"
+                android:layout_marginBottom="5dp"
+                android:layout_below="@id/extensionTitleTv"
+                android:layout_height="wrap_content"/>
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

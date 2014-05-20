@@ -1,6 +1,7 @@
 package net.yvin.codaview.app.utils;
 
 import android.content.Context;
+import android.util.Log;
 
 import java.io.*;
 
@@ -21,6 +22,7 @@ public class AssetsTxtReader {
             InputStream is = context.getResources().getAssets().open(path);
             txt = convertStreamToString(is);
         } catch (IOException ioe) {
+            Log.d("Input Exception: ", ioe.toString());
         }
         return txt;
     }
