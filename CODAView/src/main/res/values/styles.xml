@@ -16,4 +16,8 @@
         <item name="android:layout_height">40dp</item>
     </style>
 
+    <style name="ActivityTheme">
+        <item name="android:background">@color/background</item>
+    </style>
+
 </resources>

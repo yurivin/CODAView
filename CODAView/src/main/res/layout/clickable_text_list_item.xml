@@ -4,8 +4,8 @@
           android:layout_width="fill_parent"
           android:layout_height="fill_parent"
           android:padding="10dp"
-          android:textColor="@color/editText"
-          android:cacheColorHint="@color/background"
-          android:background="@color/background"
+          android:textColor="@color/background"
+          android:cacheColorHint="@color/button"
+          android:background="@color/button"
           android:textSize="14sp" >
 </TextView>

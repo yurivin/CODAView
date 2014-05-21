@@ -29,6 +29,7 @@
                 android:layout_below="@id/stepTitleTv"
                 android:layout_width="match_parent"
                 android:text="firstTv"
+                android:textSize="12sp"
                 android:layout_marginBottom="5dp"
                 android:textColor="#ffffaa0f"
                 android:layout_height="wrap_content"/>
@@ -38,6 +39,7 @@
                 android:onClick="clickBtnExtension"
                 android:layout_width="match_parent"
                 android:layout_below="@+id/stepTv"
+                android:textSize="12sp"
                 style="@style/Widget.Button.MainMenu"
                 android:text="@string/extension"
                 android:layout_height="wrap_content"/>
@@ -47,6 +49,7 @@
                 android:layout_width="match_parent"
                 android:text="secondTv"
                 android:visibility="gone"
+                android:textSize="14sp"
                 android:textColor="#ffff5003"
                 android:layout_marginBottom="5dp"
                 android:layout_below="@id/btnExtension"
@@ -57,6 +60,7 @@
                 android:layout_width="match_parent"
                 android:textColor="#ffffaa0f"
                 android:visibility="gone"
+                android:textSize="12sp"
                 android:layout_marginBottom="5dp"
                 android:layout_below="@id/extensionTitleTv"
                 android:layout_height="wrap_content"/>
