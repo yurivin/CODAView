@@ -5,6 +5,30 @@
               android:background="@color/background"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/btnWelcome"
+        android:onClick="clickBtnWelcome"
+        android:layout_weight="1"
+        android:layout_above="@+id/btnPatterns"
+        style="@style/Widget.Button.MainMenu"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="0dp"
+        android:textSize="17sp"
+        android:text="@string/welcome"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/btnPatterns"
+        android:onClick="clickBtnPatterns"
+        android:layout_weight="1"
+        android:layout_above="@+id/btnWhatCodependency"
+        style="@style/Widget.Button.MainMenu"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="0dp"
+        android:textSize="17sp"
+        android:text="@string/patterns"
+        android:layout_height="wrap_content"/>
+
     <Button
         android:id="@+id/btnWhatCodependency"
         android:onClick="clickBtnWhatCodependency"

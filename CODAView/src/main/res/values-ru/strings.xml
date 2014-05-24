@@ -13,6 +13,8 @@
     <string name="extension">Дополнительно</string>
     <string name="way_bigining">Начало пути</string>
     <string name="whatcodependency">Что такое созависимость?</string>
+    <string name="patterns">Паттерны созависимости</string>
+    <string name="welcome">Приветствие</string>
 
     <string-array name="steps">
         <item>Мы признали своё бессилие перед другими, признали, что наша жизнь перестала поддаваться контролю.</item>

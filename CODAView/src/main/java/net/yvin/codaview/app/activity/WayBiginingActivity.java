@@ -26,4 +26,20 @@ public class WayBiginingActivity extends MenuAbstractActivity {
         new ActivityLuncher(intent, this);
     }
 
+    public void clickBtnPatterns(View v) {
+        Intent intent = new Intent(this, TextActivity.class);
+        intent.putExtra(Constants.TITLE, getString(R.string.patterns));
+        intent.putExtra(Constants.FIELD, Constants.WAYBEGINING);
+        intent.putExtra(Constants.TEXT, Constants.PATTERNS);
+        new ActivityLuncher(intent, this);
+    }
+
+    public void clickBtnWelcome(View v) {
+        Intent intent = new Intent(this, TextActivity.class);
+        intent.putExtra(Constants.TITLE, getString(R.string.welcome));
+        intent.putExtra(Constants.FIELD, Constants.WAYBEGINING);
+        intent.putExtra(Constants.TEXT, Constants.WELCOME);
+        new ActivityLuncher(intent, this);
+    }
+
 }

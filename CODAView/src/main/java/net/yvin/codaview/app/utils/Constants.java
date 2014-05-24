@@ -20,6 +20,8 @@ public class Constants {
     public static final String WAYBEGINING = "wayBegining";
 
     public static final String WHATCODEPENDENCY = "whatcodependency";
+    public static final String PATTERNS = "patterns";
+    public static final String WELCOME = "welcome";
 
     public static final String DAILYID = "dailyId";
 
