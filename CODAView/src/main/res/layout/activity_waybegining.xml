@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:background="@color/background"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <Button
+        android:id="@+id/btnWhatCodependency"
+        android:onClick="clickBtnWhatCodependency"
+        android:layout_weight="1"
+        android:layout_alignParentBottom="true"
+        style="@style/Widget.Button.MainMenu"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="0dp"
+        android:textSize="17sp"
+        android:text="@string/whatcodependency"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>

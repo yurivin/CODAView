@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import net.yvin.codaview.app.R;
 import net.yvin.codaview.app.activity.base.MenuAbstractActivity;
+import net.yvin.codaview.app.activity.utils.ActivityLuncher;
 import net.yvin.codaview.app.utils.Constants;
 
 import static net.yvin.codaview.app.utils.Constants.*;
@@ -21,29 +22,31 @@ public class MenuActivity extends MenuAbstractActivity {
     }
 
     public void clickBtnCalendar(View v) {
-        lunchActivity(new Intent(this, CalendarActivity.class));
+        new ActivityLuncher(new Intent(this, CalendarActivity.class), this);
     }
 
     public void clickBtnSteps(View v) {
         Intent intent = new Intent(this, TwelveActivity.class);
         intent.putExtra(Constants.TWELVE, STEPS);
-        lunchActivity(intent);
+        new ActivityLuncher(intent, this);
     }
 
     public void clickBtnTraditions(View v) {
         Intent intent = new Intent(this, TwelveActivity.class);
         intent.putExtra(Constants.TWELVE, TRADITIONS);
-        lunchActivity(intent);
+        new ActivityLuncher(intent, this);
     }
 
     public void clickBtnPromises(View v) {
         Intent intent = new Intent(this, TwelveActivity.class);
         intent.putExtra(Constants.TWELVE, PROMISES);
-        lunchActivity(intent);
+        new ActivityLuncher(intent, this);
     }
 
-    private void lunchActivity(Intent intent) {
-        this.startActivity(intent);
-        this.finish();
+    public void clickBtnWayBegining(View v) {
+        Intent intent = new Intent(this, WayBiginingActivity.class);
+        new ActivityLuncher(intent, this);
     }
+
+
 }
