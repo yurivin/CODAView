@@ -17,5 +17,7 @@
     <string name="whatcodependency">What is codependency</string>
     <string name="patterns">Codependency patterns</string>
     <string name="welcome">Welcome</string>
+    <string name="read_daily">Read Daily</string>
+    <string name="read_daily_notification">Нажмите на сообщение, что-бы прочитать сегодняшний ежедневник</string>
 
 </resources>
