@@ -16,7 +16,7 @@
     <string name="patterns">Паттерны созависимости</string>
     <string name="welcome">Приветствие</string>
     <string name="read_daily">Не прочитан ежедневник!</string>
-    <string name="read_daily_notification">Click to read todays daily</string>
+    <string name="read_daily_notification">Нажмите на сообщение, что-бы прочитать сегодняшний ежедневник</string>
 
     <string-array name="steps">
         <item>Мы признали своё бессилие перед другими, признали, что наша жизнь перестала поддаваться контролю.</item>

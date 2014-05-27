@@ -49,6 +49,6 @@ public class DailyActivity extends MenuAbstractActivity {
         sumTv = (TextView) findViewById(R.id.sumTv);
         sumTv.setText(txtReader.getAssetsTxt(Constants.DAILY + Constants.SLASH + Constants.SUM + Constants.SLASH + dailyId + Constants.POINTTXT));
 
-        startService(new Intent(this, NotificationService.class));
+//        startService(new Intent(this, NotificationService.class));
     }
 }
