@@ -7,6 +7,7 @@
     <string name="menu">Menu</string>
     <string name="calendar">Calendar</string>
     <string name="steps">Steps</string>
+    <string name="step">Step</string>
     <string name="traditions">Traditions</string>
     <string name="promises">Promises</string>
     <string name="title_activity_splash_screen">SplashScreenActivity</string>
@@ -29,7 +30,7 @@
     <item>Made a list of all persons we had harmed and became willing to make amends to them all.</item>
     <item>Made direct amends to such people wherever possible, except when to do so would injure them or others.</item>
     <item>Continued to take personal inventory and when we were wrong, promptly admitted it.</item>
-    <item>Sought through prayer and meditation to improve our conscious contact with God as we understood God, praying only for knowledge of God's will for us and the power to carry that out.</item>
+    <item>Sought through prayer and meditation to improve our conscious contact with God as we understood God, praying only for knowledge of God\u0027s will for us and the power to carry that out.</item>
     <item>Having had a spiritual awakening as the result of these steps, we tried to carry this message to other codependents, and to practice these principles in all our affairs.</item>
 </string-array>
 <string-array name="traditions">
