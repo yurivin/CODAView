@@ -32,4 +32,6 @@ public class Constants {
     public static final String MAIN = "main";
     public static final String SUM = "sum";
     public static final String EXTENSION = "extension";
+
+    public static final String LASTREADDAILY = "lastReadDaily";
 }

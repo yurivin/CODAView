@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.widget.TextView;
 import net.yvin.codaview.app.R;
 import net.yvin.codaview.app.repository.DiaryTitlesRepository;
-import net.yvin.codaview.app.services.NotificationService;
 import net.yvin.codaview.app.utils.AssetsTxtReader;
 import net.yvin.codaview.app.utils.Constants;
 import net.yvin.codaview.app.utils.DateUtils;
@@ -49,6 +48,5 @@ public class DailyActivity extends MenuAbstractActivity {
         sumTv = (TextView) findViewById(R.id.sumTv);
         sumTv.setText(txtReader.getAssetsTxt(Constants.DAILY + Constants.SLASH + Constants.SUM + Constants.SLASH + dailyId + Constants.POINTTXT));
 
-//        startService(new Intent(this, NotificationService.class));
     }
 }
