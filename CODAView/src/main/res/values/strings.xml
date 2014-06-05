@@ -17,7 +17,6 @@
     <string name="patterns">Codependency patterns</string>
     <string name="welcome">Welcome</string>
     <string name="read_daily">Read Daily</string>
-    <string name="read_daily_notification">Click to read todays daily</string>
 
 <string-array name="steps">
     <item>We admitted we were powerless over others - that our lives had become unmanageable.</item>
