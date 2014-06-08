@@ -6,7 +6,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import net.yvin.codaview.app.R;
 import net.yvin.codaview.app.activity.base.MenuAbstractActivity;
-import net.yvin.codaview.app.context.LanguageContext;
+import net.yvin.codaview.app.service.PathService;
 import net.yvin.codaview.app.utils.AssetsReader;
 import net.yvin.codaview.app.utils.Constants;
 
@@ -44,7 +44,7 @@ public class StepActivity extends MenuAbstractActivity {
             case STEPS :
                 values = getResources().getStringArray(R.array.steps);
                 titleTv.setText(getString(R.string.step) + Constants.SPACE + getIntent().getIntExtra(Constants.NUMBER, 20) + " " + values[getIntent().getIntExtra(Constants.NUMBER, 20) - 1]);
-                mainTv.setText(txtReader.getAssets(LanguageContext.getlanguage() + Constants.SLASH + Constants.STEPS + Constants.SLASH + getIntent().getIntExtra(Constants.NUMBER, 20) + Constants.MAIN + Constants.POINTTXT));
+                mainTv.setText(txtReader.getAssets(PathService.stepMain(getIntent().getIntExtra(Constants.NUMBER, 20))));
                 break;
             case TRADITIONS :
                 break;
@@ -57,7 +57,7 @@ public class StepActivity extends MenuAbstractActivity {
         if(!extension){
             extensionTitleTv.setText("Выдержка из буклета Шаг " +  getIntent().getIntExtra(Constants.NUMBER, 20) + " Анонимных Созависимых");
             extensionTitleTv.setTextSize(14f);
-            extensionTv.setText(txtReader.getAssets(LanguageContext.getlanguage() + Constants.SLASH + Constants.STEPS + Constants.SLASH + getIntent().getIntExtra(Constants.NUMBER, 20) + Constants.EXTENSION + Constants.POINTTXT));
+            extensionTv.setText(txtReader.getAssets(PathService.stepExtention(getIntent().getIntExtra(Constants.NUMBER, 20))));
             extensionTitleTv.setVisibility(View.VISIBLE);
             extensionTv.setVisibility(View.VISIBLE);
             extensionBtn.setVisibility(View.GONE);

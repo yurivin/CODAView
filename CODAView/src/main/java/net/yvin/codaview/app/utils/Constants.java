@@ -5,7 +5,7 @@ package net.yvin.codaview.app.utils;
  */
 public class Constants {
 
-    public static final String SLASH = "/";
+
     public static final String SPACE = " ";
     public static final String POINTTXT = ".txt";
 

@@ -17,7 +17,7 @@ import net.yvin.codaview.app.service.PathService;
 
 public class DailyActivity extends MenuAbstractActivity {
 
-    TextView dayTitleTv, dateTv, quoteTv, contentTv, sumTv;
+    TextView dayTitleTv, dateTv, quoteTv, mainTv, sumTv;
     DiaryTitlesRepository diaryTitlesRepo = new DiaryTitlesRepository();
     AssetsReader txtReader = new AssetsReader(this);
 
@@ -40,15 +40,15 @@ public class DailyActivity extends MenuAbstractActivity {
         now.setToNow();
 
         dayTitleTv = (TextView) findViewById(R.id.dayTitleTv);
-        dayTitleTv.setText(diaryTitlesRepo.find(dailyId, PathService.getDiaryTitlePath(), this));
+        dayTitleTv.setText(diaryTitlesRepo.find(dailyId, PathService.diaryTitle(), this));
         dateTv =(TextView) findViewById(R.id.dateTv);
         dateTv.setText(now.monthDay + "." + String.valueOf(now.month + 1) + "." + now.year);
         quoteTv = (TextView) findViewById(R.id.quoteTv);
-        quoteTv.setText(txtReader.getAssets(LanguageContext.getlanguage().toLowerCase() + Constants.SLASH + Constants.DAILY + Constants.SLASH + Constants.QUOTE + Constants.SLASH + dailyId + Constants.POINTTXT));
-        contentTv = (TextView) findViewById(R.id.contentTv);
-        contentTv.setText(txtReader.getAssets(LanguageContext.getlanguage().toLowerCase() + Constants.SLASH + Constants.DAILY + Constants.SLASH + Constants.MAIN + Constants.SLASH + dailyId + Constants.POINTTXT));
+        quoteTv.setText(txtReader.getAssets(PathService.dailyQuote(dailyId)));
+        mainTv = (TextView) findViewById(R.id.contentTv);
+        mainTv.setText(txtReader.getAssets(PathService.dailyMain(dailyId)));
         sumTv = (TextView) findViewById(R.id.sumTv);
-        sumTv.setText(txtReader.getAssets(LanguageContext.getlanguage().toLowerCase() + Constants.SLASH + Constants.DAILY + Constants.SLASH + Constants.SUM + Constants.SLASH + dailyId + Constants.POINTTXT));
+        sumTv.setText(txtReader.getAssets(PathService.dailySum(dailyId)));
 
     }
 }
