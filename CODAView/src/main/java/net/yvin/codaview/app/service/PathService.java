@@ -14,7 +14,7 @@ public class PathService {
 
 
    public static String getDiaryTitlePath() {
-       String path = DIARYTITLES + MINUS + LanguageContext.getlanguage().toLowerCase() + POINT_PROPERTIES;
+       String path = DIARYTITLES + MINUS + LanguageContext.getlanguage() + POINT_PROPERTIES;
        Log.d("Path to daily title",path);
        return path;
    }

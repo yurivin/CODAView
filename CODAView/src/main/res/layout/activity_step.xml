@@ -39,7 +39,7 @@
                 android:onClick="clickBtnExtension"
                 android:layout_width="match_parent"
                 android:layout_below="@+id/stepTv"
-                android:textSize="12sp"
+                android:textSize="16sp"
                 style="@style/Widget.Button.MainMenu"
                 android:text="@string/extension"
                 android:layout_height="wrap_content"/>
