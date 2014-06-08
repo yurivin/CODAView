@@ -7,7 +7,6 @@ public class Constants {
 
 
     public static final String SPACE = " ";
-    public static final String POINTTXT = ".txt";
 
     public static final String TWELVE = "twelve";
     public static final String NUMBER = "number";
