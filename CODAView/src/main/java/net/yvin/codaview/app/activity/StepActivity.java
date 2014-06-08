@@ -6,8 +6,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import net.yvin.codaview.app.R;
 import net.yvin.codaview.app.activity.base.MenuAbstractActivity;
-import net.yvin.codaview.app.repository.PropertiesRepository;
-import net.yvin.codaview.app.repository.TextRepository;
+import net.yvin.codaview.app.context.LanguageContext;
+import net.yvin.codaview.app.utils.AssetsReader;
 import net.yvin.codaview.app.utils.Constants;
 
 import static net.yvin.codaview.app.utils.Constants.PROMISES;
@@ -19,9 +19,9 @@ import static net.yvin.codaview.app.utils.Constants.TRADITIONS;
  */
 public class StepActivity extends MenuAbstractActivity {
 
-    TextView titleTv, stepTv, extensionTitleTv, extensionTv, fourthTv;
+    TextView titleTv, mainTv, extensionTitleTv, extensionTv;
     Button extensionBtn;
-    TextRepository textRepo = new TextRepository();
+    AssetsReader txtReader = new AssetsReader(this);
     boolean extension = false;
     String[] values = null;
 
@@ -31,7 +31,7 @@ public class StepActivity extends MenuAbstractActivity {
         setContentView(R.layout.activity_step);
 
         titleTv = (TextView) findViewById(R.id.stepTitleTv);
-        stepTv = (TextView) findViewById(R.id.stepTv);
+        mainTv = (TextView) findViewById(R.id.stepTv);
         extensionTitleTv = (TextView) findViewById(R.id.extensionTitleTv);
         extensionTv = (TextView) findViewById(R.id.extensionTv);
         extensionBtn = (Button) findViewById(R.id.btnExtension);
@@ -44,8 +44,7 @@ public class StepActivity extends MenuAbstractActivity {
             case STEPS :
                 values = getResources().getStringArray(R.array.steps);
                 titleTv.setText(getString(R.string.step) + Constants.SPACE + getIntent().getIntExtra(Constants.NUMBER, 20) + " " + values[getIntent().getIntExtra(Constants.NUMBER, 20) - 1]);
-                stepTv.setText(textRepo.find(Constants.STEPS + Constants.SLASH + getIntent().getIntExtra(Constants.NUMBER, 20) + Constants.MAIN, this));
-
+                mainTv.setText(txtReader.getAssets(LanguageContext.getlanguage().toLowerCase() + Constants.SLASH + Constants.STEPS + Constants.SLASH + getIntent().getIntExtra(Constants.NUMBER, 20) + Constants.MAIN + Constants.POINTTXT));
                 break;
             case TRADITIONS :
                 break;
@@ -58,7 +57,7 @@ public class StepActivity extends MenuAbstractActivity {
         if(!extension){
             extensionTitleTv.setText("Выдержка из буклета Шаг " +  getIntent().getIntExtra(Constants.NUMBER, 20) + " Анонимных Созависимых");
             extensionTitleTv.setTextSize(14f);
-            extensionTv.setText(textRepo.find(Constants.STEPS + Constants.SLASH + getIntent().getIntExtra(Constants.NUMBER, 20) + Constants.EXTENSION, this));
+            extensionTv.setText(txtReader.getAssets(LanguageContext.getlanguage().toLowerCase() + Constants.SLASH + Constants.STEPS + Constants.SLASH + getIntent().getIntExtra(Constants.NUMBER, 20) + Constants.EXTENSION + Constants.POINTTXT));
             extensionTitleTv.setVisibility(View.VISIBLE);
             extensionTv.setVisibility(View.VISIBLE);
             extensionBtn.setVisibility(View.GONE);

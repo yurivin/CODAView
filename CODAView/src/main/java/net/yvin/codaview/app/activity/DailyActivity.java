@@ -7,8 +7,9 @@ import net.yvin.codaview.app.activity.base.MenuAbstractActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 import net.yvin.codaview.app.R;
+import net.yvin.codaview.app.context.LanguageContext;
 import net.yvin.codaview.app.repository.DiaryTitlesRepository;
-import net.yvin.codaview.app.utils.AssetsTxtReader;
+import net.yvin.codaview.app.utils.AssetsReader;
 import net.yvin.codaview.app.utils.Constants;
 import net.yvin.codaview.app.utils.DateUtils;
 import net.yvin.codaview.app.service.PathService;
@@ -18,7 +19,7 @@ public class DailyActivity extends MenuAbstractActivity {
 
     TextView dayTitleTv, dateTv, quoteTv, contentTv, sumTv;
     DiaryTitlesRepository diaryTitlesRepo = new DiaryTitlesRepository();
-    AssetsTxtReader txtReader = new AssetsTxtReader(this);
+    AssetsReader txtReader = new AssetsReader(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,11 +44,11 @@ public class DailyActivity extends MenuAbstractActivity {
         dateTv =(TextView) findViewById(R.id.dateTv);
         dateTv.setText(now.monthDay + "." + String.valueOf(now.month + 1) + "." + now.year);
         quoteTv = (TextView) findViewById(R.id.quoteTv);
-        quoteTv.setText(txtReader.getAssetsTxt(Constants.DAILY + Constants.SLASH + Constants.QUOTE  + Constants.SLASH + dailyId + Constants.POINTTXT));
+        quoteTv.setText(txtReader.getAssets(LanguageContext.getlanguage().toLowerCase() + Constants.SLASH + Constants.DAILY + Constants.SLASH + Constants.QUOTE + Constants.SLASH + dailyId + Constants.POINTTXT));
         contentTv = (TextView) findViewById(R.id.contentTv);
-        contentTv.setText(txtReader.getAssetsTxt(Constants.DAILY + Constants.SLASH + Constants.MAIN + Constants.SLASH + dailyId + Constants.POINTTXT));
+        contentTv.setText(txtReader.getAssets(LanguageContext.getlanguage().toLowerCase() + Constants.SLASH + Constants.DAILY + Constants.SLASH + Constants.MAIN + Constants.SLASH + dailyId + Constants.POINTTXT));
         sumTv = (TextView) findViewById(R.id.sumTv);
-        sumTv.setText(txtReader.getAssetsTxt(Constants.DAILY + Constants.SLASH + Constants.SUM + Constants.SLASH + dailyId + Constants.POINTTXT));
+        sumTv.setText(txtReader.getAssets(LanguageContext.getlanguage().toLowerCase() + Constants.SLASH + Constants.DAILY + Constants.SLASH + Constants.SUM + Constants.SLASH + dailyId + Constants.POINTTXT));
 
     }
 }

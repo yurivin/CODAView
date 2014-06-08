@@ -8,17 +8,18 @@ import java.io.*;
 /**
  * Created by Yuriy on 30.04.2014.
  */
-public class AssetsTxtReader {
+public class AssetsReader {
 
     Context context;
 
-    public AssetsTxtReader(Context context) {
+    public AssetsReader(Context context) {
         this.context = context;
     }
 
-    public String getAssetsTxt(String path) {
+    public String getAssets(String path) {
         String txt = null;
         try {
+            Log.d("assets path: ", path);
             InputStream is = context.getResources().getAssets().open(path);
             txt = convertStreamToString(is);
         } catch (IOException ioe) {
