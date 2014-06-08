@@ -11,6 +11,7 @@ import net.yvin.codaview.app.repository.DiaryTitlesRepository;
 import net.yvin.codaview.app.utils.AssetsTxtReader;
 import net.yvin.codaview.app.utils.Constants;
 import net.yvin.codaview.app.utils.DateUtils;
+import net.yvin.codaview.app.service.PathService;
 
 
 public class DailyActivity extends MenuAbstractActivity {
@@ -38,7 +39,7 @@ public class DailyActivity extends MenuAbstractActivity {
         now.setToNow();
 
         dayTitleTv = (TextView) findViewById(R.id.dayTitleTv);
-        dayTitleTv.setText(diaryTitlesRepo.find(dailyId, this));
+        dayTitleTv.setText(diaryTitlesRepo.find(dailyId, PathService.getDiaryTitlePath(), this));
         dateTv =(TextView) findViewById(R.id.dateTv);
         dateTv.setText(now.monthDay + "." + String.valueOf(now.month + 1) + "." + now.year);
         quoteTv = (TextView) findViewById(R.id.quoteTv);

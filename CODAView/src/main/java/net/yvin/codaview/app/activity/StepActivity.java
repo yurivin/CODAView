@@ -21,7 +21,7 @@ public class StepActivity extends MenuAbstractActivity {
 
     TextView titleTv, stepTv, extensionTitleTv, extensionTv, fourthTv;
     Button extensionBtn;
-    PropertiesRepository textRepo = new TextRepository();
+    TextRepository textRepo = new TextRepository();
     boolean extension = false;
     String[] values = null;
 

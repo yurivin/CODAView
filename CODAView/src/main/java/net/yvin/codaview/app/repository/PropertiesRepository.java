@@ -7,5 +7,5 @@ import android.content.Context;
  */
 public interface PropertiesRepository {
 
-    String find(String key, Context context);
+    String find(String key, String path, Context context);
 }

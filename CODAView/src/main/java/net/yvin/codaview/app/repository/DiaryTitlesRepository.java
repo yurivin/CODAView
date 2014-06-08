@@ -10,9 +10,9 @@ import java.util.Properties;
  */
 public class DiaryTitlesRepository implements PropertiesRepository{
 
-    public String find(String key, Context context) {
+    public String find(String key, String path, Context context) {
         PropertiesFileReader reader = new PropertiesFileReader(context);
-        Properties properties = reader.getAssetsProperties("diarytitles");
+        Properties properties = reader.getAssetsProperties(path);
         return (String)properties.get(key);
     }
 }
