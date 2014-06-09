@@ -7,7 +7,11 @@ import java.util.Locale;
  */
 public class LanguageContext {
 
-    public static String getlanguage(){
-        return Locale.getDefault().getLanguage();
+    public static String getLanguage(){
+        String language = Locale.getDefault().getLanguage();
+        if(!"ru".equals(language) || !"en".equals(language)) {
+            return "en";
+        }
+        return language;
     }
 }

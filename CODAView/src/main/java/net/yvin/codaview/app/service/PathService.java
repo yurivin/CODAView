@@ -17,37 +17,37 @@ public class PathService {
 
 
    public static String diaryTitle() {
-       String path = DIARYTITLES + MINUS + LanguageContext.getlanguage() + POINT_PROPERTIES;
+       String path = DIARYTITLES + MINUS + LanguageContext.getLanguage() + POINT_PROPERTIES;
        Log.d("Path to daily title",path);
        return path;
    }
 
    public static String stepMain(int stepNumber) {
-       return LanguageContext.getlanguage() + SLASH + Constants.STEPS
+       return LanguageContext.getLanguage() + SLASH + Constants.STEPS
                + SLASH + stepNumber + Constants.MAIN + POINTTXT;
    }
 
     public static String stepExtention(int stepNumber) {
-        return LanguageContext.getlanguage() + SLASH + Constants.STEPS
+        return LanguageContext.getLanguage() + SLASH + Constants.STEPS
                 + SLASH + stepNumber + Constants.EXTENSION + POINTTXT;
     }
 
     public static String dailyQuote(String dailyId) {
-        return LanguageContext.getlanguage() + SLASH + Constants.DAILY
+        return LanguageContext.getLanguage() + SLASH + Constants.DAILY
                 + SLASH + Constants.QUOTE + SLASH + dailyId + POINTTXT;
     }
 
     public static String dailyMain(String dailyId) {
-        return LanguageContext.getlanguage() + SLASH + Constants.DAILY
+        return LanguageContext.getLanguage() + SLASH + Constants.DAILY
                 + SLASH + Constants.MAIN + SLASH + dailyId + POINTTXT;
     }
 
     public static String dailySum(String dailyId) {
-        return LanguageContext.getlanguage().toLowerCase() + SLASH
+        return LanguageContext.getLanguage().toLowerCase() + SLASH
                 + Constants.DAILY + SLASH + Constants.SUM + SLASH + dailyId + POINTTXT;
     }
 
     public static String text(String field, String text) {
-        return LanguageContext.getlanguage() + SLASH + field + SLASH + text + POINTTXT;
+        return LanguageContext.getLanguage() + SLASH + field + SLASH + text + POINTTXT;
     }
 }
