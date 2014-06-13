@@ -22,7 +22,7 @@
                 android:layout_alignParentTop="true"
                 android:layout_width="match_parent"
                 android:textColor="#ffff5003"
-                android:textSize="16dp"
+                android:textSize="18dp"
                 android:layout_height="wrap_content"/>
             <TextView
                 android:id="@+id/dateTv"
@@ -49,7 +49,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="#ffffaa0f"
-                android:textSize="12dp"/>
+                android:textSize="14dp"/>
 
             <TextView
                 android:layout_below="@+id/contentTv"
@@ -57,7 +57,7 @@
                 android:id="@+id/sumTv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="12dp"
+                android:textSize="14dp"
                 android:textStyle="bold"
                 android:textColor="#ffff7105"/>
         </RelativeLayout>
