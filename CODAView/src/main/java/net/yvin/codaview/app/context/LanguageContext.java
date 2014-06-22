@@ -1,5 +1,7 @@
 package net.yvin.codaview.app.context;
 
+import android.util.Log;
+
 import java.util.Locale;
 
 /**
@@ -9,7 +11,8 @@ public class LanguageContext {
 
     public static String getLanguage(){
         String language = Locale.getDefault().getLanguage();
-        if(!"ru".equals(language) || !"en".equals(language)) {
+        Log.d("language ",  language);
+        if(!"ru".equals(language)) {
             return "en";
         }
         return language;
