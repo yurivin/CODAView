@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.view.MenuItem;
 import net.yvin.codaview.app.R;
 import net.yvin.codaview.app.activity.MenuActivity;
+import net.yvin.codaview.app.activity.SettingsActivity;
+import net.yvin.codaview.app.activity.utils.ActivityLuncher;
 
 /**
  * Created by Юрий on 17.05.2014.
@@ -19,12 +21,12 @@ public class MenuSelectorImpl implements MenuSelector {
     }
 
     public void select() {
-        Intent intent = null;
         switch (item.getItemId()) {
             case R.id.action_menu:
-                intent = new Intent(activity, MenuActivity.class);
-                activity.startActivity(intent);
-                activity.finish();
+                new ActivityLuncher(new Intent(activity, MenuActivity.class), activity);
+                break;
+            case R.id.action_settings:
+                new ActivityLuncher(new Intent(activity, SettingsActivity.class), activity);
                 break;
         }
     }
