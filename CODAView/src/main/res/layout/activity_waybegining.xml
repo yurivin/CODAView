@@ -21,7 +21,7 @@
         android:id="@+id/btnPatterns"
         android:onClick="clickBtnPatterns"
         android:layout_weight="1"
-        android:layout_above="@+id/btnWhatCodependency"
+        android:layout_above="@+id/btnPreamble"
         style="@style/Widget.Button.MainMenu"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="0dp"
@@ -30,15 +30,15 @@
         android:layout_height="wrap_content"/>
 
     <Button
-        android:id="@+id/btnWhatCodependency"
-        android:onClick="clickBtnWhatCodependency"
+        android:id="@+id/btnPreamble"
+        android:onClick="clickBtnPreamble"
         android:layout_weight="1"
         android:layout_alignParentBottom="true"
         style="@style/Widget.Button.MainMenu"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="0dp"
         android:textSize="17sp"
-        android:text="@string/whatcodependency"
+        android:text="@string/preamble"
         android:layout_height="wrap_content"/>
 
 </RelativeLayout>

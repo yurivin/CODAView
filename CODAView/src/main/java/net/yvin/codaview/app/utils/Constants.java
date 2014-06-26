@@ -18,7 +18,7 @@ public class Constants {
     public static final String DAILY = "daily";
     public static final String WAYBEGINING = "wayBegining";
 
-    public static final String WHATCODEPENDENCY = "whatcodependency";
+    public static final String PREAMBLE = "preamble";
     public static final String PATTERNS = "patterns";
     public static final String WELCOME = "welcome";
 

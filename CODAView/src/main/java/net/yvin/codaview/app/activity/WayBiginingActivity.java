@@ -18,11 +18,11 @@ public class WayBiginingActivity extends MenuAbstractActivity {
         setContentView(R.layout.activity_waybegining);
     }
 
-    public void clickBtnWhatCodependency(View v) {
+    public void clickBtnPreamble(View v) {
         Intent intent = new Intent(this, TextActivity.class);
-        intent.putExtra(Constants.TITLE, getString(R.string.whatcodependency));
+        intent.putExtra(Constants.TITLE, getString(R.string.preamble));
         intent.putExtra(Constants.FIELD, Constants.WAYBEGINING);
-        intent.putExtra(Constants.TEXT, Constants.WHATCODEPENDENCY);
+        intent.putExtra(Constants.TEXT, Constants.PREAMBLE);
         new ActivityLuncher(intent, this);
     }
 
