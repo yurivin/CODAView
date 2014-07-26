@@ -12,8 +12,8 @@ public class LanguageContext {
     public static String getLanguage(){
         String language = Locale.getDefault().getLanguage();
         Log.d("language ",  language);
-        if(!"ru".equals(language)) {
-            return "en";
+        if(!"en".equals(language)) {
+            return "ru";
         }
         return language;
     }
