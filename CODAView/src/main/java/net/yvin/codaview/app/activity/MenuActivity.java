@@ -48,5 +48,10 @@ public class MenuActivity extends MenuAbstractActivity {
         new ActivityLuncher(intent, this);
     }
 
+    public void clickBtnFillingsDiary(View v) {
+        Intent intent = new Intent(this, FillingsDiaryActivity.class);
+        new ActivityLuncher(intent, this);
+    }
+
 
 }

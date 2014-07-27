@@ -4,6 +4,15 @@
                 android:layout_width="match_parent"
                 android:background="@color/background"
                 android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/btnFillingsDiary"
+        android:onClick="clickBtnFillingsDiary"
+        android:layout_width="match_parent"
+        android:layout_above="@+id/btnWayBegining"
+        style="@style/Widget.Button.MainMenu"
+        android:text="@string/fillings_diary"
+        android:layout_height="wrap_content"/>
     <Button
         android:id="@+id/btnWayBegining"
         android:onClick="clickBtnWayBegining"

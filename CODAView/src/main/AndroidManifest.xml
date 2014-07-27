@@ -52,6 +52,16 @@
             android:screenOrientation="portrait" >
         </activity>
         <activity
+            android:name=".activity.FillingsDiaryActivity"
+            android:label="@string/fillings_diary"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".activity.NewFillingsDiaryEntryActivity"
+            android:label="@string/new_entry"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
             android:name="net.yvin.codaview.app.activity.SplashScreenActivity"
             android:label="@string/CODA" >
             <intent-filter>
