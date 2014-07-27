@@ -8,6 +8,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 import net.yvin.codaview.app.R;
 import net.yvin.codaview.app.activity.base.MenuListAbstractActivity;
+import net.yvin.codaview.app.context.LanguageContext;
 import net.yvin.codaview.app.utils.Constants;
 
 import static net.yvin.codaview.app.utils.Constants.*;
@@ -34,8 +35,12 @@ public class TwelveActivity extends MenuListAbstractActivity {
         switch (getIntent().getStringExtra(Constants.TWELVE)) {
             case STEPS:
                 values = getResources().getStringArray(R.array.steps);
-                adapter = new ArrayAdapter<String>(this,
-                        R.layout.clickable_text_list_item, values);
+                if ("en".equals(LanguageContext.getLanguage()))
+                    adapter = new ArrayAdapter<String>(this,
+                            R.layout.text_list_item, values);
+                else
+                    adapter = new ArrayAdapter<String>(this,
+                            R.layout.clickable_text_list_item, values);
                 break;
             case TRADITIONS:
                 values = getResources().getStringArray(R.array.traditions);
@@ -55,6 +60,7 @@ public class TwelveActivity extends MenuListAbstractActivity {
     protected void onListItemClick(ListView l, View v, int position, long id) {
         switch (getIntent().getStringExtra(Constants.TWELVE)) {
             case Constants.STEPS:
+                if ("en".equals(LanguageContext.getLanguage())) break;
                 Intent intent = new Intent(this, StepActivity.class);
                 intent.putExtra(Constants.TWELVE, getIntent().getStringExtra(Constants.TWELVE));
                 intent.putExtra(Constants.NUMBER, position + 1);
