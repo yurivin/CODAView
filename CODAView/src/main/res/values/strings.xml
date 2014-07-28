@@ -78,13 +78,25 @@
         <item>Delighted</item>
         <item>Excited</item>
         <item>Glad</item>
-        <item>Loved</item>
         <item>Proud</item>
         <item>Relaxed</item>
         <item>Satisfied</item>
         <item>Silly</item>
         <item>Terrific</item>
         <item>Thankful</item>
+        <item>Rage</item>
+    </string-array>
+
+    <string-array name="love-feelings">
+        <item>Loved</item>
+        <item>Amorousness</item>
+        <item>Fascinated</item>
+        <item>Passion</item>
+        <item>Desire</item>
+        <item>Lust</item>
+        <item>Beguin</item>
+        <item>Adoration</item>
+        <item>Attachment</item>
     </string-array>
 
     <string-array name="sad_feelings">
@@ -117,21 +129,25 @@
         <item>Violent</item>
     </string-array>
 
-    <string-array name="other-feelings">
+    <string-array name="afraid-feelings">
         <item>Afraid</item>
-        <item>Anxious</item>
+        <item>Scared</item>
         <item>Ashamed</item>
-        <item>Bored</item>
         <item>Confused</item>
-        <item>Curious</item>
         <item>Embarrassed</item>
+        <item>Shy</item>
+    </string-array>
+
+    <string-array name="other-feelings">
+        <item>Bored</item>
+        <item>Believe</item>
+        <item>Curious</item>
         <item>Jealous</item>
         <item>Moody</item>
         <item>Responsible</item>
-        <item>Scared</item>
-        <item>Shy</item>
         <item>Uncomfortable</item>
         <item>Worried</item>
+        <item>Anxious</item>
     </string-array>
 
 </resources>

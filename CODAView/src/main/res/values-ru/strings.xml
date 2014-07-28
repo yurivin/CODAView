@@ -69,9 +69,97 @@
         <item>Я постепенно начинаю переживать опыт прояснения ума, укрепления сил и духовного роста в моей повседневной жизни.</item>
     </string-array>
 
-    <string-array name="happy_feelings"></string-array>
-    <string-array name="sad_feelings"></string-array>
-    <string-array name="angry-feelings"></string-array>
-    <string-array name="other-feelings"></string-array>
+    <string-array name="happy_feelings">
+        <item>Восторг</item>
+        <item>Упоение</item>
+        <item>Восхищение</item>
+        <item>Приподнятость</item>
+        <item>Достоинство</item>
+        <item>Ликование</item>
+        <item>Наслаждение</item>
+        <item>Нежность</item>
+        <item>Блаженство</item>
+        <item>Благодарность</item>
+        <item>Увлечение</item>
+        <item>Умиротворение</item>
+        <item>Вдохновение</item>
+        <item>Надежда</item>
+    </string-array>
+
+    <string-array name="love-feelings">
+        <item>Любовь</item>
+        <item>Влюбленность</item>
+        <item>Привязанность</item>
+        <item>Страсть</item>
+        <item>Похоть</item>
+        <item>Обожание</item>
+        <item>Влечение</item>
+    </string-array>
+
+    <string-array name="sad_feelings">
+        <item>Скорбь</item>
+        <item>Тоска</item>
+        <item>Грусть</item>
+        <item>Печаль</item>
+        <item>Опустошенность</item>
+        <item>Одиночество</item>
+        <item>Горе</item>
+        <item>Подавленность</item>
+        <item>Безнадежность</item>
+        <item>Беспомощность</item>
+        <item>Сожаление</item>
+        <item>Отверженность</item>
+        <item>Отчаяние</item>
+        <item>Бессилие</item>
+        <item>Недовольство</item>
+        <item>Уныние</item>
+    </string-array>
+
+    <string-array name="angry-feelings">
+        <item>Ярость</item>
+        <item>Бешенство</item>
+        <item>Ненависть</item>
+        <item>Злость</item>
+        <item>Ожесточение</item>
+        <item>Раздражение</item>
+        <item>Обида</item>
+        <item>Досада</item>
+        <item>Уязвленность</item>
+        <item>Отвращение</item>
+        <item>Ревность</item>
+        <item>Зависть</item>
+        <item>Омерзение</item>
+        <item>Нетерпение</item>
+        <item>Неприязнь</item>
+        <item>Презрерние</item>
+    </string-array>
+
+    <string-array name="afraid-feelings">
+        <item>Ужас</item>
+        <item>Боязнь</item>
+        <item>Тревога</item>
+        <item>Неуверенность</item>
+        <item>Беспокойство</item>
+        <item>Удивление</item>
+        <item>Замешательство</item>
+        <item>Ошарашенность</item>
+        <item>Оцепенение</item>
+        <item>Растерянность</item>
+        <item>Испуг</item>
+        <item>Недоверие</item>
+        <item>Робость</item>
+        <item>Смятение</item>
+        <item>Недоверие</item>
+        <item>Паника</item>
+    </string-array>
+
+    <string-array name="other-feelings">
+        <item>Усталость</item>
+        <item>Надежда</item>
+        <item>Вера</item>
+        <item>Скука</item>
+        <item>Любопытство</item>
+        <item>Упоротость</item>
+    </string-array>
 
 </resources>
