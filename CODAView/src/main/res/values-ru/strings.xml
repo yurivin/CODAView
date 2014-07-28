@@ -87,7 +87,7 @@
         <item>Надежда</item>
     </string-array>
 
-    <string-array name="love-feelings">
+    <string-array name="love_feelings">
         <item>Любовь</item>
         <item>Влюбленность</item>
         <item>Привязанность</item>
@@ -116,7 +116,7 @@
         <item>Уныние</item>
     </string-array>
 
-    <string-array name="angry-feelings">
+    <string-array name="angry_feelings">
         <item>Ярость</item>
         <item>Бешенство</item>
         <item>Ненависть</item>
@@ -135,7 +135,7 @@
         <item>Презрерние</item>
     </string-array>
 
-    <string-array name="afraid-feelings">
+    <string-array name="afraid_feelings">
         <item>Ужас</item>
         <item>Боязнь</item>
         <item>Тревога</item>
@@ -154,7 +154,7 @@
         <item>Паника</item>
     </string-array>
 
-    <string-array name="other-feelings">
+    <string-array name="other_feelings">
         <item>Усталость</item>
         <item>Надежда</item>
         <item>Вера</item>

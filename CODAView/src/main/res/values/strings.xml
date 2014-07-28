@@ -88,7 +88,7 @@
         <item>Rage</item>
     </string-array>
 
-    <string-array name="love-feelings">
+    <string-array name="love_feelings">
         <item>Loved</item>
         <item>Amorousness</item>
         <item>Fascinated</item>
@@ -115,7 +115,7 @@
         <item>Withdrawn</item>
     </string-array>
 
-    <string-array name="angry-feelings">
+    <string-array name="angry_feelings">
         <item>Annoyed</item>
         <item>Bugged</item>
         <item>Destructive</item>
@@ -130,7 +130,7 @@
         <item>Violent</item>
     </string-array>
 
-    <string-array name="afraid-feelings">
+    <string-array name="afraid_feelings">
         <item>Afraid</item>
         <item>Scared</item>
         <item>Ashamed</item>
@@ -139,7 +139,7 @@
         <item>Shy</item>
     </string-array>
 
-    <string-array name="other-feelings">
+    <string-array name="other_feelings">
         <item>Bored</item>
         <item>Believe</item>
         <item>Curious</item>
