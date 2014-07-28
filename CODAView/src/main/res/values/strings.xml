@@ -21,6 +21,10 @@
     <string name="new_entry">New entry</string>
     <string name="statistics">Statistics</string>
     <string name="sort">Sort</string>
+    <string name="add_fillings">Add fillings</string>
+    <string name="time_from">Time from</string>
+    <string name="time_to">Time to</string>
+    <string name="add_comment">Add comment</string>
 
 <string-array name="steps">
     <item>We admitted we were powerless over others - that our lives had become unmanageable.</item>

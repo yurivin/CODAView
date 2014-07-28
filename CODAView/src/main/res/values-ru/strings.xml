@@ -20,6 +20,10 @@
     <string name="new_entry">Новая запись</string>
     <string name="statistics">Статистика</string>
     <string name="sort">Сортировать</string>
+    <string name="add_fillings">Добавить чувства</string>
+    <string name="time_from">С какого времени</string>
+    <string name="time_to">До какого времени</string>
+    <string name="add_comment">Добавить комментарий</string>
 
     <string-array name="steps">
         <item>Мы признали своё бессилие перед другими, признали, что наша жизнь перестала поддаваться контролю.</item>
