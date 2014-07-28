@@ -69,5 +69,69 @@
     <item>I trust the guidance I receive from my Higher Power and come to believe in my own capabilities.</item>
     <item>I gradually experience serenity, strength, and spiritual growth in my daily life.</item>
 </string-array>
+    
+    <string-array name="happy_feelings">
+        <item>Calm</item>
+        <item>Cheerful</item>
+        <item>Confident</item>
+        <item>Content</item>
+        <item>Delighted</item>
+        <item>Excited</item>
+        <item>Glad</item>
+        <item>Loved</item>
+        <item>Proud</item>
+        <item>Relaxed</item>
+        <item>Satisfied</item>
+        <item>Silly</item>
+        <item>Terrific</item>
+        <item>Thankful</item>
+    </string-array>
+
+    <string-array name="sad_feelings">
+        <item>Ashamed</item>
+        <item>Awful</item>
+        <item>Disappointed</item>
+        <item>Discouraged</item>
+        <item>Gloomy</item>
+        <item>Hurt</item>
+        <item>Lonely</item>
+        <item>Miserable</item>
+        <item>Sorry</item>
+        <item>Unhappy</item>
+        <item>Unloved</item>
+        <item>Withdrawn</item>
+    </string-array>
+
+    <string-array name="angry-feelings">
+        <item>Annoyed</item>
+        <item>Bugged</item>
+        <item>Destructive</item>
+        <item>Disgusted</item>
+        <item>Frustrated</item>
+        <item>Fuming</item>
+        <item>Furious</item>
+        <item>Grumpy</item>
+        <item>Irritated</item>
+        <item>Mad</item>
+        <item>Mean</item>
+        <item>Violent</item>
+    </string-array>
+
+    <string-array name="other-feelings">
+        <item>Afraid</item>
+        <item>Anxious</item>
+        <item>Ashamed</item>
+        <item>Bored</item>
+        <item>Confused</item>
+        <item>Curious</item>
+        <item>Embarrassed</item>
+        <item>Jealous</item>
+        <item>Moody</item>
+        <item>Responsible</item>
+        <item>Scared</item>
+        <item>Shy</item>
+        <item>Uncomfortable</item>
+        <item>Worried</item>
+    </string-array>
 
 </resources>

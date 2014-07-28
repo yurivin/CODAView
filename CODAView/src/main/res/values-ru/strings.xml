@@ -69,4 +69,9 @@
         <item>Я постепенно начинаю переживать опыт прояснения ума, укрепления сил и духовного роста в моей повседневной жизни.</item>
     </string-array>
 
+    <string-array name="happy_feelings"></string-array>
+    <string-array name="sad_feelings"></string-array>
+    <string-array name="angry-feelings"></string-array>
+    <string-array name="other-feelings"></string-array>
+
 </resources>
