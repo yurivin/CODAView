@@ -31,29 +31,36 @@ public class NewFeelingsDiaryEntryActivity extends MenuAbstractActivity {
         int mHour = c.get(Calendar.HOUR_OF_DAY);
         int mMinute = c.get(Calendar.MINUTE);
 
-        TimePickerDialog tpd = new TimePickerDialog(this,
-                new TimePickerDialog.OnTimeSetListener() {
+        showTimeDialog(mHour, mMinute);
+        showDateDialog(mYear, mMonth, mDay);
+    }
 
-                    @Override
-                    public void onTimeSet(TimePicker view, int hourOfDay,
-                                          int minute) {
-                        Log.d("Time from dialog",hourOfDay + ":" + minute);
-                    }
-                }, mHour, mMinute, true);
-        tpd.show();
-        
+    private void showDateDialog(int mYear, int mMonth, int mDay) {
         DatePickerDialog dpd = new DatePickerDialog(this,
                 new DatePickerDialog.OnDateSetListener() {
 
                     @Override
                     public void onDateSet(DatePicker view, int year,
                                           int monthOfYear, int dayOfMonth) {
-                        Log.d("Date from dialog",dayOfMonth + "-"
+                        Log.d("Date from dialog", dayOfMonth + "-"
                                 + (monthOfYear + 1) + "-" + year);
 
                     }
                 }, mYear, mMonth, mDay);
         dpd.show();
+    }
+
+    private void showTimeDialog(int mHour, int mMinute) {
+        TimePickerDialog tpd = new TimePickerDialog(this,
+                new TimePickerDialog.OnTimeSetListener() {
+
+                    @Override
+                    public void onTimeSet(TimePicker view, int hourOfDay,
+                                          int minute) {
+                        Log.d("Time from dialog", hourOfDay + ":" + minute);
+                    }
+                }, mHour, mMinute, true);
+        tpd.show();
     }
 
     public void clickBtnTimeTo(View v) {
