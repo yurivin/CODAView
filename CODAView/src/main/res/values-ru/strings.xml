@@ -11,7 +11,7 @@
     <string name="promises">Обещания</string>
     <string name="step">Шаг</string>
     <string name="extension">Дополнительно</string>
-    <string name="way_bigining">Начало пути</string>
+    <string name="way_beginning">Начало пути</string>
     <string name="preamble">Преамбула</string>
     <string name="patterns">Паттерны созависимости</string>
     <string name="welcome">Приветствие</string>
@@ -25,6 +25,7 @@
     <string name="time_to">До какого времени</string>
     <string name="add_comment">Добавить комментарий</string>
     <string name="Rate_how_myltc">Оцени, насколько тебе нравится это состояние</string>
+    <string name="language">Language</string>
 
     <string-array name="steps">
         <item>Мы признали своё бессилие перед другими, признали, что наша жизнь перестала поддаваться контролю.</item>

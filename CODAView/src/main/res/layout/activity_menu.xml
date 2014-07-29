@@ -9,17 +9,17 @@
         android:id="@+id/btnFillingsDiary"
         android:onClick="clickBtnFillingsDiary"
         android:layout_width="match_parent"
-        android:layout_above="@+id/btnWayBegining"
+        android:layout_above="@+id/btnWayBeginning"
         style="@style/Widget.Button.MainMenu"
         android:text="@string/feelings_diary"
         android:layout_height="wrap_content"/>
     <Button
-        android:id="@+id/btnWayBegining"
-        android:onClick="clickBtnWayBegining"
+        android:id="@+id/btnWayBeginning"
+        android:onClick="clickBtnWayBeginning"
         android:layout_width="match_parent"
         android:layout_above="@+id/layout12"
         style="@style/Widget.Button.MainMenu"
-        android:text="@string/way_bigining"
+        android:text="@string/way_beginning"
         android:layout_height="wrap_content"/>
     <LinearLayout
         android:id="@+id/layout12"

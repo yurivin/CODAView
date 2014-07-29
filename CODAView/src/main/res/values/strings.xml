@@ -12,7 +12,7 @@
     <string name="promises">Promises</string>
     <string name="title_activity_splash_screen">SplashScreenActivity</string>
     <string name="extension">Extension</string>
-    <string name="way_bigining">Begining of the way</string>
+    <string name="way_beginning">Beginning of the way</string>
     <string name="preamble">Preamble</string>
     <string name="patterns">Codependency patterns</string>
     <string name="welcome">Welcome</string>
@@ -26,6 +26,7 @@
     <string name="time_to">Time to</string>
     <string name="add_comment">Add comment</string>
     <string name="Rate_how_myltc">Rate how much you like this condition</string>
+    <string name="language">Language</string>
 
 <string-array name="steps">
     <item>We admitted we were powerless over others - that our lives had become unmanageable.</item>

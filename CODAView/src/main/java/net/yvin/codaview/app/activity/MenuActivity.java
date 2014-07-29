@@ -43,7 +43,7 @@ public class MenuActivity extends MenuAbstractActivity {
         new ActivityLuncher(intent, this);
     }
 
-    public void clickBtnWayBegining(View v) {
+    public void clickBtnWayBeginning(View v) {
         Intent intent = new Intent(this, WayBiginingActivity.class);
         new ActivityLuncher(intent, this);
     }
