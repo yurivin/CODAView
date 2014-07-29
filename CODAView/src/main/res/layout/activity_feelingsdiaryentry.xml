@@ -10,16 +10,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:layout_above="@+id/btnFillings">
+            android:layout_above="@+id/btnFeelings">
 
-        <Button android:id="@+id/fillTimeFrom"
+        <Button android:id="@+id/feelTimeFrom"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="clickBtnTimeFrom"
                 style="@style/Widget.Button.MainMenu"
                 android:layout_weight="1"
                 android:text="@string/time_from"
                 android:textSize="18sp"/>
-        <Button android:id="@+id/fillTimeTo"
+        <Button android:id="@+id/feelTimeTo"
+                android:onClick="clickBtnTimeTo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 style="@style/Widget.Button.MainMenu"
@@ -29,7 +31,8 @@
 
     </LinearLayout>
 
-    <Button android:id="@+id/btnFillings"
+    <Button android:id="@+id/btnFeelings"
+            android:onClick="clickBtnFeelings"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_above="@+id/RateDescription"
@@ -42,12 +45,12 @@
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
               android:layout_marginTop="10dp"
-              android:layout_above="@+id/fillingsRating"
+              android:layout_above="@+id/feelingsRating"
               android:textColor="#ffff5003"
               android:textSize="20sp"
               android:text="@string/Rate_how_myltc"/>
 
-    <RatingBar android:id="@+id/fillingsRating"
+    <RatingBar android:id="@+id/feelingsRating"
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
                android:layout_above="@+id/btnComment"/>
