@@ -8,7 +8,7 @@ import net.yvin.codaview.app.activity.base.MenuAbstractActivity;
 /**
  * Created by Юрий on 27.07.2014.
  */
-public class NewFillingsDiaryEntryActivity extends MenuAbstractActivity {
+public class NewFeelingsDiaryEntryActivity extends MenuAbstractActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

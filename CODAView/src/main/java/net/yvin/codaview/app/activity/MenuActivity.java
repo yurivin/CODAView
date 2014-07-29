@@ -49,7 +49,7 @@ public class MenuActivity extends MenuAbstractActivity {
     }
 
     public void clickBtnFillingsDiary(View v) {
-        Intent intent = new Intent(this, FillingsDiaryActivity.class);
+        Intent intent = new Intent(this, FeelingsDiaryActivity.class);
         new ActivityLuncher(intent, this);
     }
 

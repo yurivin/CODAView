@@ -52,12 +52,12 @@
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name=".activity.FillingsDiaryActivity"
+            android:name=".activity.FeelingsDiaryActivity"
             android:label="@string/feelings_diary"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name=".activity.NewFillingsDiaryEntryActivity"
+            android:name=".activity.NewFeelingsDiaryEntryActivity"
             android:label="@string/new_entry"
             android:screenOrientation="portrait" >
         </activity>
