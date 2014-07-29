@@ -71,6 +71,11 @@
         <item>Я постепенно начинаю переживать опыт прояснения ума, укрепления сил и духовного роста в моей повседневной жизни.</item>
     </string-array>
 
+    <string-array name="supported_languages">
+        <item>English</item>
+        <item>Russian(Русский)</item>
+    </string-array>
+
     <string-array name="happy_feelings">
         <item>Восторг</item>
         <item>Упоение</item>
