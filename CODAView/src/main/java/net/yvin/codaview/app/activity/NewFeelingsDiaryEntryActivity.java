@@ -28,4 +28,8 @@ public class NewFeelingsDiaryEntryActivity extends MenuAbstractActivity {
 
     }
 
+    public void clickBtnAddComment(View v) {
+
+    }
+
 }
