@@ -25,9 +25,9 @@ public class MenuSelectorImpl implements MenuSelector {
             case R.id.action_menu:
                 new ActivityLuncher(new Intent(activity, MenuActivity.class), activity);
                 break;
-/*            case R.id.action_settings:
+            case R.id.action_settings:
                 new ActivityLuncher(new Intent(activity, SettingsActivity.class), activity);
-                break; */
+                break;
         }
     }
 

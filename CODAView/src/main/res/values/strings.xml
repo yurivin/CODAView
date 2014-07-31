@@ -32,6 +32,10 @@
         <item>Английский(English)</item>
         <item>Русский</item>
     </string-array>
+    <string-array name="supported_languages_values">
+        <item>en</item>
+        <item>ru</item>
+    </string-array>
 
 <string-array name="steps">
     <item>We admitted we were powerless over others - that our lives had become unmanageable.</item>
