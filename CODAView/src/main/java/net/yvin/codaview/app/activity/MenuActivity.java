@@ -45,14 +45,15 @@ public class MenuActivity extends MenuAbstractActivity {
     }
 
     public void clickBtnWayBeginning(View v) {
-        Intent intent = new Intent(this, WayBiginingActivity.class);
-        new ActivityLuncher(intent, this);
-    }
+        new ActivityLuncher(new Intent(this, WayBiginingActivity.class), this);
+}
 
     public void clickBtnFillingsDiary(View v) {
-        Intent intent = new Intent(this, FeelingsDiaryActivity.class);
-        new ActivityLuncher(intent, this);
+        new ActivityLuncher(new Intent(this, FeelingsDiaryActivity.class), this);
     }
 
+    public void clickBtnHowToHelp(View v) {
+        new ActivityLuncher(new Intent(this, HowToHelpActivity.class), this);
+    }
 
 }

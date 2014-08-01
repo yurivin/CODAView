@@ -27,6 +27,7 @@
     <string name="add_comment">Add comment</string>
     <string name="Rate_how_myltc">Rate how much you like this condition</string>
     <string name="language">Язык(Language)</string>
+    <string name="howToHelp">How to help</string>
 
     <string-array name="supported_languages">
         <item>Английский(English)</item>

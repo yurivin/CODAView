@@ -63,6 +63,11 @@
             android:screenOrientation="portrait" >
         </activity>
         <activity
+                android:name=".activity.HowToHelpActivity"
+                android:label="@string/new_entry"
+                android:screenOrientation="portrait" >
+        </activity>
+        <activity
             android:name="net.yvin.codaview.app.activity.SplashScreenActivity"
             android:label="@string/CODA" >
             <intent-filter>

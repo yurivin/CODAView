@@ -26,6 +26,7 @@
     <string name="add_comment">Добавить комментарий</string>
     <string name="Rate_how_myltc">Оцени, насколько тебе нравится это состояние</string>
     <string name="language">Language</string>
+    <string name="howToHelp">Как помочь</string>
 
     <string-array name="steps">
         <item>Мы признали своё бессилие перед другими, признали, что наша жизнь перестала поддаваться контролю.</item>
