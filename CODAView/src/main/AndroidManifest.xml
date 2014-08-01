@@ -49,6 +49,7 @@
         <activity
             android:name="net.yvin.codaview.app.activity.SettingsActivity"
             android:label="@string/CODA"
+            android:theme="@style/ActivityTheme"
             android:screenOrientation="portrait" >
         </activity>
         <activity

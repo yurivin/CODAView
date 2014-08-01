@@ -18,6 +18,7 @@
 
     <style name="ActivityTheme">
         <item name="android:background">@color/background</item>
+        <item name="android:textColor">@color/normalText</item>
     </style>
 
 </resources>
