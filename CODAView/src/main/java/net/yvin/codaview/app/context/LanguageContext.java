@@ -1,5 +1,10 @@
 package net.yvin.codaview.app.context;
 
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.content.res.Resources;
+import android.preference.PreferenceManager;
+import android.util.DisplayMetrics;
 import android.util.Log;
 
 import java.util.*;
@@ -27,5 +32,15 @@ public class LanguageContext {
 
     public static String getDefaultLanguage() {
         return Locale.getDefault().getLanguage();
+    }
+
+    public static void setLanguage(Context context) {
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
+        Resources res = context.getResources();
+        // Change locale settings in the app.
+        DisplayMetrics dm = res.getDisplayMetrics();
+        android.content.res.Configuration conf = res.getConfiguration();
+        conf.locale = new Locale(sp.getString("language", "").toLowerCase());
+        res.updateConfiguration(conf, dm);
     }
 }

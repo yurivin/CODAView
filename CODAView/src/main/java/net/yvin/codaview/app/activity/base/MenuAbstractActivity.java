@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import net.yvin.codaview.app.R;
 import net.yvin.codaview.app.activity.MenuActivity;
+import net.yvin.codaview.app.context.LanguageContext;
 
 /**
  * Created by Yuriy on 24.04.2014.
@@ -15,6 +16,7 @@ public class MenuAbstractActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        LanguageContext.setLanguage(this);
         super.onCreate(savedInstanceState);
     }
 

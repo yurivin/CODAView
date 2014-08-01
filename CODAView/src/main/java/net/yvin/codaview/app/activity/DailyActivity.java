@@ -68,12 +68,9 @@ public class DailyActivity extends MenuAbstractActivity {
 
     private void checkPreferencesLanguage(final Context context) {
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
-        String language = sp.getString("language", "");
-        if ("".equals(language)) {
-            if (!LanguageContext.isSupportedlanguage(language))
+        if ("".equals(sp.getString("language", "")))
                 showSetLanguageDialog(context);
-        }
-        Locale.setDefault(new Locale(sp.getString("language", "ru")));
+        LanguageContext.setLanguage(this);
     }
 
     private void showSetLanguageDialog(final Context context) {
