@@ -28,8 +28,11 @@
     <string name="Rate_how_myltc">Rate how much you like this condition</string>
     <string name="language">Язык(Language)</string>
     <string name="howToHelp">How to help</string>
-    <string name="helpByTranslate">If you want to help use this application for Codependents Anonymous from other countries who speak foreign languages,
-    you may send me on e-mail Blue book of CODA, Diary of CODA and Twelve steps CODA books. discours@list.ru.</string>
+    <string name="helpByTranslate">If you want to help use this application for
+        Codependents Anonymous from other countries who speak foreign languages,
+        you may send me on e-mail Blue book of CODA, Diary of CODA and Twelve steps CODA books.
+        Or you may send me these books for other 12 steps communities. discours@list.ru. Click to send e-mail.
+    </string>
 
     <string-array name="supported_languages">
         <item>Английский(English)</item>
@@ -40,50 +43,80 @@
         <item>ru</item>
     </string-array>
 
-<string-array name="steps">
-    <item>We admitted we were powerless over others - that our lives had become unmanageable.</item>
-    <item>Came to believe that a power greater than ourselves could restore us to sanity.</item>
-    <item>Made a decision to turn our will and lives over to the care of God as we understood God.</item>
-    <item>Made a searching and fearless moral inventory of ourselves.</item>
-    <item>Admitted to God, to ourselves, and to another human being, the exact nature of our wrongs.</item>
-    <item>Were entirely ready to have God remove all these defects of character.</item>
-    <item>Humbly asked God to remove our shortcomings.</item>
-    <item>Made a list of all persons we had harmed and became willing to make amends to them all.</item>
-    <item>Made direct amends to such people wherever possible, except when to do so would injure them or others.</item>
-    <item>Continued to take personal inventory and when we were wrong, promptly admitted it.</item>
-    <item>Sought through prayer and meditation to improve our conscious contact with God as we understood God, praying only for knowledge of God\u0027s will for us and the power to carry that out.</item>
-    <item>Having had a spiritual awakening as the result of these steps, we tried to carry this message to other codependents, and to practice these principles in all our affairs.</item>
-</string-array>
-<string-array name="traditions">
-    <item>Our common welfare should come first; personal recovery depends upon CoDA unity.</item>
-    <item>For our group purpose there is but one ultimate authority: a loving higher power as expressed to our group conscience. Our leaders are but trusted servants; they do not govern.</item>
-    <item>The only requirement for membership in CoDA is a desire for healthy and loving relationships.</item>
-    <item>Each group should remain autonomous except in matters affecting other groups or CoDA as a whole.</item>
-    <item>Each group has but one primary purpose: to carry its message to other codependents who still suffer.</item>
-    <item>A CoDA group ought never endorse, finance, or lend the CoDA name to any related facility or outside enterprise, lest problems of money, property, and prestige divert us from our primary spiritual aim.</item>
-    <item>Every CoDA group ought to be fully self-supporting, declining outside contributions.</item>
-    <item>Co-Dependents Anonymous should remain forever nonprofessional, but our service centers may employ special workers.</item>
-    <item>CoDA, as such, out never be organized; but we may create service boards or committees directly responsible to those they serve.</item>
-    <item>CoDA has no opinion on outside issues; hence, the CoDA name ought never be drawn into public controversy.</item>
-    <item>Our public relations policy is based on attraction rather than promotion; we need always maintain personal anonymity at the level of press, radio, and films.</item>
-    <item>Anonymity is the spiritual foundation of all our traditions; ever reminding us to place principles before personalities.</item>
-</string-array>
-<string name="promises_intro">I can expect a miraculous change in my life by working the program of Co-Dependents Anonymous. As I make an honest effort to work the Twelve Steps and follow the Twelve Traditions...</string>
-<string-array name="promises">
-    <item>I know a new sense of belonging. The feelings of emptiness and loneliness will disappear.</item>
-    <item>I am no longer controlled by my fears. I overcome my fears and act with courage, integrity, and dignity.</item>
-    <item>I know a new freedom.</item>
-    <item>I release myself from worry, guilt, and regret about my past and present. I am aware enough not to repeat it.</item>
-    <item>I know a new love and acceptance of myself and others. I feel genuinely lovable, loving and loved.</item>
-    <item>I learn to see myself as equal to others. My new and renewed relationships are all with equal partners.</item>
-    <item>I am capable of developing and maintaining healthy and loving relationships. The need to control and manipulate others will disappear as I learn to trust those who are trustworthy.</item>
-    <item>I learn that it is possible for me to mend--to become more loving, intimate, and supportive. I have the choice of communicating with my family in a way which is safe for me and respectful of them.</item>
-    <item>I acknowledge that I am a unique and precious creation.</item>
-    <item>I no longer need to rely solely on others to provide my sense of worth.</item>
-    <item>I trust the guidance I receive from my Higher Power and come to believe in my own capabilities.</item>
-    <item>I gradually experience serenity, strength, and spiritual growth in my daily life.</item>
-</string-array>
-    
+    <string-array name="steps">
+        <item>We admitted we were powerless over others - that our lives had become unmanageable.</item>
+        <item>Came to believe that a power greater than ourselves could restore us to sanity.</item>
+        <item>Made a decision to turn our will and lives over to the care of God as we understood God.</item>
+        <item>Made a searching and fearless moral inventory of ourselves.</item>
+        <item>Admitted to God, to ourselves, and to another human being, the exact nature of our wrongs.</item>
+        <item>Were entirely ready to have God remove all these defects of character.</item>
+        <item>Humbly asked God to remove our shortcomings.</item>
+        <item>Made a list of all persons we had harmed and became willing to make amends to them all.</item>
+        <item>Made direct amends to such people wherever possible, except when to do so would injure them or others.
+        </item>
+        <item>Continued to take personal inventory and when we were wrong, promptly admitted it.</item>
+        <item>Sought through prayer and meditation to improve our conscious contact with God as we understood God,
+            praying only for knowledge of God\u0027s will for us and the power to carry that out.
+        </item>
+        <item>Having had a spiritual awakening as the result of these steps, we tried to carry this message to other
+            codependents, and to practice these principles in all our affairs.
+        </item>
+    </string-array>
+    <string-array name="traditions">
+        <item>Our common welfare should come first; personal recovery depends upon CoDA unity.</item>
+        <item>For our group purpose there is but one ultimate authority: a loving higher power as expressed to our group
+            conscience. Our leaders are but trusted servants; they do not govern.
+        </item>
+        <item>The only requirement for membership in CoDA is a desire for healthy and loving relationships.</item>
+        <item>Each group should remain autonomous except in matters affecting other groups or CoDA as a whole.</item>
+        <item>Each group has but one primary purpose: to carry its message to other codependents who still suffer.
+        </item>
+        <item>A CoDA group ought never endorse, finance, or lend the CoDA name to any related facility or outside
+            enterprise, lest problems of money, property, and prestige divert us from our primary spiritual aim.
+        </item>
+        <item>Every CoDA group ought to be fully self-supporting, declining outside contributions.</item>
+        <item>Co-Dependents Anonymous should remain forever nonprofessional, but our service centers may employ special
+            workers.
+        </item>
+        <item>CoDA, as such, out never be organized; but we may create service boards or committees directly responsible
+            to those they serve.
+        </item>
+        <item>CoDA has no opinion on outside issues; hence, the CoDA name ought never be drawn into public
+            controversy.
+        </item>
+        <item>Our public relations policy is based on attraction rather than promotion; we need always maintain personal
+            anonymity at the level of press, radio, and films.
+        </item>
+        <item>Anonymity is the spiritual foundation of all our traditions; ever reminding us to place principles before
+            personalities.
+        </item>
+    </string-array>
+    <string name="promises_intro">I can expect a miraculous change in my life by working the program of Co-Dependents
+        Anonymous. As I make an honest effort to work the Twelve Steps and follow the Twelve Traditions...
+    </string>
+    <string-array name="promises">
+        <item>I know a new sense of belonging. The feelings of emptiness and loneliness will disappear.</item>
+        <item>I am no longer controlled by my fears. I overcome my fears and act with courage, integrity, and dignity.
+        </item>
+        <item>I know a new freedom.</item>
+        <item>I release myself from worry, guilt, and regret about my past and present. I am aware enough not to repeat
+            it.
+        </item>
+        <item>I know a new love and acceptance of myself and others. I feel genuinely lovable, loving and loved.</item>
+        <item>I learn to see myself as equal to others. My new and renewed relationships are all with equal partners.
+        </item>
+        <item>I am capable of developing and maintaining healthy and loving relationships. The need to control and
+            manipulate others will disappear as I learn to trust those who are trustworthy.
+        </item>
+        <item>I learn that it is possible for me to mend--to become more loving, intimate, and supportive. I have the
+            choice of communicating with my family in a way which is safe for me and respectful of them.
+        </item>
+        <item>I acknowledge that I am a unique and precious creation.</item>
+        <item>I no longer need to rely solely on others to provide my sense of worth.</item>
+        <item>I trust the guidance I receive from my Higher Power and come to believe in my own capabilities.</item>
+        <item>I gradually experience serenity, strength, and spiritual growth in my daily life.</item>
+    </string-array>
+
     <string-array name="happy_feelings">
         <item>Calm</item>
         <item>Cheerful</item>
