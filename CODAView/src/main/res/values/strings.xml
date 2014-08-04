@@ -31,8 +31,9 @@
     <string name="helpByTranslate">If you want to help use this application for
         Codependents Anonymous from other countries who speak foreign languages,
         you may send me on e-mail Blue book of CODA, Diary of CODA and Twelve steps CODA books.
-        Or you may send me these books for other 12 steps communities. discours@list.ru. Click to send e-mail.
+        Or you may send me these books for other 12 steps communities.
     </string>
+    <string name="sendEmail">discours@list.ru. Click to send e-mail.</string>
 
     <string-array name="supported_languages">
         <item>Английский(English)</item>
