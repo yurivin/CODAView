@@ -13,8 +13,8 @@ public class MenuPreferencesAbstractActivity extends PreferenceActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        LanguageContext.setLanguage(this);
         getMenuInflater().inflate(R.menu.main_menu, menu);
+        LanguageContext.setLanguage(this);
         return true;
     }
 

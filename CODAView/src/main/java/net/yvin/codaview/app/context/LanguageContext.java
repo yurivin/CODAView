@@ -16,10 +16,10 @@ public class LanguageContext {
 
     private static final String[] supportedLanguages = {"ru", "en"};
 
-    public static String getLanguage(){
+    public static String getLanguage() {
         String language = Locale.getDefault().getLanguage();
-        Log.d("language ",  language);
-        if(!"en".equals(language)) {
+        Log.d("language ", language);
+        if (!"en".equals(language)) {
             return "ru";
         }
         return language;
@@ -42,5 +42,6 @@ public class LanguageContext {
         android.content.res.Configuration conf = res.getConfiguration();
         conf.locale = new Locale(sp.getString("language", "").toLowerCase());
         res.updateConfiguration(conf, dm);
+        Locale.setDefault(new Locale(sp.getString("language", "").toLowerCase()));
     }
 }
