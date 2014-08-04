@@ -40,8 +40,9 @@ public class LanguageContext {
         // Change locale settings in the app.
         DisplayMetrics dm = res.getDisplayMetrics();
         android.content.res.Configuration conf = res.getConfiguration();
-        conf.locale = new Locale(sp.getString("language", "").toLowerCase());
+        String language = sp.getString("language", "").toLowerCase();
+        conf.locale = new Locale(language);
         res.updateConfiguration(conf, dm);
-        Locale.setDefault(new Locale(sp.getString("language", "").toLowerCase()));
+        Locale.setDefault(new Locale(language));
     }
 }
