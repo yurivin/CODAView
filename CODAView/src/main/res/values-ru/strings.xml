@@ -27,6 +27,8 @@
     <string name="Rate_how_myltc">Оцени, насколько тебе нравится это состояние</string>
     <string name="language">Language</string>
     <string name="howToHelp">Как помочь</string>
+    <string name="helpByTranslate">Если вы хотитье помочь использовать это приложение анонимным созависимым из других стран,
+        говорящим на иностранных языках, вы можете отправить мне на электронную почту Голубую книгу CODA, Ежедневник CODA и Двенадцать шагов CODA. discours@list.ru</string>
 
     <string-array name="steps">
         <item>Мы признали своё бессилие перед другими, признали, что наша жизнь перестала поддаваться контролю.</item>
