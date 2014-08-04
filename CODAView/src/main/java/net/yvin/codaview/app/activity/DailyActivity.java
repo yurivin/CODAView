@@ -77,8 +77,6 @@ public class DailyActivity extends MenuAbstractActivity {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setTitle("Alert!")
                 .setMessage("Set your preferred language Please!")
-                .setIcon(R.drawable.codasun)
-                .setCancelable(false)
                 .setNegativeButton("ОК",
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
