@@ -33,7 +33,7 @@
         you may send me on e-mail Blue book of CODA, Diary of CODA and Twelve steps CODA books.
         Or you may send me these books for other 12 steps communities.
     </string>
-    <string name="sendEmail">discours@list.ru. Click to send e-mail.</string>
+    <string name="e_Email">discours@list.ru</string>
 
     <string-array name="supported_languages">
         <item>Английский(English)</item>

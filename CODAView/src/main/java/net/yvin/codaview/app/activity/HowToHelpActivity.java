@@ -17,11 +17,4 @@ public class HowToHelpActivity extends MenuAbstractActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_howtohelp);
     }
-
-    public void clickBtnHelpByTranslation(View v) {
-        Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
-                "mailto", "discours@list.ru", null));
-        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Subject");
-        startActivity(Intent.createChooser(emailIntent, "Send email..."));
-    }
 }
