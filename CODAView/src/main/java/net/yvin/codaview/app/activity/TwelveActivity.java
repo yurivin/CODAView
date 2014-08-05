@@ -38,7 +38,7 @@ public class TwelveActivity extends MenuListAbstractActivity {
                 if ("en".equals(LanguageContext.getLanguage()))
                     adapter = new ArrayAdapter<String>(this,
                             R.layout.text_list_item, values);
-                else
+                else if ("ru".equals(LanguageContext.getLanguage()))
                     adapter = new ArrayAdapter<String>(this,
                             R.layout.clickable_text_list_item, values);
                 break;
