@@ -61,7 +61,7 @@ public class NewFeelingsDiaryEntryActivity extends MenuAbstractActivity {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 R.layout.clickable_text_list_item, feelingsArray);
 
-        new AlertDialog.Builder(this)
+        new AlertDialog.Builder(this, AlertDialog.THEME_DEVICE_DEFAULT_DARK)
                 .setAdapter(adapter, new DialogInterface.OnClickListener() {
 
                     @Override
@@ -91,7 +91,7 @@ public class NewFeelingsDiaryEntryActivity extends MenuAbstractActivity {
 
 
     private void showDateDialog(int mYear, int mMonth, int mDay) {
-        DatePickerDialog dpd = new DatePickerDialog(this,
+        DatePickerDialog dpd = new DatePickerDialog(this, AlertDialog.THEME_DEVICE_DEFAULT_DARK,
                 new DatePickerDialog.OnDateSetListener() {
 
                     @Override
@@ -108,7 +108,7 @@ public class NewFeelingsDiaryEntryActivity extends MenuAbstractActivity {
     }
 
     private void showTimeDialog(int mHour, int mMinute) {
-        TimePickerDialog tpd = new TimePickerDialog(this,
+        TimePickerDialog tpd = new TimePickerDialog(this, AlertDialog.THEME_DEVICE_DEFAULT_DARK,
                 new TimePickerDialog.OnTimeSetListener() {
 
                     @Override
