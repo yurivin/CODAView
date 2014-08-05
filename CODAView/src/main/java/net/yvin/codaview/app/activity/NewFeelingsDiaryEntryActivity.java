@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.TimePicker;
 import net.yvin.codaview.app.R;
@@ -21,12 +22,15 @@ import java.util.*;
 public class NewFeelingsDiaryEntryActivity extends MenuAbstractActivity {
 
     int yearG, monthOfYearG, dayOfMonthG, hourOfDayG, minuteG;
+    List<String> feelingsG = new ArrayList<String>();
+    Button addFeelings;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feelingsdiaryentry);
+        addFeelings = (Button)findViewById(R.id.btnFeelings);
     }
 
     public void clickBtnTimeFrom(View v) {
@@ -58,10 +62,17 @@ public class NewFeelingsDiaryEntryActivity extends MenuAbstractActivity {
 
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        Log.i("Dialog", "Item selected: " + feelingsArray[which]);
+                        Log.d("Dialog", "Item selected: " + feelingsArray[which]);
+                        feelingsG.add(feelingsArray[which]);
+                        StringBuilder builder = new StringBuilder();
+                        addFeelings.setTextSize(14);
+                        builder.append(feelingsArray[which]);
+                        builder.append(", ");
+                        builder.append(addFeelings.getText());
+                        addFeelings.setText(builder.toString());
                     }
                 })
-                .setTitle("Select feelings")
+                .setTitle("Add feeling")
                 .setCancelable(true)
                 .show();
 

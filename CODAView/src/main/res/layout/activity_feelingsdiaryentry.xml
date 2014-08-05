@@ -36,7 +36,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_above="@+id/RateDescription"
-            android:text="@string/add_fillings"
+            android:text="@string/add_filling"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
             style="@style/Widget.Button.MainMenu"/>
