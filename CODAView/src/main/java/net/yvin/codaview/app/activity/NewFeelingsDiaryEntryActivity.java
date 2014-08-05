@@ -41,6 +41,10 @@ public class NewFeelingsDiaryEntryActivity extends MenuAbstractActivity {
         setDateTime();
     }
 
+    public void clickBtnAddComment(View v) {
+
+    }
+
     public void clickBtnFeelings(View v) {
 
         List<String> feelingsList = new ArrayList(Arrays.asList(getResources().getStringArray(R.array.afraid_feelings)));
@@ -76,10 +80,6 @@ public class NewFeelingsDiaryEntryActivity extends MenuAbstractActivity {
                 .setCancelable(true)
                 .show();
 
-
-    }
-
-    public void clickBtnAddComment(View v) {
 
     }
 
