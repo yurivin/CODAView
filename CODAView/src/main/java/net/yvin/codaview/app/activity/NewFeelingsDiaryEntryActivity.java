@@ -17,6 +17,9 @@ import java.util.Calendar;
  */
 public class NewFeelingsDiaryEntryActivity extends MenuAbstractActivity {
 
+    int yearG, monthOfYearG, dayOfMonthG, hourOfDayG, minuteG;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,16 +27,27 @@ public class NewFeelingsDiaryEntryActivity extends MenuAbstractActivity {
     }
 
     public void clickBtnTimeFrom(View v) {
-        final Calendar c = Calendar.getInstance();
-        int mYear = c.get(Calendar.YEAR);
-        int mMonth = c.get(Calendar.MONTH);
-        int mDay = c.get(Calendar.DAY_OF_MONTH);
-        int mHour = c.get(Calendar.HOUR_OF_DAY);
-        int mMinute = c.get(Calendar.MINUTE);
-
-        showTimeDialog(mHour, mMinute);
-        showDateDialog(mYear, mMonth, mDay);
+        setdateTime();
     }
+
+    public void clickBtnTimeTo(View v) {
+        setdateTime();
+    }
+
+    public void clickBtnFeelings(View v) {
+
+    }
+
+    public void clickBtnAddComment(View v) {
+
+    }
+
+    private void setdateTime() {
+        final Calendar c = Calendar.getInstance();
+        showTimeDialog(c.get(Calendar.HOUR_OF_DAY), c.get(Calendar.MINUTE));
+        showDateDialog(c.get(Calendar.YEAR), c.get(Calendar.MONTH), c.get(Calendar.DAY_OF_MONTH));
+    }
+
 
     private void showDateDialog(int mYear, int mMonth, int mDay) {
         DatePickerDialog dpd = new DatePickerDialog(this,
@@ -44,7 +58,9 @@ public class NewFeelingsDiaryEntryActivity extends MenuAbstractActivity {
                                           int monthOfYear, int dayOfMonth) {
                         Log.d("Date from dialog", dayOfMonth + "-"
                                 + (monthOfYear + 1) + "-" + year);
-
+                        dayOfMonthG = dayOfMonth;
+                        monthOfYearG = monthOfYear;
+                        yearG = year;
                     }
                 }, mYear, mMonth, mDay);
         dpd.show();
@@ -58,21 +74,10 @@ public class NewFeelingsDiaryEntryActivity extends MenuAbstractActivity {
                     public void onTimeSet(TimePicker view, int hourOfDay,
                                           int minute) {
                         Log.d("Time from dialog", hourOfDay + ":" + minute);
+                        hourOfDayG = hourOfDay;
+                        minuteG = minute;
                     }
                 }, mHour, mMinute, true);
         tpd.show();
     }
-
-    public void clickBtnTimeTo(View v) {
-
-    }
-
-    public void clickBtnFeelings(View v) {
-
-    }
-
-    public void clickBtnAddComment(View v) {
-
-    }
-
 }
