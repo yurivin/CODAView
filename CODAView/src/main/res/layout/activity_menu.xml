@@ -14,6 +14,8 @@
             style="@style/Widget.Button.MainMenu"
             android:text="@string/howToHelp"
             android:drawableLeft="@drawable/info40"
+            android:paddingLeft="70dip"
+            android:paddingRight="70dip"
             android:layout_height="wrap_content"/>
 
     <LinearLayout
@@ -41,6 +43,9 @@
                 android:textSize="17sp"
                 android:text="@string/new_entry"
                 android:drawableLeft="@drawable/new40"
+                android:paddingLeft="10dip"
+                android:paddingRight="10dip"
+                android:singleLine="true"
                 android:layout_height="wrap_content"/>
     </LinearLayout>
 
@@ -52,6 +57,9 @@
             style="@style/Widget.Button.MainMenu"
             android:text="@string/prayer"
             android:drawableLeft="@drawable/pray40"
+            android:paddingLeft="90dip"
+            android:paddingRight="90dip"
+            android:singleLine="true"
             android:layout_height="wrap_content"/>
     <Button
             android:id="@+id/btnWayBeginning"
@@ -77,6 +85,9 @@
                 android:textSize="17sp"
                 android:text="@string/steps"
                 android:drawableLeft="@drawable/footprints40"
+                android:paddingLeft="10dip"
+                android:paddingRight="10dip"
+                android:singleLine="true"
                 android:layout_height="wrap_content"/>
         <Button
                 android:id="@+id/btnTraditions"
@@ -109,5 +120,8 @@
             style="@style/Widget.Button.MainMenu"
             android:text="@string/calendar"
             android:drawableLeft="@drawable/calendar40"
+            android:paddingLeft="70dip"
+            android:paddingRight="70dip"
+            android:singleLine="true"
             android:layout_height="wrap_content"/>
 </RelativeLayout>
