@@ -13,6 +13,7 @@
             android:layout_alignParentTop="true"
             style="@style/Widget.Button.MainMenu"
             android:text="@string/howToHelp"
+            android:drawableLeft="@drawable/info40"
             android:layout_height="wrap_content"/>
 
     <LinearLayout
