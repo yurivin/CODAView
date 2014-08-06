@@ -27,17 +27,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true">
 
-        <Button
-            android:id="@+id/btnNewEntry"
-            android:onClick="clickBtnNewEntry"
-            android:layout_weight="1"
-            style="@style/Widget.Button.MainMenu"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="0dp"
-            android:textSize="17sp"
-            android:text="@string/new_entry"
-            android:layout_height="wrap_content"/>
-
  <!--       <Button
             android:id="@+id/btnAnalitics"
             android:onClick="clickBtnAnalitics"

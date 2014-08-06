@@ -17,9 +17,4 @@ public class FeelingsDiaryActivity extends MenuAbstractActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feelings);
     }
-
-    public void clickBtnNewEntry(View v) {
-        Intent intent = new Intent(this, NewFeelingsDiaryEntryActivity.class);
-        new ActivityLuncher(intent, this);
-    }
 }

@@ -52,6 +52,10 @@ public class MenuActivity extends MenuAbstractActivity {
         new ActivityLuncher(new Intent(this, FeelingsDiaryActivity.class), this);
     }
 
+    public void clickBtnFillingsNewEntry(View v) {
+        new ActivityLuncher(new Intent(this, NewFeelingsDiaryEntryActivity.class), this);
+    }
+
     public void clickBtnHowToHelp(View v) {
         new ActivityLuncher(new Intent(this, HowToHelpActivity.class), this);
     }

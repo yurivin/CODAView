@@ -5,7 +5,8 @@
                 android:background="@color/background"
                 android:layout_height="match_parent">
 
- Б   <Button
+
+    <Button
             android:id="@+id/btnHowToHelp"
             android:onClick="clickBtnHowToHelp"
             android:layout_width="match_parent"
@@ -14,13 +15,40 @@
             android:text="@string/howToHelp"
             android:layout_height="wrap_content"/>
 
+    <LinearLayout
+            android:id="@+id/layoutFeelings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/btnPrayer">
+        <Button
+                android:id="@+id/btnFillingsDiary"
+                android:layout_weight="1"
+                android:onClick="clickBtnFillingsDiary"
+                android:layout_above="@+id/btnWayBeginning"
+                android:layout_marginRight="0dp"
+                style="@style/Widget.Button.MainMenu"
+                android:textSize="17sp"
+                android:text="@string/feelings_diary"
+                android:layout_height="wrap_content"/>
+        <Button
+                android:id="@+id/btnFillingsNewEntry"
+                android:layout_weight="1"
+                android:layout_marginLeft="2dp"
+                android:onClick="clickBtnFillingsNewEntry"
+                android:layout_above="@+id/btnFillingsDiary"
+                style="@style/Widget.Button.MainMenu"
+                android:textSize="17sp"
+                android:text="@string/new_entry"
+                android:layout_height="wrap_content"/>
+    </LinearLayout>
+
     <Button
-            android:id="@+id/btnFillingsDiary"
-            android:onClick="clickBtnFillingsDiary"
+            android:id="@+id/btnPrayer"
+            android:onClick="clickBtnPrayer"
             android:layout_width="match_parent"
             android:layout_above="@+id/btnWayBeginning"
             style="@style/Widget.Button.MainMenu"
-            android:text="@string/feelings_diary"
+            android:text="@string/prayer"
             android:layout_height="wrap_content"/>
     <Button
             android:id="@+id/btnWayBeginning"
@@ -76,5 +104,6 @@
             android:layout_alignParentBottom="true"
             style="@style/Widget.Button.MainMenu"
             android:text="@string/calendar"
+            android:drawableLeft="@drawable/calendar40"
             android:layout_height="wrap_content"/>
 </RelativeLayout>

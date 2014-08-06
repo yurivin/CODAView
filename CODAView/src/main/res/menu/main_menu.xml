@@ -8,6 +8,7 @@
           android:orderInCategory="100"/>
     <item android:id="@+id/action_settings"
           android:title="@string/settings"
+          android:icon="@drawable/wheel"
           android:showAsAction="always"
           android:orderInCategory="101"/>
 </menu>
