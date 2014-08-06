@@ -40,6 +40,7 @@
                 style="@style/Widget.Button.MainMenu"
                 android:textSize="17sp"
                 android:text="@string/new_entry"
+                android:drawableLeft="@drawable/new40"
                 android:layout_height="wrap_content"/>
     </LinearLayout>
 
