@@ -73,7 +73,7 @@
                 android:layout_marginRight="0dp"
                 android:textSize="17sp"
                 android:text="@string/steps"
-                android:drawableLeft="@drawable/step40"
+                android:drawableLeft="@drawable/footprints40"
                 android:layout_height="wrap_content"/>
         <Button
                 android:id="@+id/btnTraditions"
