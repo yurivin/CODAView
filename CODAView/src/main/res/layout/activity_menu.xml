@@ -30,7 +30,7 @@
                 android:layout_above="@+id/btnWayBeginning"
                 android:layout_marginRight="0dp"
                 style="@style/Widget.Button.MainMenu"
-                android:textSize="17sp"
+                android:textSize="16sp"
                 android:text="@string/feelings_diary"
                 android:layout_height="wrap_content"/>
         <Button
@@ -40,7 +40,7 @@
                 android:onClick="clickBtnFillingsNewEntry"
                 android:layout_above="@+id/btnFillingsDiary"
                 style="@style/Widget.Button.MainMenu"
-                android:textSize="17sp"
+                android:textSize="16sp"
                 android:text="@string/new_entry"
                 android:drawableLeft="@drawable/new40"
                 android:paddingLeft="10dip"
@@ -82,7 +82,7 @@
                 style="@style/Widget.Button.MainMenu"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="0dp"
-                android:textSize="17sp"
+                android:textSize="16sp"
                 android:text="@string/steps"
                 android:drawableLeft="@drawable/footprints40"
                 android:paddingLeft="10dip"
@@ -97,8 +97,11 @@
                 style="@style/Widget.Button.MainMenu"
                 android:layout_marginLeft="2dp"
                 android:layout_marginRight="2dp"
-                android:textSize="17sp"
+                android:textSize="16sp"
                 android:text="@string/traditions"
+                android:singleLine="true"
+                android:drawableLeft="@drawable/documentcheck40"
+                android:paddingLeft="2dip"
                 android:layout_height="wrap_content"/>
         <Button
                 android:id="@+id/btnPromises"
@@ -108,7 +111,9 @@
                 style="@style/Widget.Button.MainMenu"
                 android:layout_marginLeft="0dp"
                 android:layout_marginRight="5dp"
-                android:textSize="17sp"
+                android:drawableLeft="@drawable/promise40"
+                android:textSize="16sp"
+                android:singleLine="true"
                 android:text="@string/promises"
                 android:layout_height="wrap_content"/>
     </LinearLayout>
