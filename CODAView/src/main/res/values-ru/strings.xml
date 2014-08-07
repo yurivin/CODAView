@@ -20,7 +20,7 @@
     <string name="new_entry">Новая запись</string>
     <string name="statistics">Статистика</string>
     <string name="sort">Сортировать</string>
-    <string name="add_filling">Добавить чувство</string>
+    <string name="add_filling">Добавить чувство...</string>
     <string name="time_from">С какого времени</string>
     <string name="time_to">До какого времени</string>
     <string name="add_comment">Добавить комментарий</string>
@@ -32,6 +32,7 @@
         Или вы можете прислать мне эти книги для других сообществ. discours@list.ru. Нажмите для отправки письма</string>
     <string name="e_Email">discours@list.ru</string>
     <string name="prayer">Молитвы</string>
+    <string name="ready">Готово</string>
 
     <string-array name="steps">
         <item>Мы признали своё бессилие перед другими, признали, что наша жизнь перестала поддаваться контролю.</item>

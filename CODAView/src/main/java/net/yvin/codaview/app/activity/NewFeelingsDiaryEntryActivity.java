@@ -7,10 +7,7 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.DatePicker;
-import android.widget.TimePicker;
+import android.widget.*;
 import net.yvin.codaview.app.R;
 import net.yvin.codaview.app.activity.base.MenuAbstractActivity;
 
@@ -19,26 +16,33 @@ import java.util.*;
 /**
  * Created by Юрий on 27.07.2014.
  */
-public class NewFeelingsDiaryEntryActivity extends MenuAbstractActivity {
+public class NewFeelingsDiaryEntryActivity extends MenuAbstractActivity implements RatingBar.OnRatingBarChangeListener {
 
-    int yearG, monthOfYearG, dayOfMonthG, hourOfDayG, minuteG;
+    int yearFromG, monthOfYearFromG, dayOfMonthFromG, hourOfDayFromG, minuteFromG,
+            yearToG, monthOfYearToG, dayOfMonthToG, hourOfDayToG, minuteToG;
     List<String> feelingsG = new ArrayList<String>();
-    Button addFeelings;
+    Button btnAddFeelings, btnTimeFrom, btnTimeTo;
+    RatingBar ratingBar;
+    float feelingsRating;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feelingsdiaryentry);
-        addFeelings = (Button)findViewById(R.id.btnFeelings);
+        btnAddFeelings = (Button) findViewById(R.id.btnFeelings);
+        ratingBar = (RatingBar) findViewById(R.id.feelingsRating);// create RatingBar object
+        ratingBar.setOnRatingBarChangeListener(this);
+        btnTimeFrom = (Button) findViewById(R.id.feelTimeFrom);
+        btnTimeTo = (Button) findViewById(R.id.feelTimeTo);
     }
 
     public void clickBtnTimeFrom(View v) {
-        setDateTime();
+        setDateTime(btnTimeFrom);
     }
 
     public void clickBtnTimeTo(View v) {
-        setDateTime();
+        setDateTime(btnTimeTo);
     }
 
     public void clickBtnAddComment(View v) {
@@ -55,7 +59,7 @@ public class NewFeelingsDiaryEntryActivity extends MenuAbstractActivity {
         Collections.sort(feelingsList);
 
         final String[] feelingsArray = new String[feelingsList.size()];
-        for(int i = 0; i < feelingsList.size(); i++)
+        for (int i = 0; i < feelingsList.size(); i++)
             feelingsArray[i] = feelingsList.get(i);
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
@@ -69,11 +73,11 @@ public class NewFeelingsDiaryEntryActivity extends MenuAbstractActivity {
                         Log.d("Dialog", "Item selected: " + feelingsArray[which]);
                         feelingsG.add(feelingsArray[which]);
                         StringBuilder builder = new StringBuilder();
-                        addFeelings.setTextSize(14);
+                        btnAddFeelings.setTextSize(14);
                         builder.append(feelingsArray[which]);
                         builder.append(", ");
-                        builder.append(addFeelings.getText());
-                        addFeelings.setText(builder.toString());
+                        builder.append(btnAddFeelings.getText());
+                        btnAddFeelings.setText(builder.toString());
                     }
                 })
                 .setTitle("Add feeling")
@@ -83,14 +87,21 @@ public class NewFeelingsDiaryEntryActivity extends MenuAbstractActivity {
 
     }
 
-    private void setDateTime() {
+    private void setDateTime(Button btnTime) {
         final Calendar c = Calendar.getInstance();
-        showTimeDialog(c.get(Calendar.HOUR_OF_DAY), c.get(Calendar.MINUTE));
-        showDateDialog(c.get(Calendar.YEAR), c.get(Calendar.MONTH), c.get(Calendar.DAY_OF_MONTH));
+        showTimeDialog(c.get(Calendar.HOUR_OF_DAY), c.get(Calendar.MINUTE), btnTime);
+        showDateDialog(c.get(Calendar.YEAR), c.get(Calendar.MONTH), c.get(Calendar.DAY_OF_MONTH), btnTime);
+        if (btnTime.equals(btnTimeFrom)) {
+            btnTime.setText(dayOfMonthFromG + "-" + monthOfYearFromG + "-" + yearFromG + " "
+                    + String.valueOf(hourOfDayFromG) + ":" + String.valueOf(minuteFromG));
+        } else if (btnTime.equals(btnTimeTo)) {
+            btnTime.setText(dayOfMonthToG + "-" + monthOfYearToG + "-" + yearToG + " "
+                    + String.valueOf(hourOfDayToG) + ":" + String.valueOf(minuteToG));
+        }
     }
 
 
-    private void showDateDialog(int mYear, int mMonth, int mDay) {
+    private void showDateDialog(final int mYear, int mMonth, int mDay, final Button btnTime) {
         DatePickerDialog dpd = new DatePickerDialog(this, AlertDialog.THEME_DEVICE_DEFAULT_DARK,
                 new DatePickerDialog.OnDateSetListener() {
 
@@ -99,15 +110,21 @@ public class NewFeelingsDiaryEntryActivity extends MenuAbstractActivity {
                                           int monthOfYear, int dayOfMonth) {
                         Log.d("Date from dialog", dayOfMonth + "-"
                                 + (monthOfYear + 1) + "-" + year);
-                        dayOfMonthG = dayOfMonth;
-                        monthOfYearG = monthOfYear + 1;
-                        yearG = year;
+                        if (btnTime.equals(btnTimeFrom)) {
+                            yearFromG = year;
+                            monthOfYearFromG = monthOfYear;
+                            dayOfMonthFromG = dayOfMonth;
+                        } else if (btnTime.equals(btnTimeTo)) {
+                            yearToG = year;
+                            monthOfYearToG = monthOfYear;
+                            dayOfMonthToG = dayOfMonth;
+                        }
                     }
                 }, mYear, mMonth, mDay);
         dpd.show();
     }
 
-    private void showTimeDialog(int mHour, int mMinute) {
+    private void showTimeDialog(int mHour, int mMinute, final Button btnTime) {
         TimePickerDialog tpd = new TimePickerDialog(this, AlertDialog.THEME_DEVICE_DEFAULT_DARK,
                 new TimePickerDialog.OnTimeSetListener() {
 
@@ -115,10 +132,20 @@ public class NewFeelingsDiaryEntryActivity extends MenuAbstractActivity {
                     public void onTimeSet(TimePicker view, int hourOfDay,
                                           int minute) {
                         Log.d("Time from dialog", hourOfDay + ":" + minute);
-                        hourOfDayG = hourOfDay;
-                        minuteG = minute;
+                        if (btnTime.equals(btnTimeFrom)) {
+                            hourOfDayFromG = hourOfDay;
+                            minuteFromG = minute;
+                        } else if (btnTime.equals(btnTimeTo)) {
+                            hourOfDayToG = hourOfDay;
+                            minuteToG = minute;
+                        }
                     }
                 }, mHour, mMinute, true);
         tpd.show();
+    }
+
+    @Override
+    public void onRatingChanged(RatingBar ratingBar, float v, boolean b) {
+        feelingsRating = ratingBar.getRating();
     }
 }

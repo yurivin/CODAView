@@ -21,7 +21,7 @@
     <string name="new_entry">New entry</string>
     <string name="statistics">Statistics</string>
     <string name="sort">Sort</string>
-    <string name="add_filling">Add feeling</string>
+    <string name="add_filling">Add feeling...</string>
     <string name="time_from">Time from</string>
     <string name="time_to">Time to</string>
     <string name="add_comment">Add comment</string>
@@ -35,6 +35,7 @@
     </string>
     <string name="e_Email">discours@list.ru</string>
     <string name="prayer">Prayer</string>
+    <string name="ready">Ready</string>
 
     <string-array name="supported_languages">
         <item>Английский(English)</item>

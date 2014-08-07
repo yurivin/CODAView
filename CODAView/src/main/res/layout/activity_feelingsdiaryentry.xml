@@ -9,7 +9,6 @@
             android:id="@+id/layoutTimeButtons"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
             android:layout_above="@+id/btnFeelings">
 
         <Button android:id="@+id/feelTimeFrom"
@@ -44,7 +43,6 @@
     <TextView android:id="@+id/RateDescription"
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
-              android:layout_marginTop="10dp"
               android:layout_above="@+id/feelingsRating"
               android:textColor="#ffff5003"
               android:textSize="20sp"
@@ -53,15 +51,29 @@
     <RatingBar android:id="@+id/feelingsRating"
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
+               android:layout_centerHorizontal="true"
+               android:numStars="5"
                android:layout_above="@+id/btnComment"/>
 
     <Button android:id="@+id/btnComment"
             android:onClick="clickBtnAddComment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
+            android:layout_above="@+id/btnReady"
             android:text="@string/add_comment"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            style="@style/Widget.Button.MainMenu"/>
+
+    <Button android:id="@+id/btnReady"
+            android:onClick="clickBtnAddComment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:text="@string/ready"
+            android:singleLine="true"
+            android:layout_marginTop="5dp"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
             style="@style/Widget.Button.MainMenu"/>
