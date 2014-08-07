@@ -16,6 +16,7 @@
             android:drawableLeft="@drawable/info40"
             android:paddingLeft="70dip"
             android:paddingRight="70dip"
+            android:singleLine="true"
             android:layout_height="wrap_content"/>
 
     <LinearLayout
@@ -32,6 +33,10 @@
                 style="@style/Widget.Button.MainMenu"
                 android:textSize="16sp"
                 android:text="@string/feelings_diary"
+                android:drawableLeft="@drawable/journal40"
+                android:paddingLeft="10dip"
+                android:paddingRight="5dip"
+                android:singleLine="true"
                 android:layout_height="wrap_content"/>
         <Button
                 android:id="@+id/btnFillingsNewEntry"
@@ -68,6 +73,10 @@
             android:layout_above="@+id/layout12"
             style="@style/Widget.Button.MainMenu"
             android:text="@string/way_beginning"
+            android:drawableLeft="@drawable/arow40"
+            android:paddingLeft="15dip"
+            android:paddingRight="15dip"
+            android:singleLine="true"
             android:layout_height="wrap_content"/>
     <LinearLayout
             android:id="@+id/layout12"
