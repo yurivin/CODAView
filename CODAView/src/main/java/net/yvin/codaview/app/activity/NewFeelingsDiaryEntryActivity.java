@@ -24,6 +24,8 @@ public class NewFeelingsDiaryEntryActivity extends MenuAbstractActivity implemen
     Button btnAddFeelings, btnTimeFrom, btnTimeTo;
     RatingBar ratingBar;
     float feelingsRating;
+    final String DATE_SEPARATOR = "-";
+    final String TIME_SEPARATOR = ":";
 
 
     @Override
@@ -91,13 +93,6 @@ public class NewFeelingsDiaryEntryActivity extends MenuAbstractActivity implemen
         final Calendar c = Calendar.getInstance();
         showTimeDialog(c.get(Calendar.HOUR_OF_DAY), c.get(Calendar.MINUTE), btnTime);
         showDateDialog(c.get(Calendar.YEAR), c.get(Calendar.MONTH), c.get(Calendar.DAY_OF_MONTH), btnTime);
-        if (btnTime.equals(btnTimeFrom)) {
-            btnTime.setText(dayOfMonthFromG + "-" + monthOfYearFromG + "-" + yearFromG + " "
-                    + String.valueOf(hourOfDayFromG) + ":" + String.valueOf(minuteFromG));
-        } else if (btnTime.equals(btnTimeTo)) {
-            btnTime.setText(dayOfMonthToG + "-" + monthOfYearToG + "-" + yearToG + " "
-                    + String.valueOf(hourOfDayToG) + ":" + String.valueOf(minuteToG));
-        }
     }
 
 
@@ -114,10 +109,12 @@ public class NewFeelingsDiaryEntryActivity extends MenuAbstractActivity implemen
                             yearFromG = year;
                             monthOfYearFromG = monthOfYear;
                             dayOfMonthFromG = dayOfMonth;
+                            btnTime.setText(dayOfMonthFromG + DATE_SEPARATOR + monthOfYearFromG + DATE_SEPARATOR + yearFromG + "  ");
                         } else if (btnTime.equals(btnTimeTo)) {
                             yearToG = year;
                             monthOfYearToG = monthOfYear;
                             dayOfMonthToG = dayOfMonth;
+                            btnTime.setText(dayOfMonthToG + DATE_SEPARATOR + monthOfYearToG + DATE_SEPARATOR + yearToG + "  ");
                         }
                     }
                 }, mYear, mMonth, mDay);
@@ -127,18 +124,21 @@ public class NewFeelingsDiaryEntryActivity extends MenuAbstractActivity implemen
     private void showTimeDialog(int mHour, int mMinute, final Button btnTime) {
         TimePickerDialog tpd = new TimePickerDialog(this, AlertDialog.THEME_DEVICE_DEFAULT_DARK,
                 new TimePickerDialog.OnTimeSetListener() {
-
+                    boolean realSetup = false;
                     @Override
                     public void onTimeSet(TimePicker view, int hourOfDay,
                                           int minute) {
                         Log.d("Time from dialog", hourOfDay + ":" + minute);
-                        if (btnTime.equals(btnTimeFrom)) {
+                        if (btnTime.equals(btnTimeFrom) && realSetup == true) {
                             hourOfDayFromG = hourOfDay;
                             minuteFromG = minute;
-                        } else if (btnTime.equals(btnTimeTo)) {
+                            btnTime.setText(btnTime.getText() + String.valueOf(hourOfDayFromG) + TIME_SEPARATOR + String.valueOf(minuteFromG));
+                        } else if (btnTime.equals(btnTimeTo) && realSetup == true) {
                             hourOfDayToG = hourOfDay;
                             minuteToG = minute;
+                            btnTime.setText(btnTime.getText() + String.valueOf(hourOfDayToG) + TIME_SEPARATOR + String.valueOf(minuteToG));
                         }
+                        realSetup = true;
                     }
                 }, mHour, mMinute, true);
         tpd.show();
