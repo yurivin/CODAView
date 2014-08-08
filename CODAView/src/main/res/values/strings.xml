@@ -202,4 +202,31 @@
         <item>Anxious</item>
     </string-array>
 
+    <string-array name="prayer">
+        <item>God,\n
+            grant me the serenity\n
+            To accept the things I cannot change,\n
+            Courage to change the things I can,\n
+            and wisdom to know the difference\n</item>
+        <item>God, give us grace to accept with serenity\n
+            the things that cannot be changed,\n
+            courage to change the things\n
+            which should be changed,\n
+            and the wisdom to distinguish\n
+            the one from the other.\n
+            Living one day at a time,\n
+            Enjoying one moment at a time,\n
+            Accepting hardship as a pathway to peace,\n
+            Taking, as Jesus did,\n
+            This sinful world as it is,\n
+            Not as I would have it,\n
+            Trusting that You will make all things right,\n
+            If I surrender to Your will,\n
+            So that I may be reasonably happy in this life,\n
+            And supremely happy with You forever in the next.\n
+            Amen.\n
+            \n
+            -- Reinhold Niebuhr (1892-1971)</item>
+    </string-array>
+
 </resources>
