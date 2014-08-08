@@ -44,6 +44,9 @@ public class MenuActivity extends MenuAbstractActivity {
         new ActivityLuncher(intent, this);
     }
 
+    public void clickBtnPrayer(View v) {
+        new ActivityLuncher(new Intent(this, PrayerActivity.class), this);
+    }
     public void clickBtnWayBeginning(View v) {
         new ActivityLuncher(new Intent(this, WayBiginingActivity.class), this);
 }

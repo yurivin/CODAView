@@ -225,7 +225,7 @@
         <item>Упоротость</item>
     </string-array>
 
-    <string-array name="prayer">
+    <string-array name="prayerContent">
         <item>Боже,\n
             дай мне разум и душевный покой принять то,\n
             что я не в силах изменить;\n
