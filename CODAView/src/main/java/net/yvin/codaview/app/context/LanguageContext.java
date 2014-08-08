@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.preference.PreferenceManager;
+import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.util.Log;
 
@@ -26,11 +27,14 @@ public class LanguageContext {
     }
 
     public static boolean isSupportedlanguage(String language) {
-        Set<String> langList = new HashSet<String>(Arrays.asList(supportedLanguages));
-        return langList.contains(language);
+        for(int i=0; i < supportedLanguages.length; i++) {
+            if(language.equals(supportedLanguages[i])) return true;
+        }
+        return false;
     }
 
     public static String getDefaultLanguage() {
+        Log.d("default language: ", Locale.getDefault().getLanguage());
         return Locale.getDefault().getLanguage();
     }
 

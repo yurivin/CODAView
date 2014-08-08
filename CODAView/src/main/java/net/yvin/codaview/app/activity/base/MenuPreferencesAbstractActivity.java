@@ -1,5 +1,6 @@
 package net.yvin.codaview.app.activity.base;
 
+import android.os.Bundle;
 import android.preference.PreferenceActivity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -12,9 +13,14 @@ import net.yvin.codaview.app.context.LanguageContext;
 public class MenuPreferencesAbstractActivity extends PreferenceActivity {
 
     @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        LanguageContext.setLanguage(this);
+    }
+
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main_menu, menu);
-        LanguageContext.setLanguage(this);
         return true;
     }
 

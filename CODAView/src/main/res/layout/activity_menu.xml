@@ -63,7 +63,7 @@
             android:text="@string/prayer"
             android:drawableLeft="@drawable/pray40"
             android:paddingLeft="90dip"
-            android:paddingRight="90dip"
+            android:paddingRight="70dip"
             android:singleLine="true"
             android:layout_height="wrap_content"/>
     <Button
@@ -106,7 +106,7 @@
                 style="@style/Widget.Button.MainMenu"
                 android:layout_marginLeft="2dp"
                 android:layout_marginRight="2dp"
-                android:textSize="16sp"
+                android:textSize="15sp"
                 android:text="@string/traditions"
                 android:singleLine="true"
                 android:drawableLeft="@drawable/documentcheck40"
@@ -121,7 +121,7 @@
                 android:layout_marginLeft="0dp"
                 android:layout_marginRight="5dp"
                 android:drawableLeft="@drawable/promise40"
-                android:textSize="16sp"
+                android:textSize="15sp"
                 android:singleLine="true"
                 android:text="@string/promises"
                 android:layout_height="wrap_content"/>

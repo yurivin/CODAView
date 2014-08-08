@@ -74,9 +74,9 @@ public class DailyActivity extends MenuAbstractActivity {
     }
 
     private void showSetLanguageDialog(final Context context) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        AlertDialog.Builder builder = new AlertDialog.Builder(context, AlertDialog.THEME_DEVICE_DEFAULT_DARK);
         builder.setTitle("Alert!")
-                .setMessage("Set your preferred language Please!")
+                .setMessage(R.string.setLanguage)
                 .setNegativeButton("ОК",
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {

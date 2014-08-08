@@ -5,7 +5,7 @@
             android:entries="@array/supported_languages"
             android:entryValues="@array/supported_languages_values"
             android:key="language"
-            android:summary="Language of this application"
-            android:title="Select preferred language">
+            android:summary="@string/language_comment"
+            android:title="@string/language">
     </ListPreference>
 </PreferenceScreen>

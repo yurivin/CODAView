@@ -26,7 +26,7 @@
     <string name="time_to">Time to</string>
     <string name="add_comment">Add comment</string>
     <string name="Rate_how_myltc">Rate how much you like this condition</string>
-    <string name="language">Язык(Language)</string>
+    <string name="language">Language</string>
     <string name="howToHelp">How to help</string>
     <string name="helpByTranslate">If you want to help use this application for
         Codependents Anonymous from other countries who speak foreign languages,
@@ -36,9 +36,11 @@
     <string name="e_Email">discours@list.ru</string>
     <string name="prayer">Prayer</string>
     <string name="ready">Ready</string>
+    <string name="setLanguage">Set your language!\nВыберите ваш язык.</string>
+    <string name="language_comment">Set your preferred language Please!</string>
 
     <string-array name="supported_languages">
-        <item>Английский(English)</item>
+        <item>English</item>
         <item>Русский</item>
     </string-array>
     <string-array name="supported_languages_values">
