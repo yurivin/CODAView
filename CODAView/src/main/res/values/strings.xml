@@ -227,6 +227,34 @@
             Amen.\n
             \n
             -- Reinhold Niebuhr (1892-1971)</item>
+        <item>
+            Lord, make me an instrument of Thy peace;\n
+            where there is hatred, let me sow love;\n
+            where there is injury, pardon;\n
+            where there is doubt, faith;\n
+            where there is despair, hope;\n
+            where there is darkness, light;\n
+            and where there is sadness, joy.\n
+            \n
+            O Divine Master,\n
+            grant that I may not so much seek to be consoled as to console;\n
+            to be understood, as to understand;\n
+            to be loved, as to love;\n
+            for it is in giving that we receive,\n
+            it is in pardoning that we are pardoned,\n
+            and it is in dying that we are born to eternal life.\n
+            \n
+            Amen.
+            \n
+            --St. Francis of Assisi (1181-1226)
+        </item>
+
+    </string-array>
+
+    <string-array name="prayertitles">
+        <item>Serenity Prayer</item>
+        <item>Complete Serenity Prayer</item>
+        <item>Prayer for peace</item>
     </string-array>
 
 </resources>
