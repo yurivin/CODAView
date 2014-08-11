@@ -89,9 +89,6 @@ public class NewFeelingsDiaryEntryActivity extends MenuAbstractActivity implemen
         for (int i = 0; i < feelingsList.size(); i++)
             feelingsArray[i] = feelingsList.get(i);
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                R.layout.clickable_text_list_item, feelingsArray);
-
         mCheckedItems = new boolean[feelingsArray.length];
 
         new AlertDialog.Builder(this, AlertDialog.THEME_DEVICE_DEFAULT_DARK)
