@@ -18,6 +18,7 @@
                 style="@style/Widget.Button.MainMenu"
                 android:layout_weight="1"
                 android:text="@string/time_from"
+                android:singleLine="true"
                 android:textSize="18sp"/>
         <Button android:id="@+id/feelTimeTo"
                 android:onClick="clickBtnTimeTo"
@@ -26,6 +27,7 @@
                 style="@style/Widget.Button.MainMenu"
                 android:layout_weight="1"
                 android:text="@string/time_to"
+                android:singleLine="true"
                 android:textSize="18sp"/>
 
     </LinearLayout>
@@ -41,11 +43,12 @@
             style="@style/Widget.Button.MainMenu"/>
 
     <TextView android:id="@+id/RateDescription"
-              android:layout_width="match_parent"
+              android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:layout_above="@+id/feelingsRating"
               android:textColor="#ffff5003"
               android:textSize="20sp"
+              android:singleLine="true"
               android:text="@string/Rate_how_myltc"/>
 
     <RatingBar android:id="@+id/feelingsRating"
