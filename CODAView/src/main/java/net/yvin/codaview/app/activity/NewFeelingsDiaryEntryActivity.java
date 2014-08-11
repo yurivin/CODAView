@@ -26,6 +26,7 @@ public class NewFeelingsDiaryEntryActivity extends MenuAbstractActivity implemen
     float feelingsRating;
     final String DATE_SEPARATOR = "-";
     final String TIME_SEPARATOR = ":";
+    boolean[] mCheckedItems;
 
 
     @Override
@@ -67,22 +68,38 @@ public class NewFeelingsDiaryEntryActivity extends MenuAbstractActivity implemen
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 R.layout.clickable_text_list_item, feelingsArray);
 
-        new AlertDialog.Builder(this, AlertDialog.THEME_DEVICE_DEFAULT_DARK)
-                .setAdapter(adapter, new DialogInterface.OnClickListener() {
+        mCheckedItems = new boolean[feelingsArray.length];
 
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        Log.d("Dialog", "Item selected: " + feelingsArray[which]);
-                        feelingsG.add(feelingsArray[which]);
-                        StringBuilder builder = new StringBuilder();
-                        btnAddFeelings.setTextSize(14);
-                        builder.append(feelingsArray[which]);
-                        builder.append(", ");
-                        builder.append(btnAddFeelings.getText());
-                        btnAddFeelings.setText(builder.toString());
-                    }
-                })
-                .setTitle("Add feeling")
+        new AlertDialog.Builder(this, AlertDialog.THEME_DEVICE_DEFAULT_DARK)
+                .setMultiChoiceItems(feelingsArray, mCheckedItems,
+                        new DialogInterface.OnMultiChoiceClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog,
+                                                int which, boolean isChecked) {
+                                mCheckedItems[which] = isChecked;
+                            }
+                        })
+                .setPositiveButton(R.string.ready,
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog,
+                                                int id) {
+                                StringBuilder builder = new StringBuilder();
+                                btnAddFeelings.setTextSize(14);
+                                btnAddFeelings.setText(R.string.add_filling);
+                                for (int i = 0; i < feelingsArray.length; i++) {
+
+                                    if (mCheckedItems[i]) {
+                                        builder.append(feelingsArray[i]);
+                                        builder.append(", ");
+                                    }
+                                }
+                                builder.append(btnAddFeelings.getText());
+                                btnAddFeelings.setText(builder.toString());
+                                Log.d("Selected feelings", builder.toString());
+                            }
+                        })
+                .setTitle(R.string.add_filling)
                 .setCancelable(true)
                 .show();
 
@@ -125,6 +142,7 @@ public class NewFeelingsDiaryEntryActivity extends MenuAbstractActivity implemen
         TimePickerDialog tpd = new TimePickerDialog(this, AlertDialog.THEME_DEVICE_DEFAULT_DARK,
                 new TimePickerDialog.OnTimeSetListener() {
                     boolean realSetup = false;
+
                     @Override
                     public void onTimeSet(TimePicker view, int hourOfDay,
                                           int minute) {
