@@ -20,13 +20,14 @@ public class NewFeelingsDiaryEntryActivity extends MenuAbstractActivity implemen
 
     int yearFromG, monthOfYearFromG, dayOfMonthFromG, hourOfDayFromG, minuteFromG,
             yearToG, monthOfYearToG, dayOfMonthToG, hourOfDayToG, minuteToG;
-    List<String> feelingsG = new ArrayList<String>();
-    Button btnAddFeelings, btnTimeFrom, btnTimeTo;
+    Button btnAddFeelings, btnTimeFrom, btnTimeTo, btnComment;
     RatingBar ratingBar;
     float feelingsRating;
     final String DATE_SEPARATOR = "-";
     final String TIME_SEPARATOR = ":";
     boolean[] mCheckedItems;
+    List<String> feelingsG;
+    String comment;
 
 
     @Override
@@ -38,6 +39,7 @@ public class NewFeelingsDiaryEntryActivity extends MenuAbstractActivity implemen
         ratingBar.setOnRatingBarChangeListener(this);
         btnTimeFrom = (Button) findViewById(R.id.feelTimeFrom);
         btnTimeTo = (Button) findViewById(R.id.feelTimeTo);
+        btnComment = (Button) findViewById(R.id.btnComment);
     }
 
     public void clickBtnTimeFrom(View v) {
@@ -49,7 +51,29 @@ public class NewFeelingsDiaryEntryActivity extends MenuAbstractActivity implemen
     }
 
     public void clickBtnAddComment(View v) {
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(this, AlertDialog.THEME_DEVICE_DEFAULT_DARK);
+        alertDialog.setTitle(R.string.add_comment);
+        final EditText input = new EditText(this);
+        input.setBackgroundColor(getResources().getColor(R.color.editText));
+        if (comment != null) input.setText(comment);
+        LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.MATCH_PARENT);
+        input.setLayoutParams(lp);
+        alertDialog.setView(input)
+                .setCancelable(true)
+                .setPositiveButton(R.string.ready,
+                        new DialogInterface.OnClickListener() {
 
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                comment = input.getText().toString();
+                                Log.d("Comment text: ", comment);
+                                btnComment.setTextSize(14);
+                                btnComment.setText(comment);
+                            }
+                        })
+                .show();
     }
 
     public void clickBtnFeelings(View v) {
@@ -84,17 +108,18 @@ public class NewFeelingsDiaryEntryActivity extends MenuAbstractActivity implemen
                             @Override
                             public void onClick(DialogInterface dialog,
                                                 int id) {
+                                feelingsG = new ArrayList<>();
                                 StringBuilder builder = new StringBuilder();
                                 btnAddFeelings.setTextSize(14);
                                 btnAddFeelings.setText(R.string.add_filling);
                                 for (int i = 0; i < feelingsArray.length; i++) {
 
                                     if (mCheckedItems[i]) {
+                                        feelingsG.add(feelingsArray[i]);
                                         builder.append(feelingsArray[i]);
                                         builder.append(", ");
                                     }
                                 }
-                                builder.append(btnAddFeelings.getText());
                                 btnAddFeelings.setText(builder.toString());
                                 Log.d("Selected feelings", builder.toString());
                             }
@@ -102,8 +127,6 @@ public class NewFeelingsDiaryEntryActivity extends MenuAbstractActivity implemen
                 .setTitle(R.string.add_filling)
                 .setCancelable(true)
                 .show();
-
-
     }
 
     private void setDateTime(Button btnTime) {
