@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.*;
 import net.yvin.codaview.app.R;
 import net.yvin.codaview.app.activity.base.MenuAbstractActivity;
+import net.yvin.codaview.app.utils.AssetsWriter;
 
 import java.util.*;
 
@@ -20,15 +21,15 @@ public class NewFeelingsDiaryEntryActivity extends MenuAbstractActivity implemen
 
     int yearFromG, monthOfYearFromG, dayOfMonthFromG, hourOfDayFromG, minuteFromG,
             yearToG, monthOfYearToG, dayOfMonthToG, hourOfDayToG, minuteToG;
-    Button btnAddFeelings, btnTimeFrom, btnTimeTo, btnComment;
+    Button btnAddFeelings, btnTimeFrom, btnTimeTo, btnComment, btnReady;
     RatingBar ratingBar;
     float feelingsRating;
     final String DATE_SEPARATOR = "-";
     final String TIME_SEPARATOR = ":";
     boolean[] mCheckedItems;
-    List<String> feelingsG;
+    List<String> selectedFeelings;
     String comment;
-
+    AssetsWriter assetsWriter = new AssetsWriter(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +41,7 @@ public class NewFeelingsDiaryEntryActivity extends MenuAbstractActivity implemen
         btnTimeFrom = (Button) findViewById(R.id.feelTimeFrom);
         btnTimeTo = (Button) findViewById(R.id.feelTimeTo);
         btnComment = (Button) findViewById(R.id.btnComment);
+        btnReady = (Button) findViewById(R.id.btnReady);
     }
 
     public void clickBtnTimeFrom(View v) {
@@ -76,6 +78,12 @@ public class NewFeelingsDiaryEntryActivity extends MenuAbstractActivity implemen
                 .show();
     }
 
+    public void clickBtnReady(View v) {
+        assetsWriter.feelingsDiary(String.valueOf(yearFromG), String.valueOf(monthOfYearFromG), String.valueOf(dayOfMonthFromG), String.valueOf(hourOfDayFromG), String.valueOf(minuteFromG),
+                String.valueOf(yearToG), String.valueOf(monthOfYearToG), String.valueOf(dayOfMonthToG), String.valueOf(hourOfDayToG), String.valueOf(minuteToG),
+                String.valueOf(feelingsRating), selectedFeelings.toString(), comment);
+    }
+
     public void clickBtnFeelings(View v) {
 
         List<String> feelingsList = new ArrayList(Arrays.asList(getResources().getStringArray(R.array.afraid_feelings)));
@@ -105,14 +113,14 @@ public class NewFeelingsDiaryEntryActivity extends MenuAbstractActivity implemen
                             @Override
                             public void onClick(DialogInterface dialog,
                                                 int id) {
-                                feelingsG = new ArrayList<>();
+                                selectedFeelings = new ArrayList<>();
                                 StringBuilder builder = new StringBuilder();
                                 btnAddFeelings.setTextSize(14);
                                 btnAddFeelings.setText(R.string.add_filling);
                                 for (int i = 0; i < feelingsArray.length; i++) {
 
                                     if (mCheckedItems[i]) {
-                                        feelingsG.add(feelingsArray[i]);
+                                        selectedFeelings.add(feelingsArray[i]);
                                         builder.append(feelingsArray[i]);
                                         builder.append(", ");
                                     }

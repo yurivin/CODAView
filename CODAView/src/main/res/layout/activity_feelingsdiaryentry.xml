@@ -67,7 +67,7 @@
             style="@style/Widget.Button.MainMenu"/>
 
     <Button android:id="@+id/btnReady"
-            android:onClick="clickBtnAddComment"
+            android:onClick="clickBtnReady"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
