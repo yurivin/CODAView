@@ -37,7 +37,7 @@
     <string name="prayer">Prayer</string>
     <string name="ready">Ready</string>
     <string name="setLanguage">Set your language!\nВыберите ваш язык.</string>
-    <string name="language_comment">Set your preferred language Please!</string>
+    <string name="language_comment">Click to set language!</string>
 
     <string-array name="supported_languages">
         <item>English</item>
