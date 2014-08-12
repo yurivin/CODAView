@@ -33,7 +33,6 @@ public class DailyActivity extends MenuAbstractActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_daily);
-        checkLanguage(this);
         String dailyId = DateUtils.nowToDailyId();
         if (getIntent() != null) {
             Intent intent = getIntent();
@@ -59,33 +58,5 @@ public class DailyActivity extends MenuAbstractActivity {
         sumTv = (TextView) findViewById(R.id.sumTv);
         sumTv.setText(txtReader.getAssets(PathService.dailySum(dailyId)));
 
-    }
-
-    private void checkLanguage(final Context context) {
-        if (!LanguageContext.isSupportedlanguage(LanguageContext.getDefaultLanguage()))
-            checkPreferencesLanguage(context);
-    }
-
-    private void checkPreferencesLanguage(final Context context) {
-        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
-        if ("".equals(sp.getString("language", "")))
-                showSetLanguageDialog(context);
-        LanguageContext.setLanguage(this);
-    }
-
-    private void showSetLanguageDialog(final Context context) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(context, AlertDialog.THEME_DEVICE_DEFAULT_DARK);
-        builder.setTitle("Alert!")
-                .setMessage(R.string.setLanguage)
-                .setNegativeButton("ОК",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                startActivity(new Intent(context, SettingsActivity.class));
-                                dialog.cancel();
-                                ((Activity) context).finish();
-                            }
-                        });
-        AlertDialog alert = builder.create();
-        alert.show();
     }
 }

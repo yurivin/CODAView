@@ -15,7 +15,6 @@ public class MenuExpandableListAbstractActivity extends ExpandableListActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        LanguageContext.setLanguage(this);
     }
 
     @Override

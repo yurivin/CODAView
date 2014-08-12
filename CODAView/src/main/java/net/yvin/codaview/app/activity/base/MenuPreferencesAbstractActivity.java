@@ -15,7 +15,6 @@ public class MenuPreferencesAbstractActivity extends PreferenceActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        LanguageContext.setLanguage(this);
     }
 
     @Override

@@ -20,8 +20,8 @@ public class LanguageContext {
     public static String getLanguage() {
         String language = Locale.getDefault().getLanguage();
         Log.d("language ", language);
-        if (!"en".equals(language)) {
-            return "ru";
+        if (!isSupportedlanguage(language)) {
+            return "en";
         }
         return language;
     }
@@ -31,22 +31,5 @@ public class LanguageContext {
             if(language.equals(supportedLanguages[i])) return true;
         }
         return false;
-    }
-
-    public static String getDefaultLanguage() {
-        Log.d("default language: ", Locale.getDefault().getLanguage());
-        return Locale.getDefault().getLanguage();
-    }
-
-    public static void setLanguage(Context context) {
-        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
-        Resources res = context.getResources();
-        // Change locale settings in the app.
-        DisplayMetrics dm = res.getDisplayMetrics();
-        android.content.res.Configuration conf = res.getConfiguration();
-        String language = sp.getString("language", "").toLowerCase();
-        conf.locale = new Locale(language);
-        res.updateConfiguration(conf, dm);
-        Locale.setDefault(new Locale(language));
     }
 }
