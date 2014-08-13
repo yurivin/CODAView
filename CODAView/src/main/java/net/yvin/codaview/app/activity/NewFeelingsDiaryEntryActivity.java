@@ -11,6 +11,7 @@ import android.widget.*;
 import net.yvin.codaview.app.R;
 import net.yvin.codaview.app.activity.base.MenuAbstractActivity;
 import net.yvin.codaview.app.utils.AssetsWriter;
+import net.yvin.codaview.app.utils.FeelingDiaryReader;
 
 import java.util.*;
 
@@ -82,6 +83,7 @@ public class NewFeelingsDiaryEntryActivity extends MenuAbstractActivity implemen
         assetsWriter.feelingsDiary(String.valueOf(yearFromG), String.valueOf(monthOfYearFromG), String.valueOf(dayOfMonthFromG), String.valueOf(hourOfDayFromG), String.valueOf(minuteFromG),
                 String.valueOf(yearToG), String.valueOf(monthOfYearToG), String.valueOf(dayOfMonthToG), String.valueOf(hourOfDayToG), String.valueOf(minuteToG),
                 String.valueOf(feelingsRating), selectedFeelings.toString(), comment);
+        FeelingDiaryReader.readAll();
     }
 
     public void clickBtnFeelings(View v) {

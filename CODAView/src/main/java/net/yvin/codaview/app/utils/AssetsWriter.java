@@ -29,23 +29,13 @@ public class AssetsWriter {
         String fileName = folder.toString() + "/" + "feelingsdiary.csv";
 
         try {
-            FileWriter fileWriter = new FileWriter(fileName);
+            FileWriter fileWriter = new FileWriter(fileName, true);
             CSVWriter writer = new CSVWriter(fileWriter, '\t');
             String[] entries = new String[] {yearfrom, monthFrom, dayFrom, hourFrom, minutefrom,
             yearTo, monthTo, dayTo, hourTo, minuteTo, feelingRating, selectedFeelings, comment};
             Log.d("Entries: ", entries[12]);
             writer.writeNext(entries);
             writer.close();
-            CSVReader reader = new CSVReader(new FileReader(fileName), '\t');
-            List<String[]> entriesList = reader.readAll();
-            StringBuilder builder = new StringBuilder();
-            for(String[] entry : entriesList) {
-                for(String part : entry) {
-                    builder.append(part);
-                    builder.append(",");
-                }
-            }
-            Log.d("CSV entries", builder.toString());
         } catch (IOException e) {
             e.printStackTrace();
         }

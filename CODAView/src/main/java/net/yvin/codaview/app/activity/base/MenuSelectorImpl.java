@@ -20,6 +20,7 @@ public class MenuSelectorImpl implements MenuSelector {
         this.activity = activity;
     }
 
+    @Override
     public void select() {
         switch (item.getItemId()) {
             case R.id.action_menu:
