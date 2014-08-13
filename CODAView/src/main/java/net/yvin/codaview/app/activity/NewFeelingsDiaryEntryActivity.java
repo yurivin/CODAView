@@ -154,12 +154,12 @@ public class NewFeelingsDiaryEntryActivity extends MenuAbstractActivity implemen
                                 + (monthOfYear + 1) + "-" + year);
                         if (btnTime.equals(btnTimeFrom)) {
                             yearFromG = year;
-                            monthOfYearFromG = monthOfYear;
+                            monthOfYearFromG = monthOfYear + 1;
                             dayOfMonthFromG = dayOfMonth;
                             btnTime.setText(dayOfMonthFromG + DATE_SEPARATOR + monthOfYearFromG + DATE_SEPARATOR + yearFromG + "   ");
                         } else if (btnTime.equals(btnTimeTo)) {
                             yearToG = year;
-                            monthOfYearToG = monthOfYear;
+                            monthOfYearToG = monthOfYear + 1;
                             dayOfMonthToG = dayOfMonth;
                             btnTime.setText(dayOfMonthToG + DATE_SEPARATOR + monthOfYearToG + DATE_SEPARATOR + yearToG + "   ");
                         }
