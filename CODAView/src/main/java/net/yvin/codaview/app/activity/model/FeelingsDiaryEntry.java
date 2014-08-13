@@ -46,10 +46,10 @@ public class FeelingsDiaryEntry {
     private String[] getFeelings(String feelingsdata) {
         String feelings =  feelingsdata.replace("[", "");
         feelings = feelings.replace("]", "");
-        StringTokenizer tokenizer = new StringTokenizer(", ");
+        StringTokenizer tokenizer = new StringTokenizer(feelings, ", ");
         String[] feelingsArray = new String[tokenizer.countTokens()];
         for (int i = 0; i < feelingsArray.length; i++) {
-            feelingsArray[i] = tokenizer.nextToken();
+            feelingsArray[i] = (String) tokenizer.nextElement();
         }
         StringBuilder builder = new StringBuilder();
         for(String part : feelingsArray) {
