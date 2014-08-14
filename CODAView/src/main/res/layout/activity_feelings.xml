@@ -23,7 +23,7 @@
             android:orientation="horizontal"
             android:layout_alignParentBottom="true">
 
-        <Button
+ <!--       <Button
                 android:id="@+id/btnAnalitics"
                 android:onClick="clickBtnAnalitics"
                 android:layout_weight="1"
@@ -42,7 +42,7 @@
                 android:layout_marginLeft="0dp"
                 android:layout_marginRight="5dp"
                 android:textSize="17sp"
-                android:text="@string/traditions"
-                android:layout_height="wrap_content"/>
+                android:text="@string/sort"
+                android:layout_height="wrap_content"/> -->
     </LinearLayout>
 </RelativeLayout>

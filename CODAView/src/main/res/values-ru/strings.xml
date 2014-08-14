@@ -41,6 +41,7 @@
     <string name="rating">Оценка</string>
     <string name="comment">Комментарий</string>
     <string name="intensity">Интенсивность</string>
+    <string name="sort">Порядок</string>
 
     <string-array name="steps">
         <item>Мы признали своё бессилие перед другими, признали, что наша жизнь перестала поддаваться контролю.</item>
