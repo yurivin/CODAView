@@ -41,8 +41,11 @@ public class DiaryService {
         for (int i = 0; i < diaryEntries.size(); i++) {
             FeelingsDiaryEntry entry = list.get(i);
             String feelings = new String();
-            for(String feeling : entry.selectedFeelings)
-                feelings = feelings + feeling + Constants.COMMA_SPACE;
+            for(int y = 0; y < entry.selectedFeelings.length; y++) {
+                feelings = feelings + entry.selectedFeelings[y];
+                if(y < entry.selectedFeelings.length - 1 ) feelings = feelings + Constants.COMMA_SPACE;
+                        else feelings = feelings + ".";
+            }
 
             content[i] = context.getString(R.string.until) + Constants.DOUBLE_POINT + Constants.SPACE + entry.yearTo +
                     Constants.DEFICE + entry.monthTo + Constants.DEFICE + entry.dayTo + Constants.SPACE +
