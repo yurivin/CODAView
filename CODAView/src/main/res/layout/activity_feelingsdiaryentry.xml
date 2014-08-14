@@ -42,6 +42,22 @@
             android:layout_marginRight="5dp"
             style="@style/Widget.Button.MainMenu"/>
 
+    <TextView android:id="@+id/IntensityDescription"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_above="@+id/feelingsIntensity"
+              android:textColor="#ffff5003"
+              android:textSize="20sp"
+              android:singleLine="true"
+              android:text="@string/Rate_how_myltc"/>
+
+    <RatingBar android:id="@+id/feelingsIntensity"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_centerHorizontal="true"
+               android:numStars="5"
+               android:layout_above="@+id/RateDescription"/>
+
     <TextView android:id="@+id/RateDescription"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
