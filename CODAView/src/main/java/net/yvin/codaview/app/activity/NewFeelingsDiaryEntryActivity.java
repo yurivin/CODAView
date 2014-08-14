@@ -23,8 +23,8 @@ public class NewFeelingsDiaryEntryActivity extends MenuAbstractActivity implemen
     int yearFromG, monthOfYearFromG, dayOfMonthFromG, hourOfDayFromG, minuteFromG,
             yearToG, monthOfYearToG, dayOfMonthToG, hourOfDayToG, minuteToG;
     Button btnAddFeelings, btnTimeFrom, btnTimeTo, btnComment, btnReady;
-    RatingBar ratingBar;
-    float feelingsRating;
+    RatingBar ratingBar, intensityBar;
+    float feelingsRating, feelingsIntensity;
     final String DATE_SEPARATOR = "-";
     final String TIME_SEPARATOR = ":";
     boolean[] mCheckedItems;
@@ -39,6 +39,8 @@ public class NewFeelingsDiaryEntryActivity extends MenuAbstractActivity implemen
         btnAddFeelings = (Button) findViewById(R.id.btnFeelings);
         ratingBar = (RatingBar) findViewById(R.id.feelingsRating);// create RatingBar object
         ratingBar.setOnRatingBarChangeListener(this);
+        intensityBar = (RatingBar) findViewById(R.id.feelingsIntensity);// create RatingBar object
+        intensityBar.setOnRatingBarChangeListener(this);
         btnTimeFrom = (Button) findViewById(R.id.feelTimeFrom);
         btnTimeTo = (Button) findViewById(R.id.feelTimeTo);
         btnComment = (Button) findViewById(R.id.btnComment);
@@ -81,7 +83,7 @@ public class NewFeelingsDiaryEntryActivity extends MenuAbstractActivity implemen
 
     public void clickBtnReady(View v) {
         assetsWriter.feelingsDiary(String.valueOf(yearFromG), String.valueOf(monthOfYearFromG), String.valueOf(dayOfMonthFromG), String.valueOf(hourOfDayFromG), String.valueOf(minuteFromG),
-                String.valueOf(yearToG), String.valueOf(monthOfYearToG), String.valueOf(dayOfMonthToG), String.valueOf(hourOfDayToG), String.valueOf(minuteToG),
+                String.valueOf(yearToG), String.valueOf(monthOfYearToG), String.valueOf(dayOfMonthToG), String.valueOf(hourOfDayToG), String.valueOf(minuteToG), String.valueOf(feelingsIntensity),
                 String.valueOf(feelingsRating), selectedFeelings.toString(), comment);
     }
 
@@ -193,6 +195,12 @@ public class NewFeelingsDiaryEntryActivity extends MenuAbstractActivity implemen
 
     @Override
     public void onRatingChanged(RatingBar ratingBar, float v, boolean b) {
-        feelingsRating = ratingBar.getRating();
+        switch(ratingBar.getId()) {
+            case R.id.feelingsRating :
+                feelingsRating = ratingBar.getRating();
+            case R.id.feelingsIntensity :
+                feelingsIntensity = ratingBar.getRating();
+        }
+
     }
 }

@@ -12,7 +12,7 @@ import java.util.StringTokenizer;
 public class FeelingsDiaryEntry {
 
     public FeelingsDiaryEntry(String yearFrom, String monthFrom, String dayFrom, String hourFrom, String minuteFrom,
-                             String yearTo, String monthTo, String dayTo, String hourTo, String minuteTo,
+                             String yearTo, String monthTo, String dayTo, String hourTo, String minuteTo, String feelingsIntensity,
                              String feelingRating, String selectedFeelings, String comment) {
         this.yearFrom = yearFrom;
         this.monthFrom = monthFrom;
@@ -24,6 +24,7 @@ public class FeelingsDiaryEntry {
         this.dayTo = dayTo;
         this.hourTo = hourTo;
         this.minuteTo = minuteTo;
+        this.feelingsIntensity = feelingsIntensity;
         this.feelingRating = feelingRating;
         this.selectedFeelings = getFeelings(selectedFeelings);
         this.comment = comment;
@@ -39,6 +40,7 @@ public class FeelingsDiaryEntry {
     public final String dayTo;
     public final String hourTo;
     public final String minuteTo;
+    public final String feelingsIntensity;
     public final String feelingRating;
     public final String[] selectedFeelings;
     public final String comment;

@@ -21,8 +21,8 @@ public class AssetsWriter {
         this.context = context;
     }
 
-    public void feelingsDiary(String yearfrom, String monthFrom, String dayFrom, String hourFrom, String minutefrom,
-                              String yearTo, String monthTo, String dayTo, String hourTo, String minuteTo,
+    public void feelingsDiary(String yearFrom, String monthFrom, String dayFrom, String hourFrom, String minuteFrom,
+                              String yearTo, String monthTo, String dayTo, String hourTo, String minuteTo, String feelingsIntensity,
                               String feelingRating, String selectedFeelings, String comment) {
         Log.d("comment from AssetsWriter", comment);
         File folder = (Environment.getExternalStorageDirectory());
@@ -31,9 +31,9 @@ public class AssetsWriter {
         try {
             FileWriter fileWriter = new FileWriter(fileName, true);
             CSVWriter writer = new CSVWriter(fileWriter, '\t');
-            String[] entries = new String[] {yearfrom, monthFrom, dayFrom, hourFrom, minutefrom,
-            yearTo, monthTo, dayTo, hourTo, minuteTo, feelingRating, selectedFeelings, comment};
-            Log.d("Entries: ", entries[12]);
+            String[] entries = new String[] {yearFrom, monthFrom, dayFrom, hourFrom, minuteFrom,
+            yearTo, monthTo, dayTo, hourTo, minuteTo, feelingsIntensity, feelingRating, selectedFeelings, comment};
+            Log.d("Entries: ", entries[13]);
             writer.writeNext(entries);
             writer.close();
         } catch (IOException e) {
