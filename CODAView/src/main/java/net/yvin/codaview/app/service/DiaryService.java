@@ -25,6 +25,12 @@ public class DiaryService {
 
     public static String[] getContent(Set<FeelingsDiaryEntry> diaryEntries) {
         String[] content = new String[diaryEntries.size()];
+        List<FeelingsDiaryEntry> list = new ArrayList<>(diaryEntries);
+        for (int i = 0; i < diaryEntries.size(); i++) {
+            FeelingsDiaryEntry entry = list.get(i);
+            content[i] = entry.yearTo + Constants.DEFICE + entry.monthFrom + Constants.DEFICE + entry.dayFrom + Constants.SPACE +
+                    entry.hourFrom + Constants.DOUBLE_POINT + entry.minuteFrom;
+        }
         return content;
     }
 }
