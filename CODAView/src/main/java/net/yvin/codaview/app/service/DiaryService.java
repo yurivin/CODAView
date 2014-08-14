@@ -40,8 +40,19 @@ public class DiaryService {
         List<FeelingsDiaryEntry> list = new ArrayList<>(diaryEntries);
         for (int i = 0; i < diaryEntries.size(); i++) {
             FeelingsDiaryEntry entry = list.get(i);
-            content[i] = context.getString(R.string.until) + Constants.DOUBLE_POINT + Constants.SPACE + entry.yearTo + Constants.DEFICE + entry.monthTo + Constants.DEFICE + entry.dayTo + Constants.SPACE +
-                    entry.hourTo + Constants.DOUBLE_POINT + entry.minuteTo;
+            String feelings = new String();
+            for(String feeling : entry.selectedFeelings)
+                feelings = feelings + feeling + Constants.COMMA_SPACE;
+
+            content[i] = context.getString(R.string.until) + Constants.DOUBLE_POINT + Constants.SPACE + entry.yearTo +
+                    Constants.DEFICE + entry.monthTo + Constants.DEFICE + entry.dayTo + Constants.SPACE +
+                    entry.hourTo + Constants.DOUBLE_POINT + entry.minuteTo +
+            Constants.NEW_LINE + Constants.NEW_LINE +
+                    context.getString(R.string.rating) + Constants.DOUBLE_POINT + Constants.SPACE +  entry.feelingRating +
+            Constants.NEW_LINE + Constants.NEW_LINE +
+                    context.getString(R.string.feelings) + Constants.DOUBLE_POINT + Constants.SPACE + feelings +
+            Constants.NEW_LINE + Constants.NEW_LINE +
+                    context.getString(R.string.comment) + Constants.DOUBLE_POINT + Constants.SPACE + entry.comment;
         }
         for(String string : content) {
             Log.d("Content: ", string);

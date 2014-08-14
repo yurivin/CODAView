@@ -34,5 +34,8 @@ public class Constants {
 
     public static final String DEFICE = "-";
     public static final String DOUBLE_POINT = ":";
+    public static final String COMMA_SPACE = ", ";
+
+    public static final String NEW_LINE = " \n";
 
 }

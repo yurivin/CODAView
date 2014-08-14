@@ -37,6 +37,8 @@
     <string name="ready">Готово</string>
     <string name="setLanguage">Выберите ваш язык.</string>
     <string name="until">До</string>
+    <string name="rating">Оценка</string>
+    <string name="comment">Комментарий</string>
 
     <string-array name="steps">
         <item>Мы признали своё бессилие перед другими, признали, что наша жизнь перестала поддаваться контролю.</item>
