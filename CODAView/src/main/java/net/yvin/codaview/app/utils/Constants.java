@@ -32,4 +32,7 @@ public class Constants {
     public static final String SUM = "sum";
     public static final String EXTENSION = "extension";
 
+    public static final String DEFICE = "-";
+    public static final String DOUBLE_POINT = ":";
+
 }
