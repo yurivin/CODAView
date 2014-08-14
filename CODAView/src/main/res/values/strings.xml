@@ -44,7 +44,6 @@
     <string name="feelings">Feelings</string>
     <string name="comment">Comment</string>
     <string name="intensity">Intensity</string>
-    <string name="sort">Sort</string>
 
 
     <string-array name="supported_languages">
