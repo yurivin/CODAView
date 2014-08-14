@@ -55,6 +55,7 @@
         <activity
                 android:name=".activity.FeelingsDiaryActivity"
                 android:label="@string/feelings_diary"
+                android:theme="@style/ActivityTheme"
                 android:screenOrientation="portrait">
         </activity>
         <activity
@@ -70,7 +71,7 @@
         <activity
                 android:name=".activity.PrayerActivity"
                 android:label="@string/prayer"
-                android:theme="@style/ActivityTheme"
+
                 android:screenOrientation="portrait">
         </activity>
         <activity

@@ -33,16 +33,16 @@ public class PrayerActivity extends MenuExpandableListAbstractActivity {
         String[] childFrom = new String[]{"content"};
         int[] childTo = new int[]{android.R.id.text1};
 
-        groupData = new ArrayList<Map<String, String>>();
+        groupData = new ArrayList<>();
         for (String group : prayTitles) {
-            m = new HashMap<String, String>();
+            m = new HashMap<>();
             m.put("title", group);
             groupData.add(m);
         }
-        childData = new ArrayList<ArrayList<Map<String, String>>>();
+        childData = new ArrayList<>();
         for (String content : prayContent) {
-            childDataItem = new ArrayList<Map<String, String>>();
-            m = new HashMap<String, String>();
+            childDataItem = new ArrayList<>();
+            m = new HashMap<>();
             m.put("content", content);
             childDataItem.add(m);
             childData.add(childDataItem);
