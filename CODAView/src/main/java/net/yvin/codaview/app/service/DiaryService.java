@@ -51,6 +51,8 @@ public class DiaryService {
                     Constants.DEFICE + entry.monthTo + Constants.DEFICE + entry.dayTo + Constants.SPACE +
                     entry.hourTo + Constants.DOUBLE_POINT + entry.minuteTo +
             Constants.NEW_LINE + Constants.NEW_LINE +
+                    context.getString(R.string.intensity) + Constants.DOUBLE_POINT + Constants.SPACE +  entry.feelingsIntensity +
+            Constants.NEW_LINE + Constants.NEW_LINE +
                     context.getString(R.string.rating) + Constants.DOUBLE_POINT + Constants.SPACE +  entry.feelingRating +
             Constants.NEW_LINE + Constants.NEW_LINE +
                     context.getString(R.string.feelings) + Constants.DOUBLE_POINT + Constants.SPACE + feelings +
