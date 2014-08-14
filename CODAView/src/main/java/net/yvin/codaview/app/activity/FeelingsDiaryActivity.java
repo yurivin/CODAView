@@ -36,7 +36,6 @@ public class FeelingsDiaryActivity extends MenuAbstractActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feelings);
         expListView = (ExpandableListView) findViewById(R.id.entries);
-        Resources res = getResources();
         getData();
         String[] groupFrom = new String[]{"title"};
         int[] groupTo = new int[]{android.R.id.text1};
