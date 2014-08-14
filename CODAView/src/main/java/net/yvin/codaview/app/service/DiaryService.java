@@ -40,7 +40,7 @@ public class DiaryService {
         List<FeelingsDiaryEntry> list = new ArrayList<>(diaryEntries);
         for (int i = 0; i < diaryEntries.size(); i++) {
             FeelingsDiaryEntry entry = list.get(i);
-            content[i] = context.getString(R.string.until) + entry.yearTo + Constants.DEFICE + entry.monthTo + Constants.DEFICE + entry.dayTo + Constants.SPACE +
+            content[i] = context.getString(R.string.until) + Constants.DOUBLE_POINT + Constants.SPACE + entry.yearTo + Constants.DEFICE + entry.monthTo + Constants.DEFICE + entry.dayTo + Constants.SPACE +
                     entry.hourTo + Constants.DOUBLE_POINT + entry.minuteTo;
         }
         for(String string : content) {
