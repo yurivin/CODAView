@@ -5,21 +5,16 @@
                 android:background="@color/background"
                 android:layout_height="match_parent">
 
-    <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_above="@+id/layoutFillingsButtons">
-        <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:layout_above="@+id/layoutFillingsButtons">
             <ExpandableListView android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:id="@+id/entries"
                                 android:cacheColorHint="@color/background"
-                                android:background="@color/background">
+                                android:background="@color/background"
+                                android:layout_above="@+id/layoutFillingsButtons">
             </ExpandableListView>
-        </RelativeLayout>
-    </ScrollView>
 
     <LinearLayout
             android:id="@+id/layoutFillingsButtons"
