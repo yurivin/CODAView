@@ -69,8 +69,9 @@ public class FeelingsDiaryActivity extends MenuAbstractActivity {
     }
 
     private void getData() {
+        DiaryService diaryService = new DiaryService(this);
         Set<FeelingsDiaryEntry> diaryEntries = FeelingDiaryReader.readAll();
-        feelingsTitles = DiaryService.getTitles(diaryEntries);
-        feelingsContent = DiaryService.getContent(diaryEntries);
+        feelingsTitles = diaryService.getTitles(diaryEntries);
+        feelingsContent = diaryService.getContent(diaryEntries);
     }
 }

@@ -38,6 +38,7 @@
     <string name="ready">Ready</string>
     <string name="setLanguage">Set your language!\nВыберите ваш язык.</string>
     <string name="language_comment">Click to set language!</string>
+    <string name="until">Until</string>
 
     <string-array name="supported_languages">
         <item>English</item>

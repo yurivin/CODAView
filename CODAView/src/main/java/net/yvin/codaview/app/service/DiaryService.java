@@ -1,6 +1,8 @@
 package net.yvin.codaview.app.service;
 
+import android.content.Context;
 import android.util.Log;
+import net.yvin.codaview.app.R;
 import net.yvin.codaview.app.activity.model.FeelingsDiaryEntry;
 import net.yvin.codaview.app.utils.Constants;
 
@@ -13,7 +15,13 @@ import java.util.Set;
  */
 public class DiaryService {
 
-    public static String[] getTitles(Set<FeelingsDiaryEntry> diaryEntries) {
+    Context context;
+
+    public DiaryService(Context context){
+        this.context = context;
+    }
+
+    public String[] getTitles(Set<FeelingsDiaryEntry> diaryEntries) {
         String[] titles = new String[diaryEntries.size()];
         List<FeelingsDiaryEntry> list = new ArrayList<>(diaryEntries);
         for (int i = 0; i < diaryEntries.size(); i++) {
@@ -27,12 +35,12 @@ public class DiaryService {
         return titles;
     }
 
-    public static String[] getContent(Set<FeelingsDiaryEntry> diaryEntries) {
+    public String[] getContent(Set<FeelingsDiaryEntry> diaryEntries) {
         String[] content = new String[diaryEntries.size()];
         List<FeelingsDiaryEntry> list = new ArrayList<>(diaryEntries);
         for (int i = 0; i < diaryEntries.size(); i++) {
             FeelingsDiaryEntry entry = list.get(i);
-            content[i] = entry.yearTo + Constants.DEFICE + entry.monthTo + Constants.DEFICE + entry.dayTo + Constants.SPACE +
+            content[i] = context.getString(R.string.until) + entry.yearTo + Constants.DEFICE + entry.monthTo + Constants.DEFICE + entry.dayTo + Constants.SPACE +
                     entry.hourTo + Constants.DOUBLE_POINT + entry.minuteTo;
         }
         for(String string : content) {
