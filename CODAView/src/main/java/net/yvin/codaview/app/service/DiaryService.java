@@ -10,10 +10,10 @@ import java.util.Set;
 public class DiaryService {
 
     public static String[] getTitles(Set<FeelingsDiaryEntry> diaryEntries) {
-
+        String[] titles = new String[diaryEntries.size()];
     }
 
     public static String[] getContent(Set<FeelingsDiaryEntry> diaryEntries) {
-
+        String[] content = new String[diaryEntries.size()];
     }
 }
