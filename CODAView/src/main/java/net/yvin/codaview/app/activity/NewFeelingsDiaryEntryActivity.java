@@ -40,7 +40,12 @@ public class NewFeelingsDiaryEntryActivity extends MenuAbstractActivity implemen
         ratingBar = (RatingBar) findViewById(R.id.feelingsRating);// create RatingBar object
         ratingBar.setOnRatingBarChangeListener(this);
         intensityBar = (RatingBar) findViewById(R.id.feelingsIntensity);// create RatingBar object
-        intensityBar.setOnRatingBarChangeListener(this);
+        intensityBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+            @Override
+            public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
+                feelingsIntensity = ratingBar.getRating();
+            }
+        });
         btnTimeFrom = (Button) findViewById(R.id.feelTimeFrom);
         btnTimeTo = (Button) findViewById(R.id.feelTimeTo);
         btnComment = (Button) findViewById(R.id.btnComment);
@@ -195,12 +200,6 @@ public class NewFeelingsDiaryEntryActivity extends MenuAbstractActivity implemen
 
     @Override
     public void onRatingChanged(RatingBar ratingBar, float v, boolean b) {
-        switch(ratingBar.getId()) {
-            case R.id.feelingsRating :
                 feelingsRating = ratingBar.getRating();
-            case R.id.feelingsIntensity :
-                feelingsIntensity = ratingBar.getRating();
-        }
-
     }
 }
