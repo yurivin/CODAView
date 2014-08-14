@@ -6,12 +6,12 @@
                 android:layout_height="match_parent">
 
     <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/layoutFillingsButtons">
-        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/layoutFillingsButtons">
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
             <ExpandableListView android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:id="@+id/entries"
@@ -22,31 +22,32 @@
     </ScrollView>
 
     <LinearLayout
-        android:id="@+id/layoutFillingsButtons"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true">
-
- <!--       <Button
-            android:id="@+id/btnAnalitics"
-            android:onClick="clickBtnAnalitics"
-            android:layout_weight="1"
-            style="@style/Widget.Button.MainMenu"
-            android:layout_marginLeft="2dp"
-            android:layout_marginRight="2dp"
-            android:textSize="17sp"
-            android:text="@string/statistics"
-            android:layout_height="wrap_content"/>
+            android:id="@+id/layoutFillingsButtons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_alignParentBottom="true">
 
         <Button
-            android:id="@+id/btnSort"
-            android:onClick="clickBtnSort"
-            android:layout_weight="1"
-            style="@style/Widget.Button.MainMenu"
-            android:layout_marginLeft="0dp"
-            android:layout_marginRight="5dp"
-            android:textSize="17sp"
-            android:text="@string/traditions"
-            android:layout_height="wrap_content"/> -->
+                android:id="@+id/btnAnalitics"
+                android:onClick="clickBtnAnalitics"
+                android:layout_weight="1"
+                style="@style/Widget.Button.MainMenu"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:textSize="17sp"
+                android:text="@string/statistics"
+                android:layout_height="wrap_content"/>
+
+        <Button
+                android:id="@+id/btnSort"
+                android:onClick="clickBtnSort"
+                android:layout_weight="1"
+                style="@style/Widget.Button.MainMenu"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="5dp"
+                android:textSize="17sp"
+                android:text="@string/traditions"
+                android:layout_height="wrap_content"/>
     </LinearLayout>
 </RelativeLayout>
