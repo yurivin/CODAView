@@ -4,12 +4,17 @@ import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.LayerDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.*;
 import net.yvin.codaview.app.R;
 import net.yvin.codaview.app.activity.base.MenuAbstractActivity;
+import net.yvin.codaview.app.activity.utils.ActivityLuncher;
 import net.yvin.codaview.app.activity.utils.StorageChecker;
 import net.yvin.codaview.app.utils.AssetsWriter;
 import net.yvin.codaview.app.utils.FeelingDiaryReader;
@@ -40,6 +45,8 @@ public class NewFeelingsDiaryEntryActivity extends MenuAbstractActivity implemen
         btnAddFeelings = (Button) findViewById(R.id.btnFeelings);
         ratingBar = (RatingBar) findViewById(R.id.feelingsRating);// create RatingBar object
         ratingBar.setOnRatingBarChangeListener(this);
+        LayerDrawable stars = (LayerDrawable) ratingBar.getProgressDrawable();
+        stars.getDrawable(2).setColorFilter(getResources().getColor(R.color.editText), PorterDuff.Mode.SRC_ATOP);
         intensityBar = (RatingBar) findViewById(R.id.feelingsIntensity);// create RatingBar object
         intensityBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
             @Override
@@ -47,6 +54,8 @@ public class NewFeelingsDiaryEntryActivity extends MenuAbstractActivity implemen
                 feelingsIntensity = ratingBar.getRating();
             }
         });
+        stars = (LayerDrawable) intensityBar.getProgressDrawable();
+        stars.getDrawable(2).setColorFilter(getResources().getColor(R.color.editText), PorterDuff.Mode.SRC_ATOP);
         btnTimeFrom = (Button) findViewById(R.id.feelTimeFrom);
         btnTimeTo = (Button) findViewById(R.id.feelTimeTo);
         btnComment = (Button) findViewById(R.id.btnComment);
@@ -88,9 +97,11 @@ public class NewFeelingsDiaryEntryActivity extends MenuAbstractActivity implemen
     }
 
     public void clickBtnReady(View v) {
+
         assetsWriter.feelingsDiary(String.valueOf(yearFromG), String.valueOf(monthOfYearFromG), String.valueOf(dayOfMonthFromG), String.valueOf(hourOfDayFromG), String.valueOf(minuteFromG),
                 String.valueOf(yearToG), String.valueOf(monthOfYearToG), String.valueOf(dayOfMonthToG), String.valueOf(hourOfDayToG), String.valueOf(minuteToG), String.valueOf(feelingsIntensity),
                 String.valueOf(feelingsRating), selectedFeelings.toString(), comment);
+        new ActivityLuncher(new Intent(this, MenuActivity.class), this);
     }
 
     public void clickBtnFeelings(View v) {
