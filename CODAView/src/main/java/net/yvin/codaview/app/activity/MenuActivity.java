@@ -1,11 +1,14 @@
 package net.yvin.codaview.app.activity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import net.yvin.codaview.app.R;
 import net.yvin.codaview.app.activity.base.MenuAbstractActivity;
 import net.yvin.codaview.app.activity.utils.ActivityLuncher;
+import net.yvin.codaview.app.activity.utils.StorageChecker;
 import net.yvin.codaview.app.context.LanguageContext;
 import net.yvin.codaview.app.utils.Constants;
 
@@ -47,20 +50,43 @@ public class MenuActivity extends MenuAbstractActivity {
     public void clickBtnPrayer(View v) {
         new ActivityLuncher(new Intent(this, PrayerActivity.class), this);
     }
+
     public void clickBtnWayBeginning(View v) {
         new ActivityLuncher(new Intent(this, WayBiginingActivity.class), this);
-}
+    }
 
     public void clickBtnFillingsDiary(View v) {
-        new ActivityLuncher(new Intent(this, FeelingsDiaryActivity.class), this);
+        if (new StorageChecker().isExternalStorageAvailable()) {
+            new ActivityLuncher(new Intent(this, FeelingsDiaryActivity.class), this);
+        } else {
+            showAlertNoStorage();
+        }
     }
 
     public void clickBtnFillingsNewEntry(View v) {
-        new ActivityLuncher(new Intent(this, NewFeelingsDiaryEntryActivity.class), this);
+        if (new StorageChecker().isExternalStorageAvailable()) {
+            new ActivityLuncher(new Intent(this, NewFeelingsDiaryEntryActivity.class), this);
+        } else {
+            showAlertNoStorage();
+        }
     }
 
     public void clickBtnHowToHelp(View v) {
         new ActivityLuncher(new Intent(this, HowToHelpActivity.class), this);
+    }
+
+    private void showAlertNoStorage() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(R.string.alert)
+                .setMessage(R.string.exstorage_notavailable)
+                .setNegativeButton("ok",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        });
+        AlertDialog alert = builder.create();
+        alert.show();
     }
 
 }

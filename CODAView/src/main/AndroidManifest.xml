@@ -28,6 +28,7 @@
         <activity
                 android:name="net.yvin.codaview.app.activity.MenuActivity"
                 android:label="@string/menu"
+                android:theme="@style/ActivityTheme"
                 android:screenOrientation="portrait">
         </activity>
         <activity
@@ -61,6 +62,7 @@
         <activity
                 android:name=".activity.NewFeelingsDiaryEntryActivity"
                 android:label="@string/new_entry"
+                android:theme="@style/ActivityTheme"
                 android:screenOrientation="portrait">
         </activity>
         <activity

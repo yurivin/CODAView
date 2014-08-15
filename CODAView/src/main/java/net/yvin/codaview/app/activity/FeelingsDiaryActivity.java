@@ -1,5 +1,7 @@
 package net.yvin.codaview.app.activity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
@@ -10,6 +12,7 @@ import net.yvin.codaview.app.R;
 import net.yvin.codaview.app.activity.base.MenuAbstractActivity;
 import net.yvin.codaview.app.activity.model.FeelingsDiaryEntry;
 import net.yvin.codaview.app.activity.utils.ActivityLuncher;
+import net.yvin.codaview.app.activity.utils.StorageChecker;
 import net.yvin.codaview.app.service.DiaryService;
 import net.yvin.codaview.app.utils.FeelingDiaryReader;
 
@@ -31,12 +34,17 @@ public class FeelingsDiaryActivity extends MenuAbstractActivity {
     String[] feelingsTitles;
     String[] feelingsContent;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feelings);
         expListView = (ExpandableListView) findViewById(R.id.entries);
         getData();
+        feelEpandableListView();
+    }
+
+    private void feelEpandableListView() {
         String[] groupFrom = new String[]{"title"};
         int[] groupTo = new int[]{android.R.id.text1};
         String[] childFrom = new String[]{"content"};

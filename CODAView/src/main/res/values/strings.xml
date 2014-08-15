@@ -44,6 +44,8 @@
     <string name="feelings">Feelings</string>
     <string name="comment">Comment</string>
     <string name="intensity">Intensity</string>
+    <string name="exstorage_notavailable">External storage not available or not writable. Check your SD card</string>
+    <string name="alert">Alert!</string>
 
 
     <string-array name="supported_languages">

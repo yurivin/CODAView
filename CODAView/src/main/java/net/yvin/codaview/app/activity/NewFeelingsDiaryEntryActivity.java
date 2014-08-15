@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.*;
 import net.yvin.codaview.app.R;
 import net.yvin.codaview.app.activity.base.MenuAbstractActivity;
+import net.yvin.codaview.app.activity.utils.StorageChecker;
 import net.yvin.codaview.app.utils.AssetsWriter;
 import net.yvin.codaview.app.utils.FeelingDiaryReader;
 
