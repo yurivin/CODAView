@@ -79,6 +79,7 @@ public class NewFeelingsDiaryEntryActivity extends MenuAbstractActivity implemen
         alertDialog.setTitle(R.string.add_comment);
         final EditText input = new EditText(this);
         input.setBackgroundColor(getResources().getColor(R.color.editText));
+        input.setTextColor(getResources().getColor(R.color.background));
         if (comment != null) input.setText(comment);
         LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT,
@@ -101,11 +102,24 @@ public class NewFeelingsDiaryEntryActivity extends MenuAbstractActivity implemen
     }
 
     public void clickBtnReady(View v) {
-
-        assetsWriter.feelingsDiary(String.valueOf(yearFromG), String.valueOf(monthOfYearFromG), String.valueOf(dayOfMonthFromG), String.valueOf(hourOfDayFromG), String.valueOf(minuteFromG),
-                String.valueOf(yearToG), String.valueOf(monthOfYearToG), String.valueOf(dayOfMonthToG), String.valueOf(hourOfDayToG), String.valueOf(minuteToG), String.valueOf(feelingsIntensity),
-                String.valueOf(feelingsRating), selectedFeelings.toString(), comment);
-        new ActivityLuncher(new Intent(this, MenuActivity.class), this);
+        if(selectedFeelings == null || comment == null) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle(R.string.alert)
+                    .setMessage(R.string.comment_feelings_shouldbe)
+                    .setNegativeButton("ok",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    dialog.cancel();
+                                }
+                            });
+            AlertDialog alert = builder.create();
+            alert.show();
+        } else {
+            assetsWriter.feelingsDiary(String.valueOf(yearFromG), String.valueOf(monthOfYearFromG), String.valueOf(dayOfMonthFromG), String.valueOf(hourOfDayFromG), String.valueOf(minuteFromG),
+                    String.valueOf(yearToG), String.valueOf(monthOfYearToG), String.valueOf(dayOfMonthToG), String.valueOf(hourOfDayToG), String.valueOf(minuteToG), String.valueOf(feelingsIntensity),
+                    String.valueOf(feelingsRating), selectedFeelings.toString(), comment);
+            new ActivityLuncher(new Intent(this, MenuActivity.class), this);
+        }
     }
 
     public void clickBtnFeelings(View v) {
