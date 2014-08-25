@@ -32,9 +32,9 @@
                 android:layout_marginRight="2dp"
                 android:textSize="17sp"
                 android:text="@string/statistics"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"/> -->
 
-        <Button
+<!--        <Button
                 android:id="@+id/btnSort"
                 android:onClick="clickBtnSort"
                 android:layout_weight="1"

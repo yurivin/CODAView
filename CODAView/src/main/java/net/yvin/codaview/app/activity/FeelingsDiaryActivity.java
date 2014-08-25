@@ -1,12 +1,14 @@
 package net.yvin.codaview.app.activity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ExpandableListView;
 import android.widget.SimpleExpandableListAdapter;
 import net.yvin.codaview.app.R;
 import net.yvin.codaview.app.activity.base.MenuAbstractActivity;
 import net.yvin.codaview.app.activity.model.FeelingsDiaryEntry;
 import net.yvin.codaview.app.comparators.FeelingsDiaryEntryByBeginningDate;
+import net.yvin.codaview.app.filters.FilterByIntensity;
 import net.yvin.codaview.app.service.DiaryService;
 import net.yvin.codaview.app.utils.FeelingDiaryReader;
 
@@ -21,9 +23,11 @@ public class FeelingsDiaryActivity extends MenuAbstractActivity {
     ArrayList<Map<String, String>> groupData;
     ArrayList<Map<String, String>> childDataItem;
     ArrayList<ArrayList<Map<String, String>>> childData;
+    DiaryService diaryService;
     Map<String, String> m;
     String[] feelingsTitles;
     String[] feelingsContent;
+    List<FeelingsDiaryEntry> diaryEntries;
 
 
     @Override
@@ -31,6 +35,7 @@ public class FeelingsDiaryActivity extends MenuAbstractActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feelings);
         expListView = (ExpandableListView) findViewById(R.id.entries);
+        diaryService = new DiaryService(this);
         getData();
         feelExpandableListView();
     }
@@ -68,10 +73,13 @@ public class FeelingsDiaryActivity extends MenuAbstractActivity {
     }
 
     private void getData() {
-        DiaryService diaryService = new DiaryService(this);
-        List<FeelingsDiaryEntry> diaryEntries = FeelingDiaryReader.readAll();
-        Collections.sort(diaryEntries, new FeelingsDiaryEntryByBeginningDate());
+        diaryEntries = FeelingDiaryReader.readAll();
+        diaryService.sort(diaryEntries, new FeelingsDiaryEntryByBeginningDate());
         feelingsTitles = diaryService.getTitles(diaryEntries);
         feelingsContent = diaryService.getContent(diaryEntries);
+    }
+
+    public void clickBtnSort(View v){
+        diaryService.sortByAndFilter(diaryEntries, new FeelingsDiaryEntryByBeginningDate(), new FilterByIntensity(3));
     }
 }
