@@ -3,13 +3,14 @@ package net.yvin.codaview.app.activity.model;
 import android.util.Log;
 import net.yvin.codaview.app.utils.FeelingDiaryReader;
 
+import java.util.Comparator;
 import java.util.Set;
 import java.util.StringTokenizer;
 
 /**
  * Created by Yuriy.Vinogradov on 13.08.2014.
  */
-public class FeelingsDiaryEntry {
+public class FeelingsDiaryEntry{
 
     public FeelingsDiaryEntry(String yearFrom, String monthFrom, String dayFrom, String hourFrom, String minuteFrom,
                              String yearTo, String monthTo, String dayTo, String hourTo, String minuteTo, String feelingsIntensity,

@@ -4,11 +4,10 @@ import android.content.Context;
 import android.util.Log;
 import net.yvin.codaview.app.R;
 import net.yvin.codaview.app.activity.model.FeelingsDiaryEntry;
+import net.yvin.codaview.app.filters.FeelingsDiaryFilter;
 import net.yvin.codaview.app.utils.Constants;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Created by Yuriy.Vinogradov on 14.08.2014.
@@ -19,6 +18,14 @@ public class DiaryService {
 
     public DiaryService(Context context){
         this.context = context;
+    }
+
+    public void sortByAndFilter(Set<FeelingsDiaryEntry> diaryEntries, Comparator comparator, FeelingsDiaryFilter filter) {
+
+    }
+
+    public void sortBy(Set<FeelingsDiaryEntry> diaryEntries, Comparator comparator) {
+        Collections.sort(new ArrayList<FeelingsDiaryEntry>(diaryEntries), comparator);
     }
 
     public String[] getTitles(Set<FeelingsDiaryEntry> diaryEntries) {
