@@ -24,14 +24,9 @@ public class DiaryService {
 
     }
 
-    public void sortBy(Set<FeelingsDiaryEntry> diaryEntries, Comparator comparator) {
-        Collections.sort(new ArrayList<FeelingsDiaryEntry>(diaryEntries), comparator);
-    }
-
-    public String[] getTitles(Set<FeelingsDiaryEntry> diaryEntries) {
-        String[] titles = new String[diaryEntries.size()];
-        List<FeelingsDiaryEntry> list = new ArrayList<>(diaryEntries);
-        for (int i = 0; i < diaryEntries.size(); i++) {
+    public String[] getTitles(List<FeelingsDiaryEntry> list) {
+        String[] titles = new String[list.size()];
+        for (int i = 0; i < list.size(); i++) {
             FeelingsDiaryEntry entry = list.get(i);
             titles[i] = entry.yearFrom + Constants.DEFICE + entry.monthFrom + Constants.DEFICE + entry.dayFrom + Constants.SPACE +
                     entry.hourFrom + Constants.DOUBLE_POINT + entry.minuteFrom;
@@ -42,7 +37,7 @@ public class DiaryService {
         return titles;
     }
 
-    public String[] getContent(Set<FeelingsDiaryEntry> diaryEntries) {
+    public String[] getContent(List<FeelingsDiaryEntry> diaryEntries) {
         String[] content = new String[diaryEntries.size()];
         List<FeelingsDiaryEntry> list = new ArrayList<>(diaryEntries);
         for (int i = 0; i < diaryEntries.size(); i++) {

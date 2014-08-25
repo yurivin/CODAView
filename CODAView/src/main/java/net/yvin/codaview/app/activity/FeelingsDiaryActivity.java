@@ -1,25 +1,16 @@
 package net.yvin.codaview.app.activity;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.content.res.Resources;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ExpandableListView;
 import android.widget.SimpleExpandableListAdapter;
 import net.yvin.codaview.app.R;
 import net.yvin.codaview.app.activity.base.MenuAbstractActivity;
 import net.yvin.codaview.app.activity.model.FeelingsDiaryEntry;
-import net.yvin.codaview.app.activity.utils.ActivityLuncher;
-import net.yvin.codaview.app.activity.utils.StorageChecker;
+import net.yvin.codaview.app.comparators.FeelingsDiaryEntryByBeginningDate;
 import net.yvin.codaview.app.service.DiaryService;
 import net.yvin.codaview.app.utils.FeelingDiaryReader;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Created by Юрий on 27.07.2014.
@@ -41,10 +32,10 @@ public class FeelingsDiaryActivity extends MenuAbstractActivity {
         setContentView(R.layout.activity_feelings);
         expListView = (ExpandableListView) findViewById(R.id.entries);
         getData();
-        feelEpandableListView();
+        feelExpandableListView();
     }
 
-    private void feelEpandableListView() {
+    private void feelExpandableListView() {
         String[] groupFrom = new String[]{"title"};
         int[] groupTo = new int[]{android.R.id.text1};
         String[] childFrom = new String[]{"content"};
@@ -78,7 +69,8 @@ public class FeelingsDiaryActivity extends MenuAbstractActivity {
 
     private void getData() {
         DiaryService diaryService = new DiaryService(this);
-        Set<FeelingsDiaryEntry> diaryEntries = FeelingDiaryReader.readAll();
+        List<FeelingsDiaryEntry> diaryEntries = FeelingDiaryReader.readAll();
+        Collections.sort(diaryEntries, new FeelingsDiaryEntryByBeginningDate());
         feelingsTitles = diaryService.getTitles(diaryEntries);
         feelingsContent = diaryService.getContent(diaryEntries);
     }
