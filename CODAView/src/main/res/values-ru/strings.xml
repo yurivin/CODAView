@@ -44,6 +44,7 @@
     <string name="exstorage_notavailable">Внешняя память не доступна или невозможна запись. Проверьте вашу SD карту</string>
     <string name="alert">Внимание!</string>
     <string name="сomment_feelings_shouldbe">Комментарий и чувства должны быть указаны!</string>
+    <string name="feelings">Чувства</string>
 
     <string-array name="steps">
         <item>Мы признали своё бессилие перед другими, признали, что наша жизнь перестала поддаваться контролю.</item>
