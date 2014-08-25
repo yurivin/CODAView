@@ -28,6 +28,7 @@ public class FeelingsDiaryActivity extends MenuAbstractActivity {
     String[] feelingsTitles;
     String[] feelingsContent;
     List<FeelingsDiaryEntry> diaryEntries;
+    SimpleExpandableListAdapter adapter;
 
 
     @Override
@@ -59,7 +60,7 @@ public class FeelingsDiaryActivity extends MenuAbstractActivity {
             childDataItem.add(m);
             childData.add(childDataItem);
         }
-        SimpleExpandableListAdapter adapter = new SimpleExpandableListAdapter(
+        adapter = new SimpleExpandableListAdapter(
                 this,
                 groupData,
                 android.R.layout.simple_expandable_list_item_1,
@@ -75,11 +76,23 @@ public class FeelingsDiaryActivity extends MenuAbstractActivity {
     private void getData() {
         diaryEntries = FeelingDiaryReader.readAll();
         diaryService.sort(diaryEntries, new FeelingsDiaryEntryByBeginningDate());
+        extractData();
+    }
+
+    private void extractData() {
         feelingsTitles = diaryService.getTitles(diaryEntries);
         feelingsContent = diaryService.getContent(diaryEntries);
     }
 
-    public void clickBtnSort(View v){
+    public void clickBtnSort(View v) {
         diaryService.sortByAndFilter(diaryEntries, new FeelingsDiaryEntryByBeginningDate(), new FilterByIntensity(3));
+        extractData();
+        feelExpandableListView();
+        adapter.notifyDataSetChanged();
+    }
+
+    protected void onResume() {
+        super.onResume();
+//        adapter.notifyDataSetChanged();
     }
 }
