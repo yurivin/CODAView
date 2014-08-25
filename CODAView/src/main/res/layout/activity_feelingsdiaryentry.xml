@@ -47,8 +47,7 @@
               android:layout_height="wrap_content"
               android:layout_above="@+id/feelingsIntensity"
               android:textColor="#ffff5003"
-              android:textSize="20sp"
-              android:singleLine="true"
+              android:textSize="16sp"
               android:text="@string/Rate_how_iyfa"/>
 
     <RatingBar android:id="@+id/feelingsIntensity"
@@ -63,8 +62,7 @@
               android:layout_height="wrap_content"
               android:layout_above="@+id/feelingsRating"
               android:textColor="#ffff5003"
-              android:textSize="20sp"
-              android:singleLine="true"
+              android:textSize="16sp"
               android:text="@string/Rate_how_myltc"/>
 
     <RatingBar android:id="@+id/feelingsRating"
