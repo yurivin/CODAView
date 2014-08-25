@@ -2,6 +2,7 @@ package net.yvin.codaview.app.filters;
 
 import net.yvin.codaview.app.activity.model.FeelingsDiaryEntry;
 
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -9,5 +10,5 @@ import java.util.Set;
  */
 public interface FeelingsDiaryFilter {
 
-    Set<FeelingsDiaryEntry> filter(Set<FeelingsDiaryEntry> set);
+    void filter(List<FeelingsDiaryEntry> set);
 }
