@@ -78,7 +78,7 @@ public class FeelingsDiaryActivity extends MenuAbstractActivity {
 
     private void getData() {
         diaryEntries = FeelingDiaryReader.readAll();
-        diaryService.sort(diaryEntries, new FeelingsDiaryEntryByBeginningDate());
+//        diaryService.sort(diaryEntries, new FeelingsDiaryEntryByBeginningDate());
         extractData();
     }
 
@@ -94,6 +94,8 @@ public class FeelingsDiaryActivity extends MenuAbstractActivity {
     private void showSortDialog() {
         checkedList = new ArrayList<>();
         final boolean[] mCheckedItems = {true};
+        //adding first automatically checked entry
+        checkedList.add(0);
         Resources res = getResources();
         final String[] sortTitles = res.getStringArray(R.array.sortTitles);
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -107,7 +109,10 @@ public class FeelingsDiaryActivity extends MenuAbstractActivity {
                                 if (isChecked == true)
                                     checkedList.add(which);
                                 else
-                                    checkedList.remove(which);
+                                    for (int i = 0; i < checkedList.size(); i++) {
+                                        if (checkedList.get(i) == which)
+                                            checkedList.remove(i);
+                                    }
                             }
                         })
                 .setPositiveButton("Готово",
@@ -127,14 +132,15 @@ public class FeelingsDiaryActivity extends MenuAbstractActivity {
 
                             }
                         });
-        builder.create();
+        builder.show();
     }
 
     private void understandSelection(List<Integer> checkedList) {
         Comparator<FeelingsDiaryEntry> comparator = null;
-        for (Integer checked : checkedList ) {
-            switch(checked) {
-                case 0 : comparator = new FeelingsDiaryEntryByBeginningDate();
+        for (Integer checked : checkedList) {
+            switch (checked) {
+                case 0:
+                    comparator = new FeelingsDiaryEntryByBeginningDate();
                     break;
             }
         }
