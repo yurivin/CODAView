@@ -47,6 +47,7 @@
     <string name="exstorage_notavailable">External storage not available or not writable. Check your SD card</string>
     <string name="alert">Alert!</string>
     <string name="comment_feelings_shouldbe">Comment and feelings should be entered!</string>
+    <string name="select_sorting_type">Select sorting type</string>
 
 
     <string-array name="supported_languages">
@@ -265,6 +266,10 @@
         <item>Serenity Prayer</item>
         <item>Complete Serenity Prayer</item>
         <item>Prayer for peace</item>
+    </string-array>
+
+    <string-array name="sortTitles">
+        <item>by beginning date</item>
     </string-array>
 
 </resources>

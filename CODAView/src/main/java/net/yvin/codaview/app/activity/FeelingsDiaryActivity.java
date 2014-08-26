@@ -1,5 +1,8 @@
 package net.yvin.codaview.app.activity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ExpandableListView;
@@ -8,7 +11,6 @@ import net.yvin.codaview.app.R;
 import net.yvin.codaview.app.activity.base.MenuAbstractActivity;
 import net.yvin.codaview.app.activity.model.FeelingsDiaryEntry;
 import net.yvin.codaview.app.comparators.FeelingsDiaryEntryByBeginningDate;
-import net.yvin.codaview.app.filters.FilterByIntensity;
 import net.yvin.codaview.app.service.DiaryService;
 import net.yvin.codaview.app.utils.FeelingDiaryReader;
 
@@ -29,12 +31,13 @@ public class FeelingsDiaryActivity extends MenuAbstractActivity {
     String[] feelingsContent;
     List<FeelingsDiaryEntry> diaryEntries;
     SimpleExpandableListAdapter adapter;
+    List<Integer> checkedList;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_feelings);
+        setContentView(R.layout.activity_feelings_diary);
         expListView = (ExpandableListView) findViewById(R.id.entries);
         diaryService = new DiaryService(this);
         getData();
@@ -85,14 +88,63 @@ public class FeelingsDiaryActivity extends MenuAbstractActivity {
     }
 
     public void clickBtnSort(View v) {
-        diaryService.sortByAndFilter(diaryEntries, new FeelingsDiaryEntryByBeginningDate(), new FilterByIntensity(3));
+        showSortDialog();
+    }
+
+    private void showSortDialog() {
+        checkedList = new ArrayList<>();
+        final boolean[] mCheckedItems = {true};
+        Resources res = getResources();
+        final String[] sortTitles = res.getStringArray(R.array.sortTitles);
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(R.string.select_sorting_type)
+                .setCancelable(false)
+                .setMultiChoiceItems(sortTitles, mCheckedItems,
+                        new DialogInterface.OnMultiChoiceClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog,
+                                                int which, boolean isChecked) {
+                                if (isChecked == true)
+                                    checkedList.add(which);
+                                else
+                                    checkedList.remove(which);
+                            }
+                        })
+                .setPositiveButton("Готово",
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog,
+                                                int id) {
+                                understandSelection(checkedList);
+                            }
+                        })
+                .setNegativeButton("Отмена",
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog,
+                                                int id) {
+                                dialog.cancel();
+
+                            }
+                        });
+        builder.create();
+    }
+
+    private void understandSelection(List<Integer> checkedList) {
+        Comparator<FeelingsDiaryEntry> comparator = null;
+        for (Integer checked : checkedList ) {
+            switch(checked) {
+                case 0 : comparator = new FeelingsDiaryEntryByBeginningDate();
+                    break;
+            }
+        }
+        sortBySelection(comparator);
+    }
+
+    private void sortBySelection(Comparator<FeelingsDiaryEntry> comparator) {
+        diaryService.sort(diaryEntries, comparator);
         extractData();
         feelExpandableListView();
         adapter.notifyDataSetChanged();
-    }
-
-    protected void onResume() {
-        super.onResume();
-//        adapter.notifyDataSetChanged();
     }
 }

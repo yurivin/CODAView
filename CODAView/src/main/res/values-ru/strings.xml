@@ -45,6 +45,7 @@
     <string name="alert">Внимание!</string>
     <string name="сomment_feelings_shouldbe">Комментарий и чувства должны быть указаны!</string>
     <string name="feelings">Чувства</string>
+    <string name="select_sorting_type">Выберите тип сортировки</string>
 
     <string-array name="steps">
         <item>Мы признали своё бессилие перед другими, признали, что наша жизнь перестала поддаваться контролю.</item>
@@ -333,5 +334,9 @@
         <item>Молитвы Девятого Шага</item>
         <item>Молитва Десятого Шага</item>
         <item>Молитва Одинадцатого шага - Молитва о мире</item>
+    </string-array>
+
+    <string-array name="sortTitles">
+        <item>По дате начала</item>
     </string-array>
 </resources>

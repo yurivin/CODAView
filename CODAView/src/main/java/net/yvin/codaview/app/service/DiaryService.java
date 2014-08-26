@@ -17,7 +17,7 @@ public class DiaryService {
 
     Context context;
 
-    public DiaryService(Context context){
+    public DiaryService(Context context) {
         this.context = context;
     }
 
@@ -25,9 +25,10 @@ public class DiaryService {
 
     }
 
-    public void sort(List<FeelingsDiaryEntry> diaryEntries, Comparator comparator){
-      //TODO This should be realized asynchronous way with indication of progress
-        Collections.sort(diaryEntries, new FeelingsDiaryEntryByBeginningDate());
+    public void sort(List<FeelingsDiaryEntry> diaryEntries, Comparator comparator) {
+        //TODO This should be realized asynchronous way with indication of progress
+        if (comparator != null)
+            Collections.sort(diaryEntries, new FeelingsDiaryEntryByBeginningDate());
     }
 
     public String[] getTitles(List<FeelingsDiaryEntry> list) {
@@ -37,7 +38,7 @@ public class DiaryService {
             titles[i] = entry.yearFrom + Constants.DEFICE + entry.monthFrom + Constants.DEFICE + entry.dayFrom + Constants.SPACE +
                     entry.hourFrom + Constants.DOUBLE_POINT + entry.minuteFrom;
         }
-        for(String string : titles) {
+        for (String string : titles) {
             Log.d("title: ", string);
         }
         return titles;
@@ -49,25 +50,25 @@ public class DiaryService {
         for (int i = 0; i < diaryEntries.size(); i++) {
             FeelingsDiaryEntry entry = list.get(i);
             String feelings = new String();
-            for(int y = 0; y < entry.selectedFeelings.length; y++) {
+            for (int y = 0; y < entry.selectedFeelings.length; y++) {
                 feelings = feelings + entry.selectedFeelings[y];
-                if(y < entry.selectedFeelings.length - 1 ) feelings = feelings + Constants.COMMA_SPACE;
-                        else feelings = feelings + ".";
+                if (y < entry.selectedFeelings.length - 1) feelings = feelings + Constants.COMMA_SPACE;
+                else feelings = feelings + ".";
             }
 
             content[i] = context.getString(R.string.until) + Constants.DOUBLE_POINT + Constants.SPACE + entry.yearTo +
                     Constants.DEFICE + entry.monthTo + Constants.DEFICE + entry.dayTo + Constants.SPACE +
                     entry.hourTo + Constants.DOUBLE_POINT + entry.minuteTo +
-            Constants.NEW_LINE + Constants.NEW_LINE +
-                    context.getString(R.string.intensity) + Constants.DOUBLE_POINT + Constants.SPACE +  entry.feelingsIntensity +
-            Constants.NEW_LINE + Constants.NEW_LINE +
-                    context.getString(R.string.rating) + Constants.DOUBLE_POINT + Constants.SPACE +  entry.feelingRating +
-            Constants.NEW_LINE + Constants.NEW_LINE +
+                    Constants.NEW_LINE + Constants.NEW_LINE +
+                    context.getString(R.string.intensity) + Constants.DOUBLE_POINT + Constants.SPACE + entry.feelingsIntensity +
+                    Constants.NEW_LINE + Constants.NEW_LINE +
+                    context.getString(R.string.rating) + Constants.DOUBLE_POINT + Constants.SPACE + entry.feelingRating +
+                    Constants.NEW_LINE + Constants.NEW_LINE +
                     context.getString(R.string.feelings) + Constants.DOUBLE_POINT + Constants.SPACE + feelings +
-            Constants.NEW_LINE + Constants.NEW_LINE +
+                    Constants.NEW_LINE + Constants.NEW_LINE +
                     context.getString(R.string.comment) + Constants.DOUBLE_POINT + Constants.SPACE + entry.comment;
         }
-        for(String string : content) {
+        for (String string : content) {
             Log.d("Content: ", string);
         }
         return content;
