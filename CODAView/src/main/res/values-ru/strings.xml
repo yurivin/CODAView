@@ -187,6 +187,7 @@
         <item>Бессилие</item>
         <item>Недовольство</item>
         <item>Уныние</item>
+        <item>Страдание</item>
     </string-array>
 
     <string-array name="angry_feelings">
@@ -235,6 +236,7 @@
         <item>Любопытство</item>
         <item>Упоротость</item>
         <item>Боль</item>
+        <item>Терпение</item>
     </string-array>
 
     <string-array name="prayerContent">

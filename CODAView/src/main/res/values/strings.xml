@@ -178,6 +178,7 @@
         <item>Unhappy</item>
         <item>Unloved</item>
         <item>Withdrawn</item>
+        <item>Suffering</item>
     </string-array>
 
     <string-array name="angry_feelings">
@@ -215,6 +216,7 @@
         <item>Worried</item>
         <item>Anxious</item>
         <item>Pain</item>
+        <item>Patience</item>
     </string-array>
 
     <string-array name="prayerContent">
