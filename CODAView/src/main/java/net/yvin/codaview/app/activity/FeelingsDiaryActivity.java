@@ -32,7 +32,7 @@ public class FeelingsDiaryActivity extends MenuAbstractActivity {
     String[] feelingsContent;
     List<FeelingsDiaryEntry> diaryEntries;
     SimpleExpandableListAdapter adapter;
-    List<Integer> checkedList;
+    List<Integer> checkedList = new ArrayList<>();
 
 
     @Override
@@ -40,6 +40,8 @@ public class FeelingsDiaryActivity extends MenuAbstractActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feelings_diary);
         expListView = (ExpandableListView) findViewById(R.id.entries);
+        //adding first automatically checked sort entry
+        checkedList.add(0);
         diaryService = new DiaryService(this);
         getData();
         feelExpandableListView();
@@ -93,10 +95,10 @@ public class FeelingsDiaryActivity extends MenuAbstractActivity {
     }
 
     private void showSortDialog() {
-        checkedList = new ArrayList<>();
-        final boolean[] mCheckedItems = {true};
-        //adding first automatically checked entry
-        checkedList.add(0);
+        final boolean[] mCheckedItems = {false};
+        for(int i : checkedList){
+            mCheckedItems[i] = true;
+        }
         Resources res = getResources();
         final String[] sortTitles = res.getStringArray(R.array.sortTitles);
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
