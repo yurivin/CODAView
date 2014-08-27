@@ -11,6 +11,7 @@ import net.yvin.codaview.app.R;
 import net.yvin.codaview.app.activity.base.MenuAbstractActivity;
 import net.yvin.codaview.app.activity.model.FeelingsDiaryEntry;
 import net.yvin.codaview.app.comparators.FeelingsDiaryByBeginningDate;
+import net.yvin.codaview.app.comparators.FeelingsDiaryByIntensity;
 import net.yvin.codaview.app.service.DiaryService;
 import net.yvin.codaview.app.utils.FeelingDiaryReader;
 
@@ -142,9 +143,12 @@ public class FeelingsDiaryActivity extends MenuAbstractActivity {
                 case 0:
                     comparator = new FeelingsDiaryByBeginningDate();
                     break;
+                case 1:
+                    comparator = new FeelingsDiaryByIntensity();
             }
+            sortBySelection(comparator);
         }
-        sortBySelection(comparator);
+
     }
 
     private void sortBySelection(Comparator<FeelingsDiaryEntry> comparator) {
