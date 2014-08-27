@@ -111,6 +111,7 @@ public class FeelingsDiaryActivity extends MenuAbstractActivity {
                             public void onClick(DialogInterface dialog,
                                                 int item) {
                                 understandSelection(item);
+                                dialog.cancel();
                             }
                         })
                 .setNeutralButton(R.string.cancel,
