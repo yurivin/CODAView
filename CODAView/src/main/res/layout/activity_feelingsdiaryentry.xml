@@ -19,7 +19,7 @@
                 android:layout_weight="1"
                 android:text="@string/time_from"
                 android:singleLine="true"
-                android:textSize="18sp"/>
+                android:textSize="16sp"/>
         <Button android:id="@+id/feelTimeTo"
                 android:onClick="clickBtnTimeTo"
                 android:layout_width="match_parent"
@@ -28,7 +28,7 @@
                 android:layout_weight="1"
                 android:text="@string/time_to"
                 android:singleLine="true"
-                android:textSize="18sp"/>
+                android:textSize="16sp"/>
 
     </LinearLayout>
 
