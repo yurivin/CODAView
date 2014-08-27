@@ -105,29 +105,15 @@ public class FeelingsDiaryActivity extends MenuAbstractActivity {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle(R.string.select_sorting_type)
                 .setCancelable(false)
-                .setMultiChoiceItems(sortTitles, mCheckedItems,
-                        new DialogInterface.OnMultiChoiceClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog,
-                                                int which, boolean isChecked) {
-                                if (isChecked == true)
-                                    checkedList.add(which);
-                                else
-                                    for (int i = 0; i < checkedList.size(); i++) {
-                                        if (checkedList.get(i) == which)
-                                            checkedList.remove(i);
-                                    }
-                            }
-                        })
-                .setPositiveButton(R.string.ready,
+                .setSingleChoiceItems(sortTitles, -1,
                         new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog,
-                                                int id) {
-                                understandSelection(checkedList);
+                                                int item) {
+                                understandSelection(item);
                             }
                         })
-                .setNegativeButton(R.string.cancel,
+                .setNeutralButton(R.string.cancel,
                         new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog,
@@ -138,9 +124,8 @@ public class FeelingsDiaryActivity extends MenuAbstractActivity {
         builder.show();
     }
 
-    private void understandSelection(List<Integer> checkedList) {
+    private void understandSelection(int checked) {
         Comparator<FeelingsDiaryEntry> comparator = null;
-        for (Integer checked : checkedList) {
             switch (checked) {
                 case 0:
                     comparator = new FeelingsDiaryByBeginningDate();
@@ -153,7 +138,6 @@ public class FeelingsDiaryActivity extends MenuAbstractActivity {
                     break;
             }
             sortBySelection(comparator);
-        }
     }
 
     private void sortBySelection(Comparator<FeelingsDiaryEntry> comparator) {
