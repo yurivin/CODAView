@@ -94,7 +94,7 @@ public class FeelingsDiaryActivity extends MenuAbstractActivity {
 
     private void showSortDialog() {
         checkedList = new ArrayList<>();
-        final boolean[] mCheckedItems = {true, false};
+        final boolean[] mCheckedItems = {true};
         //adding first automatically checked entry
         checkedList.add(0);
         Resources res = getResources();
@@ -145,10 +145,10 @@ public class FeelingsDiaryActivity extends MenuAbstractActivity {
                     break;
                 case 1:
                     comparator = new FeelingsDiaryByIntensity();
+                    break;
             }
             sortBySelection(comparator);
         }
-
     }
 
     private void sortBySelection(Comparator<FeelingsDiaryEntry> comparator) {
