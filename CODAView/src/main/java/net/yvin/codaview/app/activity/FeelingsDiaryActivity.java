@@ -10,10 +10,10 @@ import android.widget.SimpleExpandableListAdapter;
 import net.yvin.codaview.app.R;
 import net.yvin.codaview.app.activity.base.MenuAbstractActivity;
 import net.yvin.codaview.app.activity.model.FeelingsDiaryEntry;
-import net.yvin.codaview.app.comparators.FeelingsDiaryByBeginningDate;
-import net.yvin.codaview.app.comparators.FeelingsDiaryByIntensity;
-import net.yvin.codaview.app.comparators.FeelingsDiaryByLikeness;
-import net.yvin.codaview.app.comparators.FelingsDiaryByEndDate;
+import net.yvin.codaview.app.comparators.fde.ByBeginningDate;
+import net.yvin.codaview.app.comparators.fde.ByEndDate;
+import net.yvin.codaview.app.comparators.fde.ByIntensity;
+import net.yvin.codaview.app.comparators.fde.ByLikeness;
 import net.yvin.codaview.app.service.DiaryService;
 import net.yvin.codaview.app.utils.FeelingDiaryReader;
 
@@ -126,16 +126,16 @@ public class FeelingsDiaryActivity extends MenuAbstractActivity {
         Comparator<FeelingsDiaryEntry> comparator = null;
             switch (checked) {
                 case 0:
-                    comparator = new FeelingsDiaryByBeginningDate();
+                    comparator = new ByBeginningDate();
                     break;
                 case 1:
-                    comparator = new FelingsDiaryByEndDate();
+                    comparator = new ByEndDate();
                     break;
                 case 2:
-                    comparator = new FeelingsDiaryByIntensity();
+                    comparator = new ByIntensity();
                     break;
                 case 3:
-                    comparator = new FeelingsDiaryByLikeness();
+                    comparator = new ByLikeness();
                     break;
             }
             sortBySelection(comparator);

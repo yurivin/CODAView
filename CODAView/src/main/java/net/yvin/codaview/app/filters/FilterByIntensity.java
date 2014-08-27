@@ -9,6 +9,8 @@ import java.util.Set;
 
 /**
  * Created by Yuriy.Vinogradov on 25.08.2014.
+ * This algorithm allows to check intensity without partial part
+ * TODO include usage of this class to user interface and test it
  */
 public class FilterByIntensity implements FeelingsDiaryFilter {
 
@@ -18,12 +20,13 @@ public class FilterByIntensity implements FeelingsDiaryFilter {
         this.intensity = intensity;
     }
 
-
     @Override
     public void filter(List<FeelingsDiaryEntry> set) {
         List<FeelingsDiaryEntry> temp = new ArrayList<>();
+        intensity = intensity * 10;
         for (FeelingsDiaryEntry entry : set) {
-            if(intensity <= Double.parseDouble(entry.feelingsIntensity) && Double.parseDouble(entry.feelingsIntensity) < intensity + 1)
+            int intCheck = (int)(Double.parseDouble(entry.feelingsIntensity) * 10);
+            if(intensity <= intCheck && intCheck < intensity + 10)
                 temp.add(entry);
         }
         set.clear();
