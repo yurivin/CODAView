@@ -340,8 +340,8 @@
 
     <string-array name="sortTitles">
         <item>По дате начала</item>
+        <item>По дате окончания</item>
         <item>По интенсивности</item>
         <item>По приятности чувств</item>
-        <item>По дате окончания</item>
     </string-array>
 </resources>

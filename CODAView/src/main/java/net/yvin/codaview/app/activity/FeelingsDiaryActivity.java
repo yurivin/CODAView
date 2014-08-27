@@ -129,13 +129,13 @@ public class FeelingsDiaryActivity extends MenuAbstractActivity {
                     comparator = new FeelingsDiaryByBeginningDate();
                     break;
                 case 1:
-                    comparator = new FeelingsDiaryByIntensity();
+                    comparator = new FelingsDiaryByEndDate();
                     break;
                 case 2:
-                    comparator = new FeelingsDiaryByLikeness();
+                    comparator = new FeelingsDiaryByIntensity();
                     break;
                 case 3:
-                    comparator = new FelingsDiaryByEndDate();
+                    comparator = new FeelingsDiaryByLikeness();
                     break;
             }
             sortBySelection(comparator);
