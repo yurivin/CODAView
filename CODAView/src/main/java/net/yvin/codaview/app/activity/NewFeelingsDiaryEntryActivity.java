@@ -102,18 +102,11 @@ public class NewFeelingsDiaryEntryActivity extends MenuAbstractActivity implemen
     }
 
     public void clickBtnReady(View v) {
-        if(selectedFeelings == null || comment == null) {
-            AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setTitle(R.string.alert)
-                    .setMessage(R.string.comment_feelings_shouldbe)
-                    .setNegativeButton("ok",
-                            new DialogInterface.OnClickListener() {
-                                public void onClick(DialogInterface dialog, int id) {
-                                    dialog.cancel();
-                                }
-                            });
-            AlertDialog alert = builder.create();
-            alert.show();
+        if (brokenDates()) {
+            brokenAlert(getString(R.string.date_to_should_be_greater));
+        }
+        if (selectedFeelings == null || comment == null) {
+            brokenAlert(getString(R.string.comment_feelings_shouldbe));
         } else {
             assetsWriter.feelingsDiary(String.valueOf(yearFromG), String.valueOf(monthOfYearFromG), String.valueOf(dayOfMonthFromG), String.valueOf(hourOfDayFromG), String.valueOf(minuteFromG),
                     String.valueOf(yearToG), String.valueOf(monthOfYearToG), String.valueOf(dayOfMonthToG), String.valueOf(hourOfDayToG), String.valueOf(minuteToG), String.valueOf(feelingsIntensity),
@@ -230,6 +223,28 @@ public class NewFeelingsDiaryEntryActivity extends MenuAbstractActivity implemen
 
     @Override
     public void onRatingChanged(RatingBar ratingBar, float v, boolean b) {
-                feelingsRating = ratingBar.getRating();
+        feelingsRating = ratingBar.getRating();
     }
+
+    private boolean brokenDates() {
+        if (yearFromG <= yearToG && monthOfYearFromG <= monthOfYearToG && dayOfMonthFromG <= dayOfMonthToG &&
+                hourOfDayFromG <= hourOfDayToG && minuteFromG <= minuteToG)
+            return false;
+        else return true;
+    }
+
+    private void brokenAlert(String message) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(R.string.alert)
+                .setMessage(message)
+                .setNegativeButton("ok",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        });
+        AlertDialog alert = builder.create();
+        alert.show();
+    }
+
 }
