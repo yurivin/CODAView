@@ -341,5 +341,6 @@
     <string-array name="sortTitles">
         <item>По дате начала</item>
         <item>По интенсивности</item>
+        <item>По приятности чувств</item>
     </string-array>
 </resources>

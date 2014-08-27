@@ -273,6 +273,7 @@
     <string-array name="sortTitles">
         <item>by beginning date</item>
         <item>by intensity</item>
+        <item>by pleasantness of feelings</item>
     </string-array>
 
 </resources>

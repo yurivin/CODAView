@@ -12,6 +12,7 @@ import net.yvin.codaview.app.activity.base.MenuAbstractActivity;
 import net.yvin.codaview.app.activity.model.FeelingsDiaryEntry;
 import net.yvin.codaview.app.comparators.FeelingsDiaryByBeginningDate;
 import net.yvin.codaview.app.comparators.FeelingsDiaryByIntensity;
+import net.yvin.codaview.app.comparators.FeelingsDiaryByLikeness;
 import net.yvin.codaview.app.service.DiaryService;
 import net.yvin.codaview.app.utils.FeelingDiaryReader;
 
@@ -95,7 +96,7 @@ public class FeelingsDiaryActivity extends MenuAbstractActivity {
     }
 
     private void showSortDialog() {
-        final boolean[] mCheckedItems = {false, false};
+        final boolean[] mCheckedItems = {false, false, false};
         for(int i : checkedList){
             mCheckedItems[i] = true;
         }
@@ -146,6 +147,9 @@ public class FeelingsDiaryActivity extends MenuAbstractActivity {
                     break;
                 case 1:
                     comparator = new FeelingsDiaryByIntensity();
+                    break;
+                case 2:
+                    comparator = new FeelingsDiaryByLikeness();
                     break;
             }
             sortBySelection(comparator);
