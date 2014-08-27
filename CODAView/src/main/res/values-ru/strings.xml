@@ -234,6 +234,7 @@
         <item>Скука</item>
         <item>Любопытство</item>
         <item>Упоротость</item>
+        <item>Боль</item>
     </string-array>
 
     <string-array name="prayerContent">
