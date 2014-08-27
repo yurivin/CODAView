@@ -49,6 +49,7 @@
     <string name="comment_feelings_shouldbe">Comment and feelings should be entered!</string>
     <string name="select_sorting_type">Select sorting type</string>
     <string name="cancel">Cancel</string>
+    <string name="sort_message">In multiple selection the last selected algorithm became main. It\'s recommended to select only one.</string>
 
 
     <string-array name="supported_languages">
