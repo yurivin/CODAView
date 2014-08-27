@@ -28,7 +28,7 @@ public class DiaryService {
     public void sort(List<FeelingsDiaryEntry> diaryEntries, Comparator comparator) {
         //TODO This should be realized asynchronous way with indication of progress
         if (comparator != null)
-            Collections.sort(diaryEntries, new FeelingsDiaryByBeginningDate());
+            Collections.sort(diaryEntries, comparator);
     }
 
     public String[] getTitles(List<FeelingsDiaryEntry> list) {

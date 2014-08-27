@@ -95,7 +95,7 @@ public class FeelingsDiaryActivity extends MenuAbstractActivity {
     }
 
     private void showSortDialog() {
-        final boolean[] mCheckedItems = {false};
+        final boolean[] mCheckedItems = {false, false};
         for(int i : checkedList){
             mCheckedItems[i] = true;
         }
@@ -132,7 +132,6 @@ public class FeelingsDiaryActivity extends MenuAbstractActivity {
                             public void onClick(DialogInterface dialog,
                                                 int id) {
                                 dialog.cancel();
-
                             }
                         });
         builder.show();

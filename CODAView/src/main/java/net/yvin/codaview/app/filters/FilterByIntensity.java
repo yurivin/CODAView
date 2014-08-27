@@ -1,6 +1,7 @@
 package net.yvin.codaview.app.filters;
 
 import net.yvin.codaview.app.activity.model.FeelingsDiaryEntry;
+import net.yvin.codaview.app.filters.FeelingsDiaryFilter;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -271,7 +271,7 @@
 
     <string-array name="sortTitles">
         <item>by beginning date</item>
- <!--       <item>by intensity</item> -->
+        <item>by intensity</item>
     </string-array>
 
 </resources>

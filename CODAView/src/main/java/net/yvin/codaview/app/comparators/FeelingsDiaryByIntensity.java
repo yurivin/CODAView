@@ -10,12 +10,7 @@ import java.util.Comparator;
 public class FeelingsDiaryByIntensity implements Comparator<FeelingsDiaryEntry> {
     @Override
     public int compare(FeelingsDiaryEntry feelingsDiaryEntry, FeelingsDiaryEntry feelingsDiaryEntry2) {
-        int result;
-        if ((Float.parseFloat(feelingsDiaryEntry.feelingsIntensity) - Float.parseFloat(feelingsDiaryEntry2.feelingsIntensity)) > 0)
-            result = 1;
-        else if ((Float.parseFloat(feelingsDiaryEntry.feelingsIntensity) - Float.parseFloat(feelingsDiaryEntry2.feelingsIntensity)) < 0)
-            result = -1;
-        else result = 0;
+        int result = (int) (Float.parseFloat(feelingsDiaryEntry.feelingsIntensity) - Float.parseFloat(feelingsDiaryEntry2.feelingsIntensity) * 10);
         return result;
     }
 }
