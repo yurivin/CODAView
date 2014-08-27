@@ -6,7 +6,7 @@ import java.util.Comparator;
 
 /**
  * Created by Yuriy.Vinogradov on 27.08.2014.
- * TODO realize this class
+ * TODO realize this class. It should sort by duration of FeelingsDiaryEntry
  */
 public class ByDuration implements Comparator<FeelingsDiaryEntry> {
 
