@@ -4,7 +4,7 @@ import android.content.Context;
 import android.util.Log;
 import net.yvin.codaview.app.R;
 import net.yvin.codaview.app.activity.model.FeelingsDiaryEntry;
-import net.yvin.codaview.app.comparators.FeelingsDiaryEntryByBeginningDate;
+import net.yvin.codaview.app.comparators.FeelingsDiaryByBeginningDate;
 import net.yvin.codaview.app.filters.FeelingsDiaryFilter;
 import net.yvin.codaview.app.utils.Constants;
 
@@ -28,7 +28,7 @@ public class DiaryService {
     public void sort(List<FeelingsDiaryEntry> diaryEntries, Comparator comparator) {
         //TODO This should be realized asynchronous way with indication of progress
         if (comparator != null)
-            Collections.sort(diaryEntries, new FeelingsDiaryEntryByBeginningDate());
+            Collections.sort(diaryEntries, new FeelingsDiaryByBeginningDate());
     }
 
     public String[] getTitles(List<FeelingsDiaryEntry> list) {

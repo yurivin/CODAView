@@ -10,7 +10,7 @@ import android.widget.SimpleExpandableListAdapter;
 import net.yvin.codaview.app.R;
 import net.yvin.codaview.app.activity.base.MenuAbstractActivity;
 import net.yvin.codaview.app.activity.model.FeelingsDiaryEntry;
-import net.yvin.codaview.app.comparators.FeelingsDiaryEntryByBeginningDate;
+import net.yvin.codaview.app.comparators.FeelingsDiaryByBeginningDate;
 import net.yvin.codaview.app.service.DiaryService;
 import net.yvin.codaview.app.utils.FeelingDiaryReader;
 
@@ -93,7 +93,7 @@ public class FeelingsDiaryActivity extends MenuAbstractActivity {
 
     private void showSortDialog() {
         checkedList = new ArrayList<>();
-        final boolean[] mCheckedItems = {true};
+        final boolean[] mCheckedItems = {true, false};
         //adding first automatically checked entry
         checkedList.add(0);
         Resources res = getResources();
@@ -115,7 +115,7 @@ public class FeelingsDiaryActivity extends MenuAbstractActivity {
                                     }
                             }
                         })
-                .setPositiveButton("Готово",
+                .setPositiveButton(R.string.ready,
                         new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog,
@@ -123,7 +123,7 @@ public class FeelingsDiaryActivity extends MenuAbstractActivity {
                                 understandSelection(checkedList);
                             }
                         })
-                .setNegativeButton("Отмена",
+                .setNegativeButton(R.string.cancel,
                         new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog,
@@ -140,7 +140,7 @@ public class FeelingsDiaryActivity extends MenuAbstractActivity {
         for (Integer checked : checkedList) {
             switch (checked) {
                 case 0:
-                    comparator = new FeelingsDiaryEntryByBeginningDate();
+                    comparator = new FeelingsDiaryByBeginningDate();
                     break;
             }
         }

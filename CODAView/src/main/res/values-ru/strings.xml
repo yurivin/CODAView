@@ -46,6 +46,7 @@
     <string name="сomment_feelings_shouldbe">Комментарий и чувства должны быть указаны!</string>
     <string name="feelings">Чувства</string>
     <string name="select_sorting_type">Выберите тип сортировки</string>
+    <string name="cancel">Омена</string>
 
     <string-array name="steps">
         <item>Мы признали своё бессилие перед другими, признали, что наша жизнь перестала поддаваться контролю.</item>
@@ -338,5 +339,6 @@
 
     <string-array name="sortTitles">
         <item>По дате начала</item>
+        <item>По интенсивности</item>
     </string-array>
 </resources>

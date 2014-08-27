@@ -7,7 +7,7 @@ import java.util.Comparator;
 /**
  * Created by Yuriy.Vinogradov on 25.08.2014.
  */
-public class FeelingsDiaryEntryByBeginningDate implements Comparator<FeelingsDiaryEntry> {
+public class FeelingsDiaryByBeginningDate implements Comparator<FeelingsDiaryEntry> {
     @Override
     public int compare(FeelingsDiaryEntry feelingsDiaryEntry, FeelingsDiaryEntry feelingsDiaryEntry2) {
         int result;
