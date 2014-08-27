@@ -47,8 +47,8 @@ public class NewFeelingsDiaryEntryActivity extends MenuAbstractActivity implemen
         ratingBar.setOnRatingBarChangeListener(this);
         LayerDrawable stars = (LayerDrawable) ratingBar.getProgressDrawable();
         stars.getDrawable(2).setColorFilter(getResources().getColor(R.color.button), PorterDuff.Mode.SRC_ATOP);
-        stars.getDrawable(1).setColorFilter(getResources().getColor(R.color.editText), PorterDuff.Mode.SRC_ATOP);
-        stars.getDrawable(0).setColorFilter(getResources().getColor(R.color.editText), PorterDuff.Mode.SRC_ATOP);
+        stars.getDrawable(1).setColorFilter(getResources().getColor(R.color.bege), PorterDuff.Mode.SRC_ATOP);
+        stars.getDrawable(0).setColorFilter(getResources().getColor(R.color.bege), PorterDuff.Mode.SRC_ATOP);
         intensityBar = (RatingBar) findViewById(R.id.feelingsIntensity);// create RatingBar object
         intensityBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
             @Override
@@ -58,8 +58,8 @@ public class NewFeelingsDiaryEntryActivity extends MenuAbstractActivity implemen
         });
         stars = (LayerDrawable) intensityBar.getProgressDrawable();
         stars.getDrawable(2).setColorFilter(getResources().getColor(R.color.button), PorterDuff.Mode.SRC_ATOP);
-        stars.getDrawable(1).setColorFilter(getResources().getColor(R.color.editText), PorterDuff.Mode.SRC_ATOP);
-        stars.getDrawable(0).setColorFilter(getResources().getColor(R.color.editText), PorterDuff.Mode.SRC_ATOP);
+        stars.getDrawable(1).setColorFilter(getResources().getColor(R.color.bege), PorterDuff.Mode.SRC_ATOP);
+        stars.getDrawable(0).setColorFilter(getResources().getColor(R.color.bege), PorterDuff.Mode.SRC_ATOP);
         btnTimeFrom = (Button) findViewById(R.id.feelTimeFrom);
         btnTimeTo = (Button) findViewById(R.id.feelTimeTo);
         btnComment = (Button) findViewById(R.id.btnComment);
