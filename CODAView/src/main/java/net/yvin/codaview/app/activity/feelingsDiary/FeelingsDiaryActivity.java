@@ -98,20 +98,14 @@ public class FeelingsDiaryActivity extends MenuAbstractActivity {
         final boolean[] mCheckedItems = new boolean[1];
         Resources res = getResources();
         final String[] checkFilterTitles = res.getStringArray(R.array.filterTitles);
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
         final List<Integer> filterNumbers = new ArrayList<>();
-        builder.setTitle(R.string.filters)
+        new AlertDialog.Builder(this).setTitle(R.string.filters)
                 .setMultiChoiceItems(checkFilterTitles, mCheckedItems,
                         new DialogInterface.OnMultiChoiceClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog,
                                                 int which, boolean isChecked) {
-                                if (isChecked == true)
-                                    filterNumbers.add(which);
-                                else
-                                    for (int i = 0; i < filterNumbers.size(); i++)
-                                        if (filterNumbers.get(i) == which)
-                                            filterNumbers.remove(i);
+                                handleMultyChoiceItemclick(which, isChecked, filterNumbers);
                             }
                         })
                 .setPositiveButton(R.string.ready,
@@ -130,8 +124,7 @@ public class FeelingsDiaryActivity extends MenuAbstractActivity {
                                 dialog.cancel();
 
                             }
-                        });
-        builder.show();
+                        }).show();
     }
 
     private void showSortDialog() {
@@ -171,13 +164,14 @@ public class FeelingsDiaryActivity extends MenuAbstractActivity {
     private void filterByIntensity() {
         final boolean[] mCheckedItems = new boolean[6];
         final String[] checkRatingTitles = { "0", "1", "2", "3", "4", "5" };
+        final List<Integer> filterNumbers = new ArrayList<>();
         new AlertDialog.Builder(this).setTitle(R.string.select_ratings)
                 .setMultiChoiceItems(checkRatingTitles, mCheckedItems,
                         new DialogInterface.OnMultiChoiceClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog,
                                                 int which, boolean isChecked) {
-                                mCheckedItems[which] = isChecked;
+                                handleMultyChoiceItemclick(which, isChecked, filterNumbers);
                             }
                         })
                 .setPositiveButton(R.string.ready,
@@ -197,5 +191,14 @@ public class FeelingsDiaryActivity extends MenuAbstractActivity {
 
                             }
                         }).show();
+    }
+
+    private void handleMultyChoiceItemclick(int which, boolean isChecked, List<Integer> filterNumbers) {
+        if (isChecked == true)
+            filterNumbers.add(which);
+        else
+            for (int i = 0; i < filterNumbers.size(); i++)
+                if (filterNumbers.get(i) == which)
+                    filterNumbers.remove(i);
     }
 }
