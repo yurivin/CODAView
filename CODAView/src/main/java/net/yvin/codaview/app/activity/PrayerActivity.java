@@ -50,7 +50,7 @@ public class PrayerActivity extends MenuExpandableListAbstractActivity {
         SimpleExpandableListAdapter adapter = new SimpleExpandableListAdapter(
                 this,
                 groupData,
-                android.R.layout.simple_expandable_list_item_1,
+                R.layout.simple_expandable_list_item_my,
                 groupFrom,
                 groupTo,
                 childData,
