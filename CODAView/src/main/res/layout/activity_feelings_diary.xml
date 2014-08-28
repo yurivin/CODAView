@@ -34,6 +34,17 @@
                 android:text="@string/statistics"
                 android:layout_height="wrap_content"/> -->
 
+        <Button
+                android:id="@+id/btnFilter"
+                android:onClick="clickBtnFilter"
+                android:layout_weight="1"
+                style="@style/Widget.Button.MainMenu"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:textSize="16sp"
+                android:text="@string/filters"
+                android:layout_height="wrap_content"/>
+
      <Button
                 android:id="@+id/btnSort"
                 android:onClick="clickBtnSort"
@@ -41,7 +52,7 @@
                 style="@style/Widget.Button.MainMenu"
                 android:layout_marginLeft="0dp"
                 android:layout_marginRight="5dp"
-                android:textSize="17sp"
+                android:textSize="16sp"
                 android:text="@string/sort"
                 android:layout_height="wrap_content"/>
     </LinearLayout>

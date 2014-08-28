@@ -78,6 +78,14 @@ public class FeelingsDiaryActivity extends MenuAbstractActivity {
         expListView.setAdapter(adapter);
     }
 
+    public void clickBtnSort(View v) {
+        showSortDialog();
+    }
+
+    public void clickBtnFilter(View v) {
+        showFiltersDialog();
+    }
+
     private void getData() {
         diaryEntries = FeelingDiaryReader.readAll();
         extractData();
@@ -88,8 +96,40 @@ public class FeelingsDiaryActivity extends MenuAbstractActivity {
         feelingsContent = diaryService.getContent(diaryEntries);
     }
 
-    public void clickBtnSort(View v) {
-        showSortDialog();
+    private void showFiltersDialog() {
+        final boolean[] mCheckedItems = {false};
+        final String[] checkFilterTitles = {"Какой-то фильтр"};
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        List<Integer> filterList = new ArrayList<>();
+        builder.setTitle(R.string.filters)
+                .setMultiChoiceItems(checkFilterTitles, mCheckedItems,
+                        new DialogInterface.OnMultiChoiceClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog,
+                                                int which, boolean isChecked) {
+                                mCheckedItems[which] = isChecked;
+                            }
+                        })
+
+                        // Добавляем кнопки
+                .setPositiveButton(R.string.ready,
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog,
+                                                int id) {
+                            }
+                        })
+
+                .setNegativeButton(R.string.cancel,
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog,
+                                                int id) {
+                                dialog.cancel();
+
+                            }
+                        });
+        builder.show();
     }
 
     private void showSortDialog() {
@@ -103,7 +143,7 @@ public class FeelingsDiaryActivity extends MenuAbstractActivity {
                             @Override
                             public void onClick(DialogInterface dialog,
                                                 int item) {
-                                understandSelection(item);
+                                understandComparatorSelection(item);
                                 dialog.cancel();
                             }
                         })
@@ -118,7 +158,7 @@ public class FeelingsDiaryActivity extends MenuAbstractActivity {
         builder.show();
     }
 
-    private void understandSelection(int checked) {
+    private void understandComparatorSelection(int checked) {
         Comparator<FeelingsDiaryEntry> comparator = null;
             switch (checked) {
                 case 0:
