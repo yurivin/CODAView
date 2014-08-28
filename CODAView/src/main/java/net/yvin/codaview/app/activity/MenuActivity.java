@@ -7,9 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import net.yvin.codaview.app.R;
 import net.yvin.codaview.app.activity.base.MenuAbstractActivity;
+import net.yvin.codaview.app.activity.feelingsDiary.FeelingsDiaryActivity;
 import net.yvin.codaview.app.activity.utils.ActivityLuncher;
 import net.yvin.codaview.app.activity.utils.StorageChecker;
-import net.yvin.codaview.app.context.LanguageContext;
 import net.yvin.codaview.app.utils.Constants;
 
 import static net.yvin.codaview.app.utils.Constants.*;

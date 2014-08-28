@@ -1,4 +1,4 @@
-package net.yvin.codaview.app.activity;
+package net.yvin.codaview.app.activity.feelingsDiary;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -10,10 +10,6 @@ import android.widget.SimpleExpandableListAdapter;
 import net.yvin.codaview.app.R;
 import net.yvin.codaview.app.activity.base.MenuAbstractActivity;
 import net.yvin.codaview.app.activity.model.FeelingsDiaryEntry;
-import net.yvin.codaview.app.comparators.feelingsDiaryEntry.ByBeginningDate;
-import net.yvin.codaview.app.comparators.feelingsDiaryEntry.ByEndDate;
-import net.yvin.codaview.app.comparators.feelingsDiaryEntry.ByIntensity;
-import net.yvin.codaview.app.comparators.feelingsDiaryEntry.ByLikeness;
 import net.yvin.codaview.app.service.DiaryService;
 import net.yvin.codaview.app.utils.FeelingDiaryReader;
 
@@ -34,6 +30,7 @@ public class FeelingsDiaryActivity extends MenuAbstractActivity {
     String[] feelingsContent;
     List<FeelingsDiaryEntry> diaryEntries;
     SimpleExpandableListAdapter adapter;
+    FeelingsDiarySortService sortService;
 
 
     @Override
@@ -43,10 +40,11 @@ public class FeelingsDiaryActivity extends MenuAbstractActivity {
         expListView = (ExpandableListView) findViewById(R.id.entries);
         diaryService = new DiaryService(this);
         getData();
+        sortService = new FeelingsDiarySortService(diaryService, diaryEntries, this);
         feelExpandableListView();
     }
 
-    private void feelExpandableListView() {
+    public void feelExpandableListView() {
         String[] groupFrom = new String[]{"title"};
         int[] groupTo = new int[]{android.R.id.text1};
         String[] childFrom = new String[]{"content"};
@@ -86,40 +84,44 @@ public class FeelingsDiaryActivity extends MenuAbstractActivity {
         showFiltersDialog();
     }
 
+    void extractData() {
+        feelingsTitles = diaryService.getTitles(diaryEntries);
+        feelingsContent = diaryService.getContent(diaryEntries);
+    }
+
     private void getData() {
         diaryEntries = FeelingDiaryReader.readAll();
         extractData();
     }
 
-    private void extractData() {
-        feelingsTitles = diaryService.getTitles(diaryEntries);
-        feelingsContent = diaryService.getContent(diaryEntries);
-    }
-
     private void showFiltersDialog() {
-        final boolean[] mCheckedItems = {false};
-        final String[] checkFilterTitles = {"Какой-то фильтр"};
+        final boolean[] mCheckedItems = new boolean[1];
+        Resources res = getResources();
+        final String[] checkFilterTitles = res.getStringArray(R.array.filterTitles);
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        List<Integer> filterList = new ArrayList<>();
+        final List<Integer> filterNumbers = new ArrayList<>();
         builder.setTitle(R.string.filters)
                 .setMultiChoiceItems(checkFilterTitles, mCheckedItems,
                         new DialogInterface.OnMultiChoiceClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog,
                                                 int which, boolean isChecked) {
-                                mCheckedItems[which] = isChecked;
+                                if (isChecked == true)
+                                    filterNumbers.add(which);
+                                else
+                                    for (int i = 0; i < filterNumbers.size(); i++)
+                                        if (filterNumbers.get(i) == which)
+                                            filterNumbers.remove(i);
                             }
                         })
-
-                        // Добавляем кнопки
                 .setPositiveButton(R.string.ready,
                         new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog,
                                                 int id) {
+                                understandSelectedFilters(filterNumbers);
                             }
                         })
-
                 .setNegativeButton(R.string.cancel,
                         new DialogInterface.OnClickListener() {
                             @Override
@@ -135,15 +137,14 @@ public class FeelingsDiaryActivity extends MenuAbstractActivity {
     private void showSortDialog() {
         Resources res = getResources();
         final String[] sortTitles = res.getStringArray(R.array.sortTitles);
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle(R.string.select_sorting_type)
+        new AlertDialog.Builder(this).setTitle(R.string.select_sorting_type)
                 .setCancelable(false)
                 .setSingleChoiceItems(sortTitles, -1,
                         new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog,
                                                 int item) {
-                                understandComparatorSelection(item);
+                                sortService.understandComparatorSelection(item);
                                 dialog.cancel();
                             }
                         })
@@ -154,33 +155,47 @@ public class FeelingsDiaryActivity extends MenuAbstractActivity {
                                                 int id) {
                                 dialog.cancel();
                             }
-                        });
-        builder.show();
+                        }).show();
     }
 
-    private void understandComparatorSelection(int checked) {
-        Comparator<FeelingsDiaryEntry> comparator = null;
-            switch (checked) {
-                case 0:
-                    comparator = new ByBeginningDate();
-                    break;
-                case 1:
-                    comparator = new ByEndDate();
-                    break;
-                case 2:
-                    comparator = new ByIntensity();
-                    break;
-                case 3:
-                    comparator = new ByLikeness();
+    private void understandSelectedFilters(List<Integer> filterNumbers) {
+        for(int integer : filterNumbers) {
+            switch(integer) {
+                case 0 :
+                    filterByIntensity();
                     break;
             }
-            sortBySelection(comparator);
+        }
     }
 
-    private void sortBySelection(Comparator<FeelingsDiaryEntry> comparator) {
-        diaryService.sort(diaryEntries, comparator);
-        extractData();
-        feelExpandableListView();
-        adapter.notifyDataSetChanged();
+    private void filterByIntensity() {
+        final boolean[] mCheckedItems = new boolean[6];
+        final String[] checkRatingTitles = { "0", "1", "2", "3", "4", "5" };
+        new AlertDialog.Builder(this).setTitle(R.string.select_ratings)
+                .setMultiChoiceItems(checkRatingTitles, mCheckedItems,
+                        new DialogInterface.OnMultiChoiceClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog,
+                                                int which, boolean isChecked) {
+                                mCheckedItems[which] = isChecked;
+                            }
+                        })
+                .setPositiveButton(R.string.ready,
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog,
+                                                int id) {
+
+                            }
+                        })
+                .setNegativeButton(R.string.cancel,
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog,
+                                                int id) {
+                                dialog.cancel();
+
+                            }
+                        }).show();
     }
 }

@@ -54,7 +54,7 @@
                 android:screenOrientation="portrait">
         </activity>
         <activity
-                android:name=".activity.FeelingsDiaryActivity"
+                android:name=".activity.feelingsDiary.FeelingsDiaryActivity"
                 android:label="@string/feelings_diary"
                 android:theme="@style/ActivityTheme"
                 android:screenOrientation="portrait">

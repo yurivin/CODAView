@@ -52,7 +52,7 @@
     <string name="sort_message">In multiple selection the last selected algorithm became main. It\'s recommended to select only one.</string>
     <string name="date_to_should_be_greater">Date of end should be greater or equal to date of beginning</string>
     <string name="filters">Filters</string>
-
+    <string name="select_ratings">Select ratings for filter</string>
 
     <string-array name="supported_languages">
         <item>English</item>
@@ -280,6 +280,10 @@
         <item>by end date</item>
         <item>by intensity</item>
         <item>by pleasantness of feelings</item>
+    </string-array>
+
+    <string-array name="filterTitles">
+        <item>by Intensity</item>
     </string-array>
 
 </resources>
