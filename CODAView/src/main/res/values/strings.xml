@@ -53,6 +53,7 @@
     <string name="date_to_should_be_greater">Date of end should be greater or equal to date of beginning</string>
     <string name="filters">Filters</string>
     <string name="select_ratings">Select ratings for filter</string>
+    <string name="workOn">Work on program</string>
 
     <string-array name="supported_languages">
         <item>English</item>
