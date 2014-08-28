@@ -6,5 +6,6 @@
     <color name="editText">#ffffa701</color>
     <color name="normalText">#ffff7105</color>
     <color name="bege">#ffffd975</color>
+    <color name="header">#ffff5003</color>
 
 </resources>

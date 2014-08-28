@@ -34,7 +34,6 @@ public class FeelingsDiaryActivity extends MenuAbstractActivity {
     String[] feelingsContent;
     List<FeelingsDiaryEntry> diaryEntries;
     SimpleExpandableListAdapter adapter;
-    List<Integer> checkedList = new ArrayList<>();
 
 
     @Override
@@ -42,8 +41,6 @@ public class FeelingsDiaryActivity extends MenuAbstractActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feelings_diary);
         expListView = (ExpandableListView) findViewById(R.id.entries);
-        //adding first automatically checked sort entry
-        checkedList.add(0);
         diaryService = new DiaryService(this);
         getData();
         feelExpandableListView();
@@ -71,7 +68,7 @@ public class FeelingsDiaryActivity extends MenuAbstractActivity {
         adapter = new SimpleExpandableListAdapter(
                 this,
                 groupData,
-                android.R.layout.simple_expandable_list_item_1,
+                R.layout.simple_expandable_list_item_my,
                 groupFrom,
                 groupTo,
                 childData,
@@ -83,7 +80,6 @@ public class FeelingsDiaryActivity extends MenuAbstractActivity {
 
     private void getData() {
         diaryEntries = FeelingDiaryReader.readAll();
-//        diaryService.sort(diaryEntries, new FeelingsDiaryEntryByBeginningDate());
         extractData();
     }
 

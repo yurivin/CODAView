@@ -190,6 +190,7 @@
         <item>Недовольство</item>
         <item>Уныние</item>
         <item>Страдание</item>
+        <item>Скука</item>
     </string-array>
 
     <string-array name="angry_feelings">
@@ -233,7 +234,6 @@
         <item>Усталость</item>
         <item>Надежда</item>
         <item>Вера</item>
-        <item>Скука</item>
         <item>Любопытство</item>
         <item>Упоротость</item>
         <item>Боль</item>

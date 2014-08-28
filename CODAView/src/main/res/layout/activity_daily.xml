@@ -21,7 +21,7 @@
                 android:id="@+id/dayTitleTv"
                 android:layout_alignParentTop="true"
                 android:layout_width="match_parent"
-                android:textColor="#ffff5003"
+                android:textColor="@color/header"
                 android:textSize="18dp"
                 android:layout_height="wrap_content"/>
             <TextView
