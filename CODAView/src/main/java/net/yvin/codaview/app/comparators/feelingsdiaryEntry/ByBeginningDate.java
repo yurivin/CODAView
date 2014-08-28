@@ -1,4 +1,4 @@
-package net.yvin.codaview.app.comparators.fde;
+package net.yvin.codaview.app.comparators.feelingsDiaryEntry;
 
 import net.yvin.codaview.app.activity.model.FeelingsDiaryEntry;
 

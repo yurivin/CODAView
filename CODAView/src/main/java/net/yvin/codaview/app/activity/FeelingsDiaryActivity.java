@@ -10,10 +10,10 @@ import android.widget.SimpleExpandableListAdapter;
 import net.yvin.codaview.app.R;
 import net.yvin.codaview.app.activity.base.MenuAbstractActivity;
 import net.yvin.codaview.app.activity.model.FeelingsDiaryEntry;
-import net.yvin.codaview.app.comparators.fde.ByBeginningDate;
-import net.yvin.codaview.app.comparators.fde.ByEndDate;
-import net.yvin.codaview.app.comparators.fde.ByIntensity;
-import net.yvin.codaview.app.comparators.fde.ByLikeness;
+import net.yvin.codaview.app.comparators.feelingsDiaryEntry.ByBeginningDate;
+import net.yvin.codaview.app.comparators.feelingsDiaryEntry.ByEndDate;
+import net.yvin.codaview.app.comparators.feelingsDiaryEntry.ByIntensity;
+import net.yvin.codaview.app.comparators.feelingsDiaryEntry.ByLikeness;
 import net.yvin.codaview.app.service.DiaryService;
 import net.yvin.codaview.app.utils.FeelingDiaryReader;
 
