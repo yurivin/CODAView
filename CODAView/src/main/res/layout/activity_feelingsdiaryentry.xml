@@ -48,7 +48,7 @@
               android:layout_above="@+id/feelingsIntensity"
               android:textColor="#ffff5003"
               android:textSize="16sp"
-              android:text="@string/Rate_how_iyfa"/>
+              android:text="@string/Intensity_of_feel"/>
 
     <RatingBar android:id="@+id/feelingsIntensity"
                android:layout_width="wrap_content"
