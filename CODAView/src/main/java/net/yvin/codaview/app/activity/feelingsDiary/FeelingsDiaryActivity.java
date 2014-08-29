@@ -104,7 +104,7 @@ public class FeelingsDiaryActivity extends MenuAbstractActivity {
 
     private void showFiltersDialog() {
         final Context context = this;
-        final boolean[] mCheckedItems = new boolean[1];
+        final boolean[] mCheckedItems = new boolean[2];
         Resources res = getResources();
         final String[] checkFilterTitles = res.getStringArray(R.array.filterTitles);
         final List<Integer> filterNumbers = new ArrayList<>();

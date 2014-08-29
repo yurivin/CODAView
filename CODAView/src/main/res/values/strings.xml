@@ -54,6 +54,7 @@
     <string name="filters">Filters</string>
     <string name="select_intensity">Select intensity for filter</string>
     <string name="workOn">Work on program</string>
+    <string name="select_rate">Select marks</string>
 
     <string-array name="supported_languages">
         <item>English</item>
@@ -285,6 +286,7 @@
 
     <string-array name="filterTitles">
         <item>by Intensity</item>
+        <item>by pleasantness rating</item>
     </string-array>
 
 </resources>
