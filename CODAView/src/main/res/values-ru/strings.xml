@@ -50,7 +50,7 @@
     <string name="sort_message">При выделении нескольких пунктов, выбранный последним становится основным. Рекомендую выбирать по одному пункту.</string>
     <string name="date_to_should_be_greater">Дата окончания должна быть позже или равна дате начала</string>
     <string name="filters">Фильтры</string>
-    <string name="select_ratings">Выберите рейтинги для фильтра</string>
+    <string name="select_intensity">Выберите интенсивность для фильтра</string>
     <string name="workOn">Работа по программе</string>
 
     <string-array name="steps">

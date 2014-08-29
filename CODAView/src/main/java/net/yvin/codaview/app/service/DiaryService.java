@@ -37,9 +37,9 @@ public class DiaryService {
             titles[i] = entry.yearFrom + Constants.DEFICE + entry.monthFrom + Constants.DEFICE + entry.dayFrom + Constants.SPACE +
                     entry.hourFrom + Constants.DOUBLE_POINT + entry.minuteFrom;
         }
-        for (String string : titles) {
-            Log.d("title: ", string);
-        }
+//        for (String string : titles) {
+//            Log.d("title: ", string);
+//        }
         return titles;
     }
 
@@ -67,9 +67,9 @@ public class DiaryService {
                     Constants.NEW_LINE + Constants.NEW_LINE +
                     context.getString(R.string.comment) + Constants.DOUBLE_POINT + Constants.SPACE + entry.comment;
         }
-        for (String string : content) {
-            Log.d("Content: ", string);
-        }
+//        for (String string : content) {
+//            Log.d("Content: ", string);
+//        }
         return content;
     }
 }

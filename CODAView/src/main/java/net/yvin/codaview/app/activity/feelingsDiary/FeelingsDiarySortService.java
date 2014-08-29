@@ -1,5 +1,6 @@
 package net.yvin.codaview.app.activity.feelingsDiary;
 
+import android.content.Context;
 import net.yvin.codaview.app.activity.feelingsDiary.FeelingsDiaryActivity;
 import net.yvin.codaview.app.activity.model.FeelingsDiaryEntry;
 import net.yvin.codaview.app.comparators.feelingsDiaryEntry.ByBeginningDate;
@@ -20,10 +21,10 @@ public class FeelingsDiarySortService {
     private List<FeelingsDiaryEntry> diaryEntries;
     private FeelingsDiaryActivity feelingsdiaryActivity;
 
-    FeelingsDiarySortService(DiaryService diaryService, List<FeelingsDiaryEntry> diaryEntries, FeelingsDiaryActivity feelingsdiaryActivity) {
+    FeelingsDiarySortService(DiaryService diaryService, List<FeelingsDiaryEntry> diaryEntries, Context feelingsdiaryActivity) {
         this.diaryService = diaryService;
         this.diaryEntries = diaryEntries;
-        this.feelingsdiaryActivity = feelingsdiaryActivity;
+        this.feelingsdiaryActivity = (FeelingsDiaryActivity)feelingsdiaryActivity;
     }
 
     void understandComparatorSelection(int checked) {
@@ -42,13 +43,7 @@ public class FeelingsDiarySortService {
                 comparator = new ByLikeness();
                 break;
         }
-        sortBySelection(comparator);
-    }
-
-    private void sortBySelection(Comparator<FeelingsDiaryEntry> comparator) {
         diaryService.sort(diaryEntries, comparator);
-        feelingsdiaryActivity.extractData();
-        feelingsdiaryActivity.feelExpandableListView();
-        feelingsdiaryActivity.adapter.notifyDataSetChanged();
+        feelingsdiaryActivity.showData(diaryEntries);
     }
 }
