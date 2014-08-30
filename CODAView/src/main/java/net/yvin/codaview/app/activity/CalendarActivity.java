@@ -27,6 +27,7 @@ public class CalendarActivity extends MenuAbstractActivity {
         calendar.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             public void onSelectedDayChange(CalendarView view,
                                             int year, int month, int dayOfMonth) {
+                //We need this check because without if we try to scroll calendar it loads current date
                 if(view.getDate() != date) {
                     Intent intent = new Intent(getApplicationContext(), DailyActivity.class);
                     intent.putExtra("dailyId", DateUtils.CalendarToDailyId(month, dayOfMonth));
