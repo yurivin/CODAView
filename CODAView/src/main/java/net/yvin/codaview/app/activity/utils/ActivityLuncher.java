@@ -14,5 +14,6 @@ public class ActivityLuncher {
 
     private void lunchActivity(Intent intent, Activity context) {
         context.startActivity(intent);
+        context.finish();
     }
 }
