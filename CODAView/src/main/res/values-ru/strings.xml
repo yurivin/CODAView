@@ -53,6 +53,7 @@
     <string name="select_intensity">Выберите интенсивность для фильтра</string>
     <string name="workOn">Работа по программе</string>
     <string name="select_rate">Выберите оценки</string>
+    <string name="today_entry">На сегодя</string>
 
     <string-array name="steps">
         <item>Мы признали своё бессилие перед другими, признали, что наша жизнь перестала поддаваться контролю.</item>

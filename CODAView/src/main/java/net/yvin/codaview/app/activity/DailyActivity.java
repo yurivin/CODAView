@@ -32,6 +32,9 @@ public class DailyActivity extends MenuAbstractActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Time now = new Time();
+        now.setToNow();
+
         setContentView(R.layout.activity_daily);
         String dailyId = DateUtils.nowToDailyId();
         if (getIntent() != null) {
@@ -40,12 +43,10 @@ public class DailyActivity extends MenuAbstractActivity {
                 if (intent.getExtras().containsKey(Constants.DAILYID)) {
                     dailyId = intent.getStringExtra(Constants.DAILYID);
                     Log.d(Constants.DAILYID, dailyId);
+                    now.set(intent.getIntExtra(Constants.DAY_OF_MONTH, now.monthDay), intent.getIntExtra(Constants.MONTH, now.month),  now.year);
                 }
             }
         }
-
-        Time now = new Time();
-        now.setToNow();
 
         dayTitleTv = (TextView) findViewById(R.id.dayTitleTv);
         dayTitleTv.setText(diaryTitlesRepo.find(dailyId, PathService.diaryTitle(), this));

@@ -1,4 +1,4 @@
-package net.yvin.codaview.app.utils;
+package net.yvin.codaview.app.activity.utils;
 
 import java.util.List;
 

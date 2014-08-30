@@ -55,6 +55,7 @@
     <string name="select_intensity">Select intensity for filter</string>
     <string name="workOn">Work on program</string>
     <string name="select_rate">Select marks</string>
+    <string name="today_entry">today\'s entry</string>
 
     <string-array name="supported_languages">
         <item>English</item>

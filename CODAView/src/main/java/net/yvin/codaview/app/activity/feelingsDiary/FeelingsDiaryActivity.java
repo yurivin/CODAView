@@ -11,9 +11,8 @@ import android.widget.SimpleExpandableListAdapter;
 import net.yvin.codaview.app.R;
 import net.yvin.codaview.app.activity.base.MenuAbstractActivity;
 import net.yvin.codaview.app.activity.model.FeelingsDiaryEntry;
-import net.yvin.codaview.app.filters.FilterByIntensity;
 import net.yvin.codaview.app.service.DiaryService;
-import net.yvin.codaview.app.utils.ActivityUtils;
+import net.yvin.codaview.app.activity.utils.ActivityUtils;
 import net.yvin.codaview.app.utils.FeelingDiaryReader;
 
 import java.util.*;

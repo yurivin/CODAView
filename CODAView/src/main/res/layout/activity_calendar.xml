@@ -25,10 +25,10 @@
         android:layout_width="match_parent"
         android:layout_alignParentBottom="true"
         style="@style/Widget.Button.MainMenu"
-        android:text="Ok"
+        android:text="@string/today_entry"
         android:drawableLeft="@drawable/ok40"
-        android:paddingLeft="80dip"
-        android:paddingRight="80dip"
+        android:paddingLeft="20dip"
+        android:paddingRight="20dip"
         android:singleLine="true"
         android:layout_height="wrap_content"/>
 
