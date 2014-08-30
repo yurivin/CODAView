@@ -13,9 +13,23 @@
         android:id="@+id/calendarView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_above="@+id/btnOk"
         android:unfocusedMonthDateColor="#ffd1850f"
         android:focusedMonthDateColor="#ffc6ff16"
         android:showWeekNumber="false"
         android:weekSeparatorLineColor="#ffd1510f"/>
+
+    <Button
+        android:id="@+id/btnOk"
+        android:onClick="clickBtnOk"
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        style="@style/Widget.Button.MainMenu"
+        android:text="Ok"
+        android:drawableLeft="@drawable/ok40"
+        android:paddingLeft="80dip"
+        android:paddingRight="80dip"
+        android:singleLine="true"
+        android:layout_height="wrap_content"/>
 
 </RelativeLayout>

@@ -5,23 +5,27 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.CalendarView;
 import android.widget.TextView;
 import android.widget.Toast;
 import net.yvin.codaview.app.R;
 import net.yvin.codaview.app.activity.base.MenuAbstractActivity;
+import net.yvin.codaview.app.activity.utils.ActivityLuncher;
 import net.yvin.codaview.app.utils.DateUtils;
 
 import java.lang.reflect.Field;
+import java.util.Date;
 
 public class CalendarActivity extends MenuAbstractActivity {
     Long date;
+    CalendarView calendar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calendar);
         setMonthTitleColor();
-        CalendarView calendar = (CalendarView) findViewById(R.id.calendarView);
+        calendar = (CalendarView) findViewById(R.id.calendarView);
         date = calendar.getDate();
 
         calendar.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
@@ -37,6 +41,13 @@ public class CalendarActivity extends MenuAbstractActivity {
                 }
             }
         });
+    }
+
+    public void clickBtnOk(View v) {
+        Date selectedDate = new Date(calendar.getDate());
+        Intent intent = new Intent(getApplicationContext(), DailyActivity.class);
+        intent.putExtra("dailyId", DateUtils.CalendarToDailyId(selectedDate.getMonth(), selectedDate.getDay()));
+        new ActivityLuncher(intent, this);
     }
 
     private void setMonthTitleColor() {
