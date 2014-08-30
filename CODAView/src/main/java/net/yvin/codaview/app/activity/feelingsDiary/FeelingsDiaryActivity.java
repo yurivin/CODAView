@@ -121,7 +121,7 @@ public class FeelingsDiaryActivity extends MenuAbstractActivity {
                             @Override
                             public void onClick(DialogInterface dialog,
                                                 int id) {
-                               new FeelingsDiaryFilterService(diaryEntries, context).understandSelectedFilters(filterNumbers);
+                               new feelingsDiaryFilterService(diaryEntries, context).understandSelectedFilters(filterNumbers);
                             }
                         })
                 .setNegativeButton(R.string.cancel,

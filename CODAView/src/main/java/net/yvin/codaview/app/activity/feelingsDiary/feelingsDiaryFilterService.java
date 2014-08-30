@@ -5,25 +5,23 @@ import android.content.Context;
 import android.content.DialogInterface;
 import net.yvin.codaview.app.R;
 import net.yvin.codaview.app.activity.model.FeelingsDiaryEntry;
-import net.yvin.codaview.app.filters.FeelingsDiaryFilter;
 import net.yvin.codaview.app.filters.FilterByIntensity;
 import net.yvin.codaview.app.filters.FilterByRate;
-import net.yvin.codaview.app.utils.ActivityUtils;
+import net.yvin.codaview.app.activity.utils.ActivityUtils;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 /**
  * Created by Yuriy.Vinogradov on 28.08.2014.
  */
-public class FeelingsDiaryFilterService {
+public class feelingsDiaryFilterService {
 
     List<FeelingsDiaryEntry> entries;
     Context context;
     List<Integer> filterNumbers;
 
-    FeelingsDiaryFilterService(List<FeelingsDiaryEntry> entries, Context context) {
+    feelingsDiaryFilterService(List<FeelingsDiaryEntry> entries, Context context) {
         this.entries = entries;
         this.context = context;
     }
