@@ -161,7 +161,8 @@
             style="@style/Widget.Button.MainMenu"
             android:text="@string/daily"
             android:drawableLeft="@drawable/today40"
-            android:paddingLeft="30dip"
+            android:paddingLeft="20dip"
+            android:textSize="16sp"
             android:layout_marginRight="1dp"
             android:singleLine="true"
             android:layout_height="wrap_content"/>
@@ -172,9 +173,10 @@
             android:layout_weight="1"
             android:layout_marginLeft="1dp"
             style="@style/Widget.Button.MainMenu"
+            android:textSize="16sp"
             android:text="@string/calendar"
             android:drawableLeft="@drawable/calendar40"
-            android:paddingLeft="10dip"
+            android:paddingLeft="20dip"
             android:singleLine="true"
             android:layout_height="wrap_content"/>
     </LinearLayout>
