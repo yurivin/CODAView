@@ -75,6 +75,10 @@ public class MenuActivity extends MenuAbstractActivity {
         new ActivityLuncher(new Intent(this, HowToHelpActivity.class), this);
     }
 
+    public void clickBtnDaily(View v){
+        new ActivityLuncher(new Intent(this, DailyActivity.class), this);
+    }
+
     private void showAlertNoStorage() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle(R.string.alert)

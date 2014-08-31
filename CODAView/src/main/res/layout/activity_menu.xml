@@ -7,149 +7,175 @@
 
 
     <Button
-            android:id="@+id/btnHowToHelp"
-            android:onClick="clickBtnHowToHelp"
-            android:layout_width="match_parent"
-            android:layout_alignParentTop="true"
-            style="@style/Widget.Button.MainMenu"
-            android:text="@string/howToHelp"
-            android:drawableLeft="@drawable/info40"
-            android:paddingLeft="70dip"
-            android:paddingRight="70dip"
-            android:singleLine="true"
-            android:layout_height="wrap_content"/>
+        android:id="@+id/btnHowToHelp"
+        android:onClick="clickBtnHowToHelp"
+        android:layout_width="match_parent"
+        android:layout_alignParentTop="true"
+        style="@style/Widget.Button.MainMenu"
+        android:text="@string/howToHelp"
+        android:drawableLeft="@drawable/info40"
+        android:paddingLeft="70dip"
+        android:paddingRight="70dip"
+        android:singleLine="true"
+        android:layout_height="wrap_content"/>
 
-<!--    <Button
-            android:id="@+id/btnWorkOnProgram"
-            android:onClick="clickBtnWorkOnProgram"
-            android:layout_width="match_parent"
-            android:layout_above="@+id/layoutFeelings"
-            style="@style/Widget.Button.MainMenu"
-            android:text="@string/workOn"
-            android:drawableLeft="@drawable/workon40"
-            android:textSize="20sp"
-            android:paddingLeft="30dip"
-            android:paddingRight="30dip"
-            android:singleLine="true"
-            android:layout_height="wrap_content"/> -->
+    <!--    <Button
+                android:id="@+id/btnWorkOnProgram"
+                android:onClick="clickBtnWorkOnProgram"
+                android:layout_width="match_parent"
+                android:layout_above="@+id/layoutFeelings"
+                style="@style/Widget.Button.MainMenu"
+                android:text="@string/workOn"
+                android:drawableLeft="@drawable/workon40"
+                android:textSize="20sp"
+                android:paddingLeft="30dip"
+                android:paddingRight="30dip"
+                android:singleLine="true"
+                android:layout_height="wrap_content"/> -->
 
     <LinearLayout
-            android:id="@+id/layoutFeelings"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/btnPrayer">
-        <Button
-                android:id="@+id/btnFillingsDiary"
-                android:layout_weight="1"
-                android:onClick="clickBtnFillingsDiary"
-                android:layout_above="@+id/btnWayBeginning"
-                android:layout_marginRight="0dp"
-                style="@style/Widget.Button.MainMenu"
-                android:textSize="16sp"
-                android:text="@string/feelings_diary"
-                android:drawableLeft="@drawable/journal40"
-                android:paddingLeft="10dip"
-                android:paddingRight="0dip"
-                android:singleLine="true"
-                android:layout_height="wrap_content"/>
-        <Button
-                android:id="@+id/btnFillingsNewEntry"
-                android:layout_weight="1"
-                android:layout_marginLeft="2dp"
-                android:onClick="clickBtnFillingsNewEntry"
-                android:layout_above="@+id/btnFillingsDiary"
-                style="@style/Widget.Button.MainMenu"
-                android:textSize="16sp"
-                android:text="@string/new_entry"
-                android:drawableLeft="@drawable/new40"
-                android:paddingLeft="10dip"
-                android:paddingRight="10dip"
-                android:singleLine="true"
-                android:layout_height="wrap_content"/>
-    </LinearLayout>
+        android:id="@+id/layoutFeelings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnPrayer">
 
-    <Button
-            android:id="@+id/btnPrayer"
-            android:onClick="clickBtnPrayer"
-            android:layout_width="match_parent"
+        <Button
+            android:id="@+id/btnFillingsDiary"
+            android:layout_weight="1"
+            android:onClick="clickBtnFillingsDiary"
             android:layout_above="@+id/btnWayBeginning"
+            android:layout_marginRight="0dp"
             style="@style/Widget.Button.MainMenu"
-            android:text="@string/prayer"
-            android:drawableLeft="@drawable/pray40"
-            android:paddingLeft="90dip"
-            android:paddingRight="70dip"
+            android:textSize="16sp"
+            android:text="@string/feelings_diary"
+            android:drawableLeft="@drawable/journal40"
+            android:paddingLeft="10dip"
+            android:paddingRight="0dip"
             android:singleLine="true"
             android:layout_height="wrap_content"/>
-    <Button
-            android:id="@+id/btnWayBeginning"
-            android:onClick="clickBtnWayBeginning"
-            android:layout_width="match_parent"
-            android:layout_above="@+id/layout12"
+
+        <Button
+            android:id="@+id/btnFillingsNewEntry"
+            android:layout_weight="1"
+            android:layout_marginLeft="2dp"
+            android:onClick="clickBtnFillingsNewEntry"
+            android:layout_above="@+id/btnFillingsDiary"
             style="@style/Widget.Button.MainMenu"
-            android:text="@string/way_beginning"
-            android:drawableLeft="@drawable/arow40"
-            android:paddingLeft="15dip"
-            android:paddingRight="15dip"
+            android:textSize="16sp"
+            android:text="@string/new_entry"
+            android:drawableLeft="@drawable/new40"
+            android:paddingLeft="10dip"
+            android:paddingRight="10dip"
             android:singleLine="true"
             android:layout_height="wrap_content"/>
-    <LinearLayout
-            android:id="@+id/layout12"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/btnCalendar">
-        <Button
-                android:id="@+id/btnSteps"
-                android:onClick="clickBtnSteps"
-                android:layout_weight="1"
-                android:layout_above="@+id/btnCalendar"
-                style="@style/Widget.Button.MainMenu"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="0dp"
-                android:textSize="16sp"
-                android:text="@string/steps"
-                android:drawableLeft="@drawable/footprints40"
-                android:paddingLeft="10dip"
-                android:paddingRight="10dip"
-                android:singleLine="true"
-                android:layout_height="wrap_content"/>
-        <Button
-                android:id="@+id/btnTraditions"
-                android:onClick="clickBtnTraditions"
-                android:layout_weight="1"
-                android:layout_above="@+id/btnSteps"
-                style="@style/Widget.Button.MainMenu"
-                android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp"
-                android:textSize="15sp"
-                android:text="@string/traditions"
-                android:singleLine="true"
-                android:drawableLeft="@drawable/documentcheck40"
-                android:paddingLeft="2dip"
-                android:layout_height="wrap_content"/>
-        <Button
-                android:id="@+id/btnPromises"
-                android:onClick="clickBtnPromises"
-                android:layout_weight="1"
-                android:layout_above="@+id/btnTraditions"
-                style="@style/Widget.Button.MainMenu"
-                android:layout_marginLeft="0dp"
-                android:layout_marginRight="5dp"
-                android:drawableLeft="@drawable/promise40"
-                android:textSize="15sp"
-                android:singleLine="true"
-                android:text="@string/promises"
-                android:layout_height="wrap_content"/>
     </LinearLayout>
+
     <Button
+        android:id="@+id/btnPrayer"
+        android:onClick="clickBtnPrayer"
+        android:layout_width="match_parent"
+        android:layout_above="@+id/btnWayBeginning"
+        style="@style/Widget.Button.MainMenu"
+        android:text="@string/prayer"
+        android:drawableLeft="@drawable/pray40"
+        android:paddingLeft="90dip"
+        android:paddingRight="70dip"
+        android:singleLine="true"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/btnWayBeginning"
+        android:onClick="clickBtnWayBeginning"
+        android:layout_width="match_parent"
+        android:layout_above="@+id/layout12"
+        style="@style/Widget.Button.MainMenu"
+        android:text="@string/way_beginning"
+        android:drawableLeft="@drawable/arow40"
+        android:paddingLeft="15dip"
+        android:paddingRight="15dip"
+        android:singleLine="true"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:id="@+id/layout12"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/layoutDaily">
+
+        <Button
+            android:id="@+id/btnSteps"
+            android:onClick="clickBtnSteps"
+            android:layout_weight="1"
+            android:layout_above="@+id/btnCalendar"
+            style="@style/Widget.Button.MainMenu"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="0dp"
+            android:textSize="16sp"
+            android:text="@string/steps"
+            android:drawableLeft="@drawable/footprints40"
+            android:paddingLeft="10dip"
+            android:paddingRight="10dip"
+            android:singleLine="true"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/btnTraditions"
+            android:onClick="clickBtnTraditions"
+            android:layout_weight="1"
+            android:layout_above="@+id/btnSteps"
+            style="@style/Widget.Button.MainMenu"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:textSize="15sp"
+            android:text="@string/traditions"
+            android:singleLine="true"
+            android:drawableLeft="@drawable/documentcheck40"
+            android:paddingLeft="2dip"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/btnPromises"
+            android:onClick="clickBtnPromises"
+            android:layout_weight="1"
+            android:layout_above="@+id/btnTraditions"
+            style="@style/Widget.Button.MainMenu"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="5dp"
+            android:drawableLeft="@drawable/promise40"
+            android:textSize="15sp"
+            android:singleLine="true"
+            android:text="@string/promises"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutDaily"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <Button
+            android:id="@+id/btnDaily"
+            android:onClick="clickBtnDaily"
+            android:layout_weight="1"
+            style="@style/Widget.Button.MainMenu"
+            android:text="@string/daily"
+            android:drawableLeft="@drawable/today40"
+            android:paddingLeft="30dip"
+            android:layout_marginRight="1dp"
+            android:singleLine="true"
+            android:layout_height="wrap_content"/>
+
+        <Button
             android:id="@+id/btnCalendar"
             android:onClick="clickBtnCalendar"
-            android:layout_width="match_parent"
-            android:layout_alignParentBottom="true"
+            android:layout_weight="1"
+            android:layout_marginLeft="1dp"
             style="@style/Widget.Button.MainMenu"
             android:text="@string/calendar"
             android:drawableLeft="@drawable/calendar40"
-            android:paddingLeft="70dip"
-            android:paddingRight="70dip"
+            android:paddingLeft="10dip"
             android:singleLine="true"
             android:layout_height="wrap_content"/>
+    </LinearLayout>
 </RelativeLayout>
