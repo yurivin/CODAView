@@ -15,13 +15,13 @@ import java.util.List;
 /**
  * Created by Yuriy.Vinogradov on 28.08.2014.
  */
-public class feelingsDiaryFilterService {
+public class FeelingsDiaryFilterService {
 
     List<FeelingsDiaryEntry> entries;
     Context context;
     List<Integer> filterNumbers;
 
-    feelingsDiaryFilterService(List<FeelingsDiaryEntry> entries, Context context) {
+    FeelingsDiaryFilterService(List<FeelingsDiaryEntry> entries, Context context) {
         this.entries = entries;
         this.context = context;
     }
