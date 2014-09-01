@@ -1,5 +1,6 @@
 package net.yvin.codaview.app.activity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -20,6 +21,7 @@ import java.util.Date;
 public class CalendarActivity extends MenuAbstractActivity {
     Long date;
     CalendarView calendar;
+    Activity activity = this;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,8 +40,7 @@ public class CalendarActivity extends MenuAbstractActivity {
                     intent.putExtra(Constants.MONTH, month);
                     intent.putExtra(Constants.DAY_OF_MONTH, dayOfMonth);
                     Log.d("Calendar date ", DateUtils.CalendarToDailyId(month, dayOfMonth));
-                    startActivity(intent);
-                    finish();
+                    new ActivityLuncher(intent, activity);
                 }
             }
         });
