@@ -10,56 +10,97 @@
                 tools:context="net.yvin.codaview.app.activity.DailyActivity">
 
     <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/layoutButtons">
 
         <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/dayTitleTv"
-                android:layout_alignParentTop="true"
-                android:layout_width="match_parent"
-                android:textColor="@color/header"
-                android:textSize="18dp"
-                android:layout_height="wrap_content"/>
+                    android:id="@+id/dayTitleTv"
+                    android:layout_alignParentTop="true"
+                    android:layout_width="match_parent"
+                    android:textColor="@color/header"
+                    android:textSize="18dp"
+                    android:layout_height="wrap_content"/>
             <TextView
-                android:id="@+id/dateTv"
-                android:layout_below="@+id/dayTitleTv"
-                android:layout_width="match_parent"
-                android:textColor="#ffff5103"
-                android:textSize="12dp"
-                android:layout_height="wrap_content"/>
+                    android:id="@+id/dateTv"
+                    android:layout_below="@+id/dayTitleTv"
+                    android:layout_width="match_parent"
+                    android:textColor="#ffff5103"
+                    android:textSize="12dp"
+                    android:layout_height="wrap_content"/>
 
             <TextView
-                android:layout_below="@+id/dateTv"
-                android:layout_marginTop="11dp"
-                android:id="@+id/quoteTv"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="14dp"
-                android:textStyle="italic"
-                android:textColor="#fffff00c"/>
+                    android:layout_below="@+id/dateTv"
+                    android:layout_marginTop="11dp"
+                    android:id="@+id/quoteTv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="14dp"
+                    android:textStyle="italic"
+                    android:textColor="#fffff00c"/>
 
             <TextView
-                android:layout_below="@+id/quoteTv"
-                android:layout_marginTop="11dp"
-                android:id="@+id/contentTv"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="#ffffaa0f"
-                android:textSize="14dp"/>
+                    android:layout_below="@+id/quoteTv"
+                    android:layout_marginTop="11dp"
+                    android:id="@+id/contentTv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#ffffaa0f"
+                    android:textSize="14dp"/>
 
             <TextView
-                android:layout_below="@+id/contentTv"
-                android:layout_marginTop="11dp"
-                android:id="@+id/sumTv"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="14dp"
-                android:textStyle="bold"
-                android:textColor="#ffff7105"/>
+                    android:layout_below="@+id/contentTv"
+                    android:layout_marginTop="11dp"
+                    android:id="@+id/sumTv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    android:textColor="#ffff7105"/>
         </RelativeLayout>
     </ScrollView>
+    <LinearLayout
+            android:id="@+id/layoutButtons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true">
+
+        <Button
+                android:id="@+id/btnPrevious"
+                android:onClick="clickBtnPrevious"
+                android:layout_weight="3"
+                style="@style/Widget.Button.MainMenu"
+                android:text="@string/previous"
+                android:textSize="14sp"
+                android:layout_marginRight="1dp"
+                android:singleLine="true"
+                android:layout_height="20dp"/>
+
+<!--        <Button
+                android:id="@+id/btnStar"
+                android:onClick="clickBtnStar"
+                android:layout_weight="4"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp"
+                style="@style/Widget.Button.MainMenu"
+                android:textSize="14sp"
+                android:text="star"
+                android:singleLine="true"
+                android:layout_height="20dp"/> -->
+
+        <Button
+                android:id="@+id/btnNext"
+                android:onClick="clickBtnNext"
+                android:layout_weight="3"
+                android:layout_marginLeft="1dp"
+                style="@style/Widget.Button.MainMenu"
+                android:textSize="14sp"
+                android:text="@string/next"
+                android:singleLine="true"
+                android:layout_height="20dp"/>
+    </LinearLayout>
 </RelativeLayout>
