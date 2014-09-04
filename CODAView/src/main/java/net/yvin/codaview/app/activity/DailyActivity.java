@@ -9,10 +9,12 @@ import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.text.format.Time;
 import android.util.Log;
+import android.view.View;
 import net.yvin.codaview.app.activity.base.MenuAbstractActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 import net.yvin.codaview.app.R;
+import net.yvin.codaview.app.activity.utils.ActivityLuncher;
 import net.yvin.codaview.app.context.LanguageContext;
 import net.yvin.codaview.app.repository.DiaryTitlesRepository;
 import net.yvin.codaview.app.utils.AssetsReader;
@@ -28,11 +30,12 @@ public class DailyActivity extends MenuAbstractActivity {
     TextView dayTitleTv, dateTv, quoteTv, mainTv, sumTv;
     DiaryTitlesRepository diaryTitlesRepo = new DiaryTitlesRepository();
     AssetsReader txtReader = new AssetsReader(this);
+    Time now;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Time now = new Time();
+        now = new Time();
         now.setToNow();
 
         setContentView(R.layout.activity_daily);
@@ -59,5 +62,25 @@ public class DailyActivity extends MenuAbstractActivity {
         sumTv = (TextView) findViewById(R.id.sumTv);
         sumTv.setText(txtReader.getAssets(PathService.dailySum(dailyId)));
 
+    }
+
+    public void clickBtnPrevious(View v) {
+        now.set(now.toMillis(false) - 86400000l);
+        Intent intent = new Intent(getApplicationContext(), DailyActivity.class);
+        intent.putExtra(Constants.DAILYID, DateUtils.CalendarToDailyId(now.month, now.monthDay));
+        intent.putExtra(Constants.MONTH, now.month);
+        intent.putExtra(Constants.DAY_OF_MONTH, now.monthDay);
+        Log.d("Calendar date ", DateUtils.CalendarToDailyId(now.month, now.monthDay));
+        new ActivityLuncher(intent, this);
+    }
+
+    public void clickBtnNext(View v) {
+        now.set(now.toMillis(false) + 86400000l);
+        Intent intent = new Intent(getApplicationContext(), DailyActivity.class);
+        intent.putExtra(Constants.DAILYID, DateUtils.CalendarToDailyId(now.month, now.monthDay));
+        intent.putExtra(Constants.MONTH, now.month);
+        intent.putExtra(Constants.DAY_OF_MONTH, now.monthDay);
+        Log.d("Calendar date ", DateUtils.CalendarToDailyId(now.month, now.monthDay));
+        new ActivityLuncher(intent, this);
     }
 }
