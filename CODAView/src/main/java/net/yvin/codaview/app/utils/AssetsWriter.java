@@ -33,7 +33,22 @@ public class AssetsWriter {
             CSVWriter writer = new CSVWriter(fileWriter, '\t');
             String[] entries = new String[] {yearFrom, monthFrom, dayFrom, hourFrom, minuteFrom,
             yearTo, monthTo, dayTo, hourTo, minuteTo, feelingsIntensity, feelingRating, selectedFeelings, comment};
-            Log.d("Entries: ", entries[13]);
+//            Log.d("Entries: ", entries[13]);
+            writer.writeNext(entries);
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void favoritizeDaily(String dailyId) {
+        File folder = (Environment.getExternalStorageDirectory());
+        String fileName = folder.toString() + "/CODAapp/" + "favoriteDaily.csv";
+        try {
+            FileWriter fileWriter = new FileWriter(fileName, true);
+            CSVWriter writer = new CSVWriter(fileWriter, '\t');
+            String[] entries = new String[] {dailyId};
+            Log.d("Entries: ", entries[0]);
             writer.writeNext(entries);
             writer.close();
         } catch (IOException e) {

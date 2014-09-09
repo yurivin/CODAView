@@ -10,6 +10,7 @@ import android.preference.PreferenceManager;
 import android.text.format.Time;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 import net.yvin.codaview.app.activity.base.MenuAbstractActivity;
 import android.os.Bundle;
 import android.widget.TextView;
@@ -18,6 +19,7 @@ import net.yvin.codaview.app.activity.utils.ActivityLuncher;
 import net.yvin.codaview.app.context.LanguageContext;
 import net.yvin.codaview.app.repository.DiaryTitlesRepository;
 import net.yvin.codaview.app.utils.AssetsReader;
+import net.yvin.codaview.app.utils.AssetsWriter;
 import net.yvin.codaview.app.utils.Constants;
 import net.yvin.codaview.app.utils.DateUtils;
 import net.yvin.codaview.app.service.PathService;
@@ -30,6 +32,7 @@ public class DailyActivity extends MenuAbstractActivity {
     TextView dayTitleTv, dateTv, quoteTv, mainTv, sumTv;
     DiaryTitlesRepository diaryTitlesRepo = new DiaryTitlesRepository();
     AssetsReader txtReader = new AssetsReader(this);
+    String dailyId;
     Time now;
 
     @Override
@@ -39,7 +42,7 @@ public class DailyActivity extends MenuAbstractActivity {
         now.setToNow();
 
         setContentView(R.layout.activity_daily);
-        String dailyId = DateUtils.nowToDailyId();
+        dailyId = DateUtils.nowToDailyId();
         if (getIntent() != null) {
             Intent intent = getIntent();
             if (intent.getExtras() != null) {
@@ -82,5 +85,11 @@ public class DailyActivity extends MenuAbstractActivity {
         intent.putExtra(Constants.DAY_OF_MONTH, now.monthDay);
         Log.d("Calendar date ", DateUtils.CalendarToDailyId(now.month, now.monthDay));
         new ActivityLuncher(intent, this);
+    }
+
+    public void clickBtnStar(View v) {
+        AssetsWriter assetsWriter = new AssetsWriter(this);
+        assetsWriter.favoritizeDaily(dailyId);
+        Toast.makeText(this, getString(R.string.favoritize), Toast.LENGTH_LONG).show();
     }
 }

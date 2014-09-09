@@ -80,7 +80,7 @@
                 android:singleLine="true"
                 android:layout_height="20dp"/>
 
-<!--        <Button
+        <Button
                 android:id="@+id/btnStar"
                 android:onClick="clickBtnStar"
                 android:layout_weight="4"
@@ -88,9 +88,9 @@
                 android:layout_marginRight="1dp"
                 style="@style/Widget.Button.MainMenu"
                 android:textSize="14sp"
-                android:text="star"
+                android:text="\u2605"
                 android:singleLine="true"
-                android:layout_height="20dp"/> -->
+                android:layout_height="20dp"/>
 
         <Button
                 android:id="@+id/btnNext"
