@@ -237,6 +237,7 @@
         <item>Робость</item>
         <item>Смятение</item>
         <item>Паника</item>
+        <item>Страх</item>
     </string-array>
 
     <string-array name="other_feelings">
