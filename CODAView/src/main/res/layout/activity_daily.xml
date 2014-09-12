@@ -81,18 +81,6 @@
                 android:layout_height="20dp"/>
 
         <Button
-                android:id="@+id/btnStar"
-                android:onClick="clickBtnStar"
-                android:layout_weight="4"
-                android:layout_marginLeft="1dp"
-                android:layout_marginRight="1dp"
-                style="@style/Widget.Button.MainMenu"
-                android:textSize="14sp"
-                android:text="\u2605"
-                android:singleLine="true"
-                android:layout_height="20dp"/>
-
-        <Button
                 android:id="@+id/btnNext"
                 android:onClick="clickBtnNext"
                 android:layout_weight="3"
