@@ -32,4 +32,17 @@
         android:text="@string/e_Email"
         android:textSize="14dp"/>
 
+    <TextView
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="11dp"
+            android:id="@+id/tvRate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="10dp"
+            android:textColor="#ffffaa0f"
+            android:text="@string/rate_app_ongoogleplay"
+            android:textSize="14dp"/>
+
 </RelativeLayout>

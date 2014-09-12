@@ -57,6 +57,7 @@
     <string name="next">следующий =\u203A</string>
     <string name="previous">\u2039= предыдущий</string>
     <string name="favoritize">Запись добавлена в избранное</string>
+    <string name="rate_app_ongoogleplay">Так же будет замечательно, если вы оцените это приложение на google play market</string>
 
     <string-array name="steps">
         <item>Мы признали своё бессилие перед другими, признали, что наша жизнь перестала поддаваться контролю.</item>
