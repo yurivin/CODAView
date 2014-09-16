@@ -15,13 +15,13 @@ import java.util.List;
 /**
  * Created by Yuriy.Vinogradov on 28.08.2014.
  */
-public class FeelingsDiaryFilterService {
+public class feelingsDiaryFilterService {
 
     List<FeelingsDiaryEntry> entries;
     Context context;
     List<Integer> filterNumbers;
 
-    FeelingsDiaryFilterService(List<FeelingsDiaryEntry> entries, Context context) {
+    feelingsDiaryFilterService(List<FeelingsDiaryEntry> entries, Context context) {
         this.entries = entries;
         this.context = context;
     }
@@ -81,8 +81,10 @@ public class FeelingsDiaryFilterService {
                 switch (filterNumber) {
                     case 0:
                         new FilterByIntensity(number).filter(tempAll);
+                        break;
                     case 1:
                         new FilterByRate(number).filter(tempAll);
+                        break;
             }
             tempFiltered.addAll(tempAll);
         }
