@@ -59,7 +59,7 @@
     <string name="next">next =\u203A</string>
     <string name="previous">\u2039= previous</string>
     <string name="favoritize">Entry added to fave</string>
-    <string name="rate_app_ongoogleplay">Also it will be great if you\'ll rate this app in google play market</string>
+    <string name="rate_app_ongoogleplay">Click to rate on google play</string>
 
     <string-array name="supported_languages">
         <item>English</item>
