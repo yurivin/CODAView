@@ -63,7 +63,7 @@ public class FeelingsDiaryActivity extends MenuAbstractActivity {
             childDataItem.add(m);
             childData.add(childDataItem);
         }
-        adapter = new SimpleExpandableListAdapter(
+        adapter = new ColoredExpListAdapter(
                 this,
                 groupData,
                 R.layout.simple_expandable_list_item_my,
