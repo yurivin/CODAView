@@ -8,7 +8,7 @@ import net.yvin.codaview.app.R;
 import net.yvin.codaview.app.activity.DailyActivity;
 import net.yvin.codaview.app.activity.MenuActivity;
 import net.yvin.codaview.app.activity.utils.ActivityLuncher;
-import net.yvin.codaview.app.utils.FaveDailyStorage;
+import net.yvin.codaview.app.repository.FaveDailyStorage;
 
 /**
  * Created by Юрий on 17.05.2014.

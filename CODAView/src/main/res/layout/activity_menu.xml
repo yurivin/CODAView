@@ -19,20 +19,6 @@
             android:singleLine="true"
             android:layout_height="wrap_content"/>
 
-    <!--    <Button
-                android:id="@+id/btnWorkOnProgram"
-                android:onClick="clickBtnWorkOnProgram"
-                android:layout_width="match_parent"
-                android:layout_above="@+id/layoutFeelings"
-                style="@style/Widget.Button.MainMenu"
-                android:text="@string/workOn"
-                android:drawableLeft="@drawable/workon40"
-                android:textSize="20sp"
-                android:paddingLeft="30dip"
-                android:paddingRight="30dip"
-                android:singleLine="true"
-                android:layout_height="wrap_content"/> -->
-
     <LinearLayout
             android:id="@+id/layoutFeelings"
             android:layout_width="match_parent"

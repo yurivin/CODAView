@@ -14,7 +14,7 @@ import android.widget.*;
 import net.yvin.codaview.app.R;
 import net.yvin.codaview.app.activity.base.MenuAbstractActivity;
 import net.yvin.codaview.app.activity.utils.ActivityLuncher;
-import net.yvin.codaview.app.utils.FeelingDiaryStorage;
+import net.yvin.codaview.app.repository.FeelingDiaryStorage;
 
 import java.util.*;
 
