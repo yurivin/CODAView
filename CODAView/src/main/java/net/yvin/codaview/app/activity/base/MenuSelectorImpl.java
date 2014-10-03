@@ -3,9 +3,11 @@ package net.yvin.codaview.app.activity.base;
 import android.app.Activity;
 import android.content.Intent;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 import net.yvin.codaview.app.R;
 import net.yvin.codaview.app.activity.DailyActivity;
+import net.yvin.codaview.app.activity.FaveDailyActivity;
 import net.yvin.codaview.app.activity.MenuActivity;
 import net.yvin.codaview.app.activity.utils.ActivityLuncher;
 import net.yvin.codaview.app.repository.FaveDailyStorage;
@@ -31,9 +33,12 @@ public class MenuSelectorImpl implements MenuSelector {
             case R.id.action_star:
                 if(activity instanceof DailyActivity) {
                     FaveDailyStorage.faveDaily(((DailyActivity) activity).getDailyId());
-                    Toast.makeText(activity, activity.getString(R.string.favoritize), Toast.LENGTH_LONG).show();
+                    Toast toast = Toast.makeText(activity, activity.getString(R.string.favoritize), Toast.LENGTH_LONG);
+                    View view = toast.getView();
+                    view.setBackgroundColor(000000);
+                    toast.show();
                 } else {
-                    Toast.makeText(activity, "Open starred", Toast.LENGTH_LONG).show();
+                    new ActivityLuncher(new Intent(activity, FaveDailyActivity.class), activity);
                 }
                 break;
         }
