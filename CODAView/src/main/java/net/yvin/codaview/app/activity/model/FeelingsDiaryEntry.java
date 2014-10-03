@@ -1,10 +1,7 @@
 package net.yvin.codaview.app.activity.model;
 
 import android.util.Log;
-import net.yvin.codaview.app.utils.FeelingDiaryReader;
 
-import java.util.Comparator;
-import java.util.Set;
 import java.util.StringTokenizer;
 
 /**

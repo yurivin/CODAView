@@ -5,7 +5,6 @@ import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.LayerDrawable;
 import android.os.Bundle;
@@ -15,9 +14,7 @@ import android.widget.*;
 import net.yvin.codaview.app.R;
 import net.yvin.codaview.app.activity.base.MenuAbstractActivity;
 import net.yvin.codaview.app.activity.utils.ActivityLuncher;
-import net.yvin.codaview.app.activity.utils.StorageChecker;
-import net.yvin.codaview.app.utils.AssetsWriter;
-import net.yvin.codaview.app.utils.FeelingDiaryReader;
+import net.yvin.codaview.app.utils.FeelingDiaryStorage;
 
 import java.util.*;
 
@@ -36,7 +33,6 @@ public class NewFeelingsDiaryEntryActivity extends MenuAbstractActivity implemen
     boolean[] mCheckedItems;
     List<String> selectedFeelings;
     String comment;
-    AssetsWriter assetsWriter = new AssetsWriter(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -108,7 +104,7 @@ public class NewFeelingsDiaryEntryActivity extends MenuAbstractActivity implemen
         if (selectedFeelings == null || comment == null) {
             brokenAlert(getString(R.string.comment_feelings_shouldbe));
         } else {
-            assetsWriter.feelingsDiary(String.valueOf(yearFromG), String.valueOf(monthOfYearFromG), String.valueOf(dayOfMonthFromG), String.valueOf(hourOfDayFromG), String.valueOf(minuteFromG),
+            FeelingDiaryStorage.feelingsDiary(String.valueOf(yearFromG), String.valueOf(monthOfYearFromG), String.valueOf(dayOfMonthFromG), String.valueOf(hourOfDayFromG), String.valueOf(minuteFromG),
                     String.valueOf(yearToG), String.valueOf(monthOfYearToG), String.valueOf(dayOfMonthToG), String.valueOf(hourOfDayToG), String.valueOf(minuteToG), String.valueOf(feelingsIntensity),
                     String.valueOf(feelingsRating), selectedFeelings.toString(), comment);
             new ActivityLuncher(new Intent(this, MenuActivity.class), this);

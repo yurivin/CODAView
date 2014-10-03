@@ -13,7 +13,7 @@ import net.yvin.codaview.app.activity.base.MenuAbstractActivity;
 import net.yvin.codaview.app.activity.model.FeelingsDiaryEntry;
 import net.yvin.codaview.app.service.DiaryService;
 import net.yvin.codaview.app.activity.utils.ActivityUtils;
-import net.yvin.codaview.app.utils.FeelingDiaryReader;
+import net.yvin.codaview.app.utils.FeelingDiaryStorage;
 
 import java.util.*;
 
@@ -97,7 +97,7 @@ public class FeelingsDiaryActivity extends MenuAbstractActivity {
     }
 
     private void getData() {
-        diaryEntries = FeelingDiaryReader.readAll();
+        diaryEntries = FeelingDiaryStorage.readAll();
         extractData();
     }
 

@@ -67,9 +67,6 @@ public class DiaryService {
                     Constants.NEW_LINE + Constants.NEW_LINE +
                     context.getString(R.string.comment) + Constants.DOUBLE_POINT + Constants.SPACE + entry.comment;
         }
-//        for (String string : content) {
-//            Log.d("Content: ", string);
-//        }
         return content;
     }
 }

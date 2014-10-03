@@ -1,30 +1,19 @@
 package net.yvin.codaview.app.activity;
 
-import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
 import android.text.format.Time;
 import android.util.Log;
 import android.view.View;
-import android.widget.Toast;
 import net.yvin.codaview.app.activity.base.MenuAbstractActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 import net.yvin.codaview.app.R;
 import net.yvin.codaview.app.activity.utils.ActivityLuncher;
-import net.yvin.codaview.app.context.LanguageContext;
 import net.yvin.codaview.app.repository.DiaryTitlesRepository;
 import net.yvin.codaview.app.utils.AssetsReader;
-import net.yvin.codaview.app.utils.AssetsWriter;
 import net.yvin.codaview.app.utils.Constants;
 import net.yvin.codaview.app.utils.DateUtils;
 import net.yvin.codaview.app.service.PathService;
-
-import java.util.Locale;
 
 
 public class DailyActivity extends MenuAbstractActivity {
