@@ -31,20 +31,9 @@
                 style="@style/Widget.Button.MainMenu"
                 android:text="@string/today_entry"
                 android:drawableLeft="@drawable/ok40"
-                android:paddingLeft="10dip"
-                android:paddingRight="10dip"
+                android:paddingLeft="20dip"
+                android:paddingRight="20dip"
                 android:layout_marginRight="1dp"
-                android:singleLine="true"
-                android:layout_height="wrap_content"/>
-        <Button
-                android:id="@+id/btnStar"
-                android:onClick="clickBtnStar"
-                android:layout_weight="7"
-                android:layout_marginLeft="1dp"
-                android:layout_alignParentBottom="true"
-                style="@style/Widget.Button.MainMenu"
-                android:text="\u2605"
-                android:textSize="25sp"
                 android:singleLine="true"
                 android:layout_height="wrap_content"/>
     </LinearLayout>
