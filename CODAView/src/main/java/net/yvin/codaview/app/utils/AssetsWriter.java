@@ -42,13 +42,12 @@ public class AssetsWriter {
         }
     }
 
-    public void favoritizeDaily(String dailyId) {
+    public void faveDaily(String dailyId) {
         File extSoreFolder = (Environment.getExternalStorageDirectory());
         File folder = new File(extSoreFolder, Constants.CODAAPP);
         if(!folder.exists()) {
             folder.mkdir();
         }
-        Log.d("Path:", folder.getPath());
         String fileName = folder.toString() + "starred.csv";
         try {
             FileWriter fileWriter = new FileWriter(fileName, true);

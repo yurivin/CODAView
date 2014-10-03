@@ -7,7 +7,6 @@ import android.widget.Toast;
 import net.yvin.codaview.app.R;
 import net.yvin.codaview.app.activity.DailyActivity;
 import net.yvin.codaview.app.activity.MenuActivity;
-import net.yvin.codaview.app.activity.SettingsActivity;
 import net.yvin.codaview.app.activity.utils.ActivityLuncher;
 import net.yvin.codaview.app.utils.AssetsWriter;
 
@@ -32,7 +31,7 @@ public class MenuSelectorImpl implements MenuSelector {
             case R.id.action_star:
                 if(activity instanceof DailyActivity) {
                     AssetsWriter assetsWriter = new AssetsWriter(activity);
-                    assetsWriter.favoritizeDaily(((DailyActivity) activity).getDailyId());
+                    assetsWriter.faveDaily(((DailyActivity) activity).getDailyId());
                     Toast.makeText(activity, activity.getString(R.string.favoritize), Toast.LENGTH_LONG).show();
                 } else {
                     Toast.makeText(activity, "Open starred", Toast.LENGTH_LONG).show();
