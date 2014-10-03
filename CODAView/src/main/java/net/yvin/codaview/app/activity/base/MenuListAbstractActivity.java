@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import net.yvin.codaview.app.R;
+import net.yvin.codaview.app.activity.FaveDailyActivity;
 import net.yvin.codaview.app.activity.MenuActivity;
 import net.yvin.codaview.app.context.LanguageContext;
 
@@ -22,6 +23,10 @@ public class MenuListAbstractActivity extends ListActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main_menu, menu);
+        if(this instanceof FaveDailyActivity) {
+            menu.findItem(R.id.action_delete).setVisible(true);
+            menu.findItem(R.id.action_star).setVisible(false);
+        }
         return true;
     }
 
