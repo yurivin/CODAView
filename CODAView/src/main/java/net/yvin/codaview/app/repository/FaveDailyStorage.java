@@ -38,8 +38,9 @@ public class FaveDailyStorage {
 
     public static List<String> readAll() {
         List<String> entryList = new ArrayList<>();
-        File folder = (Environment.getExternalStorageDirectory());
-        String fileName = folder.toString() + "/" + "feelingsdiary.csv";
+        File extSoreFolder = (Environment.getExternalStorageDirectory());
+        File folder = new File(extSoreFolder, Constants.CODAAPP);
+        String fileName = folder.toString() + "starred.csv";
         try {
             CSVReader reader = new CSVReader(new FileReader(fileName), '\t');
             List<String[]> entries = reader.readAll();
