@@ -87,9 +87,7 @@ public class DailyActivity extends MenuAbstractActivity {
         new ActivityLuncher(intent, this);
     }
 
-    public void clickBtnStar(View v) {
-        AssetsWriter assetsWriter = new AssetsWriter(this);
-        assetsWriter.favoritizeDaily(dailyId);
-        Toast.makeText(this, getString(R.string.favoritize), Toast.LENGTH_LONG).show();
+    public String getDailyId() {
+        return dailyId;
     }
 }

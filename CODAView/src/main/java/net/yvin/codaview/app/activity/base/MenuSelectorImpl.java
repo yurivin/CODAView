@@ -9,6 +9,7 @@ import net.yvin.codaview.app.activity.DailyActivity;
 import net.yvin.codaview.app.activity.MenuActivity;
 import net.yvin.codaview.app.activity.SettingsActivity;
 import net.yvin.codaview.app.activity.utils.ActivityLuncher;
+import net.yvin.codaview.app.utils.AssetsWriter;
 
 /**
  * Created by Юрий on 17.05.2014.
@@ -30,7 +31,9 @@ public class MenuSelectorImpl implements MenuSelector {
                 break;
             case R.id.action_star:
                 if(activity instanceof DailyActivity) {
-                    Toast.makeText(activity, "Insertion in to starred", Toast.LENGTH_LONG).show();
+                    AssetsWriter assetsWriter = new AssetsWriter(activity);
+                    assetsWriter.favoritizeDaily(((DailyActivity) activity).getDailyId());
+                    Toast.makeText(activity, activity.getString(R.string.favoritize), Toast.LENGTH_LONG).show();
                 } else {
                     Toast.makeText(activity, "Open starred", Toast.LENGTH_LONG).show();
                 }

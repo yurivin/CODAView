@@ -1,7 +1,6 @@
 package net.yvin.codaview.app.utils;
 
 import android.os.Environment;
-import android.util.Log;
 import au.com.bytecode.opencsv.CSVReader;
 import net.yvin.codaview.app.activity.model.FeelingsDiaryEntry;
 
@@ -13,21 +12,27 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Yuriy.Vinogradov on 13.08.2014.
+ * Created by Yuriy.Vinogradov on 03.10.2014.
  */
-public class FeelingDiaryReader {
+public class StarReader {
 
-    public static List<FeelingsDiaryEntry> readAll() {
+    public List<FeelingsDiaryEntry> readAll() {
         List<FeelingsDiaryEntry> entryList = new ArrayList<>();
         File folder = (Environment.getExternalStorageDirectory());
-        String fileName = folder.toString() + "/" + "feelingsdiary.csv";
+        String fileName = folder.toString() + Constants.CODAAPP + "starred.csv";
         try {
             CSVReader reader = new CSVReader(new FileReader(fileName), '\t');
             List<String[]> entries = reader.readAll();
             for(String[] entry : entries) {
-                FeelingsDiaryEntry feelingsDiaryEntryBean = new FeelingsDiaryEntry(entry[0], entry[1], entry[2], entry[3],
-                        entry[4], entry[5], entry[6], entry[7], entry[8], entry[9], entry[10], entry[11], entry[12], entry[13]);
-                entryList.add(feelingsDiaryEntryBean);
+//                StringBuilder builder = new StringBuilder();
+//                for(String part : entry) {
+//                    builder.append(part);
+//                    builder.append(",");
+//                }
+//                Log.d("CSV entry: ", builder.toString());
+//                FeelingsDiaryEntry feelingsDiaryEntryBean = new FeelingsDiaryEntry(entry[0], entry[1], entry[2], entry[3],
+//                        entry[4], entry[5], entry[6], entry[7], entry[8], entry[9], entry[10], entry[11], entry[12], entry[13]);
+//                entryList.add(feelingsDiaryEntryBean);
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();

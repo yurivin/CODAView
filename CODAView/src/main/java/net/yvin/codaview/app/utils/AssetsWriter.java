@@ -15,6 +15,7 @@ import java.util.List;
  */
 public class AssetsWriter {
 
+
     Context context;
 
     public AssetsWriter(Context context) {
@@ -42,8 +43,13 @@ public class AssetsWriter {
     }
 
     public void favoritizeDaily(String dailyId) {
-        File folder = (Environment.getExternalStorageDirectory());
-        String fileName = folder.toString() + "/CODAapp/" + "favoriteDaily.csv";
+        File extSoreFolder = (Environment.getExternalStorageDirectory());
+        File folder = new File(extSoreFolder, Constants.CODAAPP);
+        if(!folder.exists()) {
+            folder.mkdir();
+        }
+        Log.d("Path:", folder.getPath());
+        String fileName = folder.toString() + "starred.csv";
         try {
             FileWriter fileWriter = new FileWriter(fileName, true);
             CSVWriter writer = new CSVWriter(fileWriter, '\t');
