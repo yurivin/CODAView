@@ -3,7 +3,9 @@ package net.yvin.codaview.app.activity.base;
 import android.app.Activity;
 import android.content.Intent;
 import android.view.MenuItem;
+import android.widget.Toast;
 import net.yvin.codaview.app.R;
+import net.yvin.codaview.app.activity.DailyActivity;
 import net.yvin.codaview.app.activity.MenuActivity;
 import net.yvin.codaview.app.activity.SettingsActivity;
 import net.yvin.codaview.app.activity.utils.ActivityLuncher;
@@ -26,9 +28,13 @@ public class MenuSelectorImpl implements MenuSelector {
             case R.id.action_menu:
                 new ActivityLuncher(new Intent(activity, MenuActivity.class), activity);
                 break;
-//            case R.id.action_settings:
-//                new ActivityLuncher(new Intent(activity, SettingsActivity.class), activity);
-//                break;
+            case R.id.action_star:
+                if(activity instanceof DailyActivity) {
+                    Toast.makeText(activity, "Insertion in to starred", Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(activity, "Open starred", Toast.LENGTH_LONG).show();
+                }
+                break;
         }
     }
 
