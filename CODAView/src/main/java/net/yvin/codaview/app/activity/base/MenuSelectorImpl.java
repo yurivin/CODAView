@@ -4,8 +4,11 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 import net.yvin.codaview.app.R;
 import net.yvin.codaview.app.activity.DailyActivity;
@@ -41,6 +44,9 @@ public class MenuSelectorImpl implements MenuSelector {
                 if (activity instanceof DailyActivity) {
                     FaveDailyStorage.faveDaily(((DailyActivity) activity).getDailyId());
                     Toast toast = Toast.makeText(activity, activity.getString(R.string.favoritize), Toast.LENGTH_LONG);
+                    TextView text = (TextView) toast.getView().findViewById(android.R.id.message);
+                    text.setTextColor(Color.parseColor("#ffff7105"));
+                    text.setTextSize(16);
                     toast.show();
                 } else {
                     new ActivityLuncher(new Intent(activity, FaveDailyActivity.class), activity);
@@ -48,7 +54,11 @@ public class MenuSelectorImpl implements MenuSelector {
                 break;
             case R.id.action_delete:
                 if (activity instanceof FaveDailyActivity) {
-                    Toast.makeText(activity, activity.getString(R.string.click_item_to_delete), Toast.LENGTH_LONG).show();
+                    Toast toast = Toast.makeText(activity, activity.getString(R.string.click_item_to_delete), Toast.LENGTH_LONG);
+                    TextView text = (TextView) toast.getView().findViewById(android.R.id.message);
+                    text.setTextColor(Color.parseColor("#ffff7105"));
+                    text.setTextSize(16);
+                    toast.show();
                     FaveDailyStorage.setDelete(true);
                 }
         }
