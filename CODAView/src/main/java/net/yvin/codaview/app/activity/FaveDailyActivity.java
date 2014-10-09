@@ -11,6 +11,7 @@ import net.yvin.codaview.app.repository.DiaryTitlesRepository;
 import net.yvin.codaview.app.repository.FaveDailyStorage;
 import net.yvin.codaview.app.service.PathService;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -21,11 +22,12 @@ import java.util.Map;
 public class FaveDailyActivity extends MenuListAbstractActivity {
 
     DiaryTitlesRepository diaryTitlesRepo = new DiaryTitlesRepository();
+    Map<String, String> entryMap;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         List<String> dailyIds = FaveDailyStorage.readAll();
-        Map<String, String> entryMap = new HashMap<>();
+        entryMap = new HashMap<>();
         for (String id : dailyIds)
             entryMap.put(id, diaryTitlesRepo.find(id, PathService.diaryTitle(), this));
         for(Map.Entry entry : entryMap.entrySet()) {
@@ -38,6 +40,9 @@ public class FaveDailyActivity extends MenuListAbstractActivity {
     }
     @Override
     protected void onListItemClick(ListView l, View v, int position, long id) {
-
+        if(FaveDailyStorage.isDelete()){
+            FaveDailyStorage.delete(new ArrayList<>(entryMap.keySet()).remove(position));
+            recreate();
+        }
     }
 }

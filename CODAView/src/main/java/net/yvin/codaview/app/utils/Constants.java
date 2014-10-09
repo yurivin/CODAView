@@ -6,6 +6,8 @@ package net.yvin.codaview.app.utils;
 public class Constants {
 
     public static final String CODAAPP = "/CODAapp/";
+    public static final String STARREDCSV = "starred.csv";
+    public static final String TEMPFILE = "temp.txt";
     public static final String SPACE = " ";
 
     public static final String TWELVE = "twelve";

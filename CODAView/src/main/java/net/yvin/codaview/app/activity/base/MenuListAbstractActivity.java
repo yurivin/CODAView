@@ -35,6 +35,4 @@ public class MenuListAbstractActivity extends ListActivity {
         new MenuSelectorImpl(item, this).select();
         return super.onOptionsItemSelected(item);
     }
-
-
 }

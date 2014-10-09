@@ -34,14 +34,16 @@ public class MenuSelectorImpl implements MenuSelector {
                 if(activity instanceof DailyActivity) {
                     FaveDailyStorage.faveDaily(((DailyActivity) activity).getDailyId());
                     Toast toast = Toast.makeText(activity, activity.getString(R.string.favoritize), Toast.LENGTH_LONG);
-                    View view = toast.getView();
-                    view.setBackgroundColor(000000);
                     toast.show();
                 } else {
                     new ActivityLuncher(new Intent(activity, FaveDailyActivity.class), activity);
                 }
                 break;
+            case R.id.action_delete:
+                if(activity instanceof FaveDailyActivity) {
+                    Toast.makeText(activity, activity.getString(R.string.click_item_to_delete), Toast.LENGTH_LONG).show();
+                    FaveDailyStorage.setDelete(true);
+                }
         }
     }
-
 }

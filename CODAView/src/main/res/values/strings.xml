@@ -60,6 +60,7 @@
     <string name="previous">\u2039= previous</string>
     <string name="favoritize">Entry added to fave</string>
     <string name="rate_app_ongoogleplay">Rate on google play</string>
+    <string name="click_item_to_delete">Click item to delete</string>
 
     <string-array name="supported_languages">
         <item>English</item>

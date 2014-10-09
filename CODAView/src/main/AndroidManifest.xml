@@ -13,7 +13,6 @@
         <activity
                 android:name="net.yvin.codaview.app.activity.DailyActivity"
                 android:label="@string/daily"
-                android:theme="@style/ActivityTheme"
                 android:screenOrientation="portrait">
         </activity>
         <activity
