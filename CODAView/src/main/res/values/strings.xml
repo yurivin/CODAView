@@ -61,6 +61,7 @@
     <string name="favoritize">Entry added to fave</string>
     <string name="rate_app_ongoogleplay">Rate on google play</string>
     <string name="click_item_to_delete">Click item to delete</string>
+    <string name="no_fave_exists">No favorite daily entries exists. To create favorite daily entry click star menu button on daily page</string>
 
     <string-array name="supported_languages">
         <item>English</item>

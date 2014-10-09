@@ -59,6 +59,7 @@
     <string name="favoritize">Запись добавлена в избранное</string>
     <string name="rate_app_ongoogleplay">Оценить на google play</string>
     <string name="click_item_to_delete">Выберите название для удаления</string>
+    <string name="no_fave_exists">Нет избранных записей ежедневника. Что-бы сохранить запись в избранное, нажмите на кнопку меню со звездой на страничке понравившейся записи ежедневника</string>
 
     <string-array name="steps">
         <item>Мы признали своё бессилие перед другими, признали, что наша жизнь перестала поддаваться контролю.</item>

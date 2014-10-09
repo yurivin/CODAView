@@ -1,5 +1,7 @@
 package net.yvin.codaview.app.activity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -39,6 +41,9 @@ public class FaveDailyActivity extends MenuListAbstractActivity {
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
                 R.layout.text_list_item, entryMap.values().toArray(valueArray));
         setListAdapter(adapter);
+        if(dailyIds.size() == 0) {
+            showAlertNoData();
+        }
     }
     @Override
     protected void onListItemClick(ListView l, View v, int position, long id) {
@@ -51,5 +56,19 @@ public class FaveDailyActivity extends MenuListAbstractActivity {
             intent.putExtra("dailyId", new ArrayList<>(entryMap.keySet()).remove(position));
             new ActivityLuncher(intent, this);
         }
+    }
+
+    private void showAlertNoData() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(R.string.alert)
+                .setMessage(R.string.no_fave_exists)
+                .setNegativeButton("ok",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        });
+        AlertDialog alert = builder.create();
+        alert.show();
     }
 }
