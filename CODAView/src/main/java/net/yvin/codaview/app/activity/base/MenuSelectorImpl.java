@@ -1,6 +1,8 @@
 package net.yvin.codaview.app.activity.base;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.MenuItem;
 import android.view.View;
@@ -10,6 +12,7 @@ import net.yvin.codaview.app.activity.DailyActivity;
 import net.yvin.codaview.app.activity.FaveDailyActivity;
 import net.yvin.codaview.app.activity.MenuActivity;
 import net.yvin.codaview.app.activity.utils.ActivityLuncher;
+import net.yvin.codaview.app.activity.utils.StorageChecker;
 import net.yvin.codaview.app.repository.FaveDailyStorage;
 
 /**
@@ -31,7 +34,11 @@ public class MenuSelectorImpl implements MenuSelector {
                 new ActivityLuncher(new Intent(activity, MenuActivity.class), activity);
                 break;
             case R.id.action_star:
-                if(activity instanceof DailyActivity) {
+                if (!new StorageChecker().isExternalStorageAvailable()) {
+                    showAlertNoStorage();
+                    break;
+                }
+                if (activity instanceof DailyActivity) {
                     FaveDailyStorage.faveDaily(((DailyActivity) activity).getDailyId());
                     Toast toast = Toast.makeText(activity, activity.getString(R.string.favoritize), Toast.LENGTH_LONG);
                     toast.show();
@@ -40,10 +47,24 @@ public class MenuSelectorImpl implements MenuSelector {
                 }
                 break;
             case R.id.action_delete:
-                if(activity instanceof FaveDailyActivity) {
+                if (activity instanceof FaveDailyActivity) {
                     Toast.makeText(activity, activity.getString(R.string.click_item_to_delete), Toast.LENGTH_LONG).show();
                     FaveDailyStorage.setDelete(true);
                 }
         }
+    }
+
+    private void showAlertNoStorage() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(activity);
+        builder.setTitle(R.string.alert)
+                .setMessage(R.string.exstorage_notavailable)
+                .setNegativeButton("ok",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        });
+        AlertDialog alert = builder.create();
+        alert.show();
     }
 }

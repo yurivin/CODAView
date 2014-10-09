@@ -28,11 +28,11 @@ public class FaveDailyStorage {
             FileWriter fileWriter = new FileWriter(fileName, true);
             CSVWriter writer = new CSVWriter(fileWriter, '\t');
             String[] entries = new String[]{dailyId};
-            Log.d("Entries: ", entries[0]);
+//            Log.d("Entries: ", entries[0]);
             writer.writeNext(entries);
             writer.close();
         } catch (IOException e) {
-            e.printStackTrace();
+            Log.e("IOException reading fave entries from file"," ", e);
         }
     }
 
@@ -46,9 +46,9 @@ public class FaveDailyStorage {
             List<String[]> entries = reader.readAll();
             for (String[] entry : entries) entryList.add(entry[0]);
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            Log.e("FileNotFoundException reading fave entries from file"," ", e);
         } catch (IOException e) {
-            e.printStackTrace();
+            Log.e("IOException reading fave entries from file"," ", e);
         }
         return entryList;
     }
@@ -69,6 +69,7 @@ public class FaveDailyStorage {
             while ((currentLine = reader.readLine()) != null) {
                 if (currentLine.contains(lineToRemove)) continue;
                 writer.write(currentLine);
+                writer.newLine();
             }
         } catch (Exception e) {
             Log.e("Deleting favorite exception", ": ", e);
