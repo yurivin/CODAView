@@ -43,11 +43,7 @@ public class MenuSelectorImpl implements MenuSelector {
                 }
                 if (activity instanceof DailyActivity) {
                     FaveDailyStorage.faveDaily(((DailyActivity) activity).getDailyId());
-                    Toast toast = Toast.makeText(activity, activity.getString(R.string.favoritize), Toast.LENGTH_LONG);
-                    TextView text = (TextView) toast.getView().findViewById(android.R.id.message);
-                    text.setTextColor(Color.parseColor("#ffff7105"));
-                    text.setTextSize(16);
-                    toast.show();
+                    showAlertFaved();
                 } else {
                     new ActivityLuncher(new Intent(activity, FaveDailyActivity.class), activity);
                 }
@@ -68,6 +64,20 @@ public class MenuSelectorImpl implements MenuSelector {
         AlertDialog.Builder builder = new AlertDialog.Builder(activity);
         builder.setTitle(R.string.alert)
                 .setMessage(R.string.exstorage_notavailable)
+                .setNegativeButton("ok",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        });
+        AlertDialog alert = builder.create();
+        alert.show();
+    }
+
+    private void showAlertFaved() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(activity);
+        builder.setTitle(R.string.alert)
+                .setMessage(R.string.faved)
                 .setNegativeButton("ok",
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
