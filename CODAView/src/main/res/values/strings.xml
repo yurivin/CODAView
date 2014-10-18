@@ -38,7 +38,6 @@
     <string name="prayer">Prayer</string>
     <string name="ready">Ready</string>
     <string name="setLanguage">Set your language!\nВыберите ваш язык.</string>
-    <string name="language_comment">Click to set language!</string>
     <string name="until">Until</string>
     <string name="rating">Rating</string>
     <string name="feelings">Feelings</string>
@@ -63,15 +62,6 @@
     <string name="click_item_to_delete">Click item to delete</string>
     <string name="no_fave_exists">No favorite daily entries exists. To create favorite daily entry click star menu button on daily page</string>
     <string name="faved">Entry added to favorite. You may open favorite entries list by clicking star menu button on any other page except daily(this page)</string>
-
-    <string-array name="supported_languages">
-        <item>English</item>
-        <item>Русский</item>
-    </string-array>
-    <string-array name="supported_languages_values">
-        <item>en</item>
-        <item>ru</item>
-    </string-array>
 
     <string-array name="steps">
         <item>We admitted we were powerless over others - that our lives had become unmanageable.</item>

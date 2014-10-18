@@ -9,6 +9,8 @@
     <string name="steps">Шаги</string>
     <string name="traditions">Традиции</string>
     <string name="promises">Обещания</string>
+    <string name="title_activity_splash_screen">SplashScreenActivity</string>
+    <string name="comment_feelings_shouldbe">Comment and feelings should be entered!</string>
     <string name="step">Шаг</string>
     <string name="extension">Дополнительно</string>
     <string name="way_beginning">Начало пути</string>
@@ -28,7 +30,7 @@
     <string name="Intensity_of_feel">Интенсивность чувств</string>
     <string name="language">Язык</string>
     <string name="howToHelp">Как помочь</string>
-    <string name="helpByTranslate">Если вы хотитье помочь использовать это приложение анонимным созависимым из других
+    <string name="helpByTranslate">Если вы хотите помочь использовать это приложение анонимным созависимым из других
         стран, говорящим на иностранных языках, вы можете отправить мне на электронную почту Голубую книгу CODA, Ежедневник
         CODA на языках, которые еще не поддерживаются этим приложением.
         Или вы можете прислать мне эти книги для других сообществ.
