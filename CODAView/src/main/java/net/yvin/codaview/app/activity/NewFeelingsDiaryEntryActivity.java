@@ -91,7 +91,7 @@ public class NewFeelingsDiaryEntryActivity extends MenuAbstractActivity implemen
                                 comment = input.getText().toString();
                                 Log.d("Comment text: ", comment);
                                 btnComment.setTextSize(14);
-                                btnComment.setText(comment);
+                                btnComment.setText(comment.length() > 120 ? comment.substring(0, 120) + "..." : comment);
                             }
                         })
                 .show();
