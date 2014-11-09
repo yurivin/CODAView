@@ -17,12 +17,14 @@
                 android:onClick="clickBtnTimeFrom"
                 style="@style/Widget.Button.MainMenu"
                 android:layout_weight="1"
+                android:layout_marginRight="1dp"
                 android:text="@string/time_from"
                 android:singleLine="true"
                 android:textSize="16sp"/>
         <Button android:id="@+id/feelTimeTo"
                 android:onClick="clickBtnTimeTo"
                 android:layout_width="match_parent"
+                android:layout_marginLeft="1dp"
                 android:layout_height="wrap_content"
                 style="@style/Widget.Button.MainMenu"
                 android:layout_weight="1"
@@ -78,9 +80,6 @@
             android:layout_height="wrap_content"
             android:layout_above="@+id/btnReady"
             android:text="@string/add_comment"
-            android:layout_marginTop="5dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
             style="@style/Widget.Button.MainMenu"/>
 
     <Button android:id="@+id/btnReady"
@@ -90,9 +89,6 @@
             android:layout_alignParentBottom="true"
             android:text="@string/ready"
             android:singleLine="true"
-            android:layout_marginTop="5dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
             style="@style/Widget.Button.MainMenu"/>
 
 </RelativeLayout>
