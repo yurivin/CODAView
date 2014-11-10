@@ -1,5 +1,6 @@
 package net.yvin.codaview.app.activity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -45,7 +46,7 @@ public class TwelveActivity extends MenuListAbstractActivity {
             case TRADITIONS:
                 values = getResources().getStringArray(R.array.traditions);
                 adapter = new ArrayAdapter<String>(this,
-                        R.layout.text_list_item, values);
+                        R.layout.clickable_text_list_item, values);
                 break;
             case PROMISES:
                 values = getResources().getStringArray(R.array.promises);
@@ -61,12 +62,19 @@ public class TwelveActivity extends MenuListAbstractActivity {
         switch (getIntent().getStringExtra(Constants.TWELVE)) {
             case Constants.STEPS:
                 if ("en".equals(LanguageContext.getLanguage())) break;
-                Intent intent = new Intent(this, StepActivity.class);
-                intent.putExtra(Constants.TWELVE, getIntent().getStringExtra(Constants.TWELVE));
-                intent.putExtra(Constants.NUMBER, position + 1);
-                startActivity(intent);
-                finish();
+                startTwelveDetailsActivity(position, StepActivity.class);
+                break;
+            case Constants.TRADITIONS:
+                startTwelveDetailsActivity(position, TraditionActivity.class);
                 break;
         }
+    }
+
+    private void startTwelveDetailsActivity(int position, Class<? extends Activity> activityClass) {
+        Intent intent = new Intent(this, activityClass);
+        intent.putExtra(Constants.TWELVE, getIntent().getStringExtra(Constants.TWELVE));
+        intent.putExtra(Constants.NUMBER, position + 1);
+        startActivity(intent);
+        finish();
     }
 }

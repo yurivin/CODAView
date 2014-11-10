@@ -45,10 +45,11 @@
         <activity
                 android:name="net.yvin.codaview.app.activity.StepActivity"
                 android:label="@string/CODA"
+                android:theme="@style/ActivityTheme"
                 android:screenOrientation="portrait">
         </activity>
         <activity
-                android:name="net.yvin.codaview.app.activity.SettingsActivity"
+                android:name="net.yvin.codaview.app.activity.TraditionActivity"
                 android:label="@string/CODA"
                 android:theme="@style/ActivityTheme"
                 android:screenOrientation="portrait">
