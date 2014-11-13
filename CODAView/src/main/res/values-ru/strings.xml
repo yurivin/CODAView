@@ -8,6 +8,8 @@
     <string name="calendar">Календарь</string>
     <string name="steps">Шаги</string>
     <string name="traditions">Традиции</string>
+    <string name="tradition">Традиция</string>
+    <string name="explanation">Разъяснение</string>
     <string name="promises">Обещания</string>
     <string name="title_activity_splash_screen">SplashScreenActivity</string>
     <string name="comment_feelings_shouldbe">Comment and feelings should be entered!</string>

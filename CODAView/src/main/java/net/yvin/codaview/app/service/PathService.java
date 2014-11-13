@@ -50,4 +50,8 @@ public class PathService {
     public static String text(String field, String text) {
         return LanguageContext.getLanguage() + SLASH + field + SLASH + text + POINTTXT;
     }
+
+    public static String traditionExtention(int traditionNumber) {
+        return LanguageContext.getLanguage()  + SLASH + Constants.TRADITION_DETAILS + SLASH + traditionNumber + POINTTXT;
+    }
 }

@@ -17,7 +17,7 @@ import static net.yvin.codaview.app.utils.Constants.TRADITIONS;
 /**
  * Created by Юрий on 17.05.2014.
  */
-public class StepActivity extends MenuAbstractActivity {
+public class TwelveDetailsActivity extends MenuAbstractActivity {
 
     TextView titleTv, mainTv, extensionTitleTv, extensionTv;
     Button extensionBtn;
@@ -29,24 +29,34 @@ public class StepActivity extends MenuAbstractActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_step);
+        getViewReferences();
+        setData();
+    }
 
+    private void getViewReferences() {
         titleTv = (TextView) findViewById(R.id.stepTitleTv);
         mainTv = (TextView) findViewById(R.id.stepTv);
         extensionTitleTv = (TextView) findViewById(R.id.extensionTitleTv);
         extensionTv = (TextView) findViewById(R.id.extensionTv);
         extensionBtn = (Button) findViewById(R.id.btnExtension);
-        setData();
-
     }
 
     private void setData() {
         switch(getIntent().getStringExtra(Constants.TWELVE)) {
             case STEPS :
                 values = getResources().getStringArray(R.array.steps);
-                titleTv.setText(getString(R.string.step) + Constants.SPACE + getIntent().getIntExtra(Constants.NUMBER, 20) + " " + values[getIntent().getIntExtra(Constants.NUMBER, 20) - 1]);
+                titleTv.setText(getString(R.string.step) + Constants.SPACE + getIntent().getIntExtra(Constants.NUMBER, 20) + Constants.SPACE + values[getIntent().getIntExtra(Constants.NUMBER, 20) - 1]);
                 mainTv.setText(txtReader.getAssets(PathService.stepMain(getIntent().getIntExtra(Constants.NUMBER, 20))));
                 break;
             case TRADITIONS :
+                extensionBtn.setVisibility(View.GONE);
+                values = getResources().getStringArray(R.array.traditions);
+                titleTv.setText(getString(R.string.tradition) + Constants.SPACE + getIntent().getIntExtra(Constants.NUMBER, 20));
+                mainTv.setText(values[getIntent().getIntExtra(Constants.NUMBER, 20) - 1]);
+                extensionTv.setVisibility(View.VISIBLE);
+                extensionTitleTv.setVisibility(View.VISIBLE);
+                extensionTitleTv.setText(R.string.explanation);
+                extensionTv.setText(txtReader.getAssets(PathService.traditionExtention(getIntent().getIntExtra(Constants.NUMBER, 20))));
                 break;
             case PROMISES :
                 break;

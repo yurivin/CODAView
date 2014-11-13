@@ -43,13 +43,7 @@
                 android:theme="@style/ActivityTheme">
         </activity>
         <activity
-                android:name="net.yvin.codaview.app.activity.StepActivity"
-                android:label="@string/CODA"
-                android:theme="@style/ActivityTheme"
-                android:screenOrientation="portrait">
-        </activity>
-        <activity
-                android:name="net.yvin.codaview.app.activity.TraditionActivity"
+                android:name=".activity.TwelveDetailsActivity"
                 android:label="@string/CODA"
                 android:theme="@style/ActivityTheme"
                 android:screenOrientation="portrait">

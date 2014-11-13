@@ -21,6 +21,7 @@ public class Constants {
     public static final String WAYBEGINING = "wayBegining";
     public static final String MONTH = "month";
     public static final String DAY_OF_MONTH = "dayOfMonth";
+    public static final String TRADITION_DETAILS = "tradition_details";
 
     public static final String PREAMBLE = "preamble";
     public static final String PATTERNS = "patterns";

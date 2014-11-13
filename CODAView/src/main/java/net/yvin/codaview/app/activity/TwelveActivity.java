@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 import net.yvin.codaview.app.R;
 import net.yvin.codaview.app.activity.base.MenuListAbstractActivity;
 import net.yvin.codaview.app.context.LanguageContext;
@@ -62,10 +61,10 @@ public class TwelveActivity extends MenuListAbstractActivity {
         switch (getIntent().getStringExtra(Constants.TWELVE)) {
             case Constants.STEPS:
                 if ("en".equals(LanguageContext.getLanguage())) break;
-                startTwelveDetailsActivity(position, StepActivity.class);
+                startTwelveDetailsActivity(position, TwelveDetailsActivity.class);
                 break;
             case Constants.TRADITIONS:
-                startTwelveDetailsActivity(position, TraditionActivity.class);
+                startTwelveDetailsActivity(position, TwelveDetailsActivity.class);
                 break;
         }
     }
